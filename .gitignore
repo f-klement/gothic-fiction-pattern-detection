@@ -1,0 +1,10 @@
+.venv
+thesispyenv
+results_to_compare
+.ipynb_checkpoints
+checkpoint.pt
+_train.pkl
+_test.pkl
+_val.pkl
+modeling2.ipynb
+octis/results/models
