@@ -1,5 +1,6 @@
 .venv
 thesispyenv
+thesisenv
 results_to_compare
 .ipynb_checkpoints
 checkpoint.pt
