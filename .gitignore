@@ -1,5 +1,8 @@
 .venv
 thesispyenv
+texsys.aux
+xelatex.log
+thesisenv
 results_to_compare
 .ipynb_checkpoints
 checkpoint.pt
