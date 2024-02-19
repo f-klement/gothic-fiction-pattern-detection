@@ -100,7 +100,7 @@ Byron -> Intimacy & Identity (45)
 
 Smith Charlotte -> (38)
 
-Shelley Mary -> Psychological Trauma, Madness & Aggression, Trickery and Science (15, 38, 5)
+Shelley Mary -> Psychological Trauma, Madness & Aggression, Trickery and Science, Science & Animalistic Violence (15,10, 38, 5)
 
 Colderidge -> Secrets and Demons (34)
 
@@ -110,8 +110,21 @@ Brown Charles Brockden -> Psychological Trauma (38)
 
 ## Textual Associations:
 
-Wharton -> Frightful Dialogue, Myth and Trials, Chivalry & Faith (2,4, 8)
+Wharton -> Frightful Dialogue, Myth and Trials, Chivalry & Faith, Rituals & Magic (2,4, 8, 13)
 
 Walpole -> Aggression & Madness (5)
 
 Kippling -> Chivalry & Faith (8)
+
+Shelly Marry -> Gloom, Doom and Longing (11)
+
+Vernon Lee -> Undeath & Grief (17)
+
+Hawthorne -> Myth, Wealth and Castles has three entries by Hawthorne - prime contributer (70) !!!
+
+Moore Thomas -> Intimacy, Identity and Emotions (45)
+
+Parson, Eliza -> Psychological Trauma (38)
+
+Lytton -> Psychological Trauma (38)
+
