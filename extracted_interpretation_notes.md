@@ -331,7 +331,8 @@ darker aspects of human behavior. Topic 51: "Disillusionment with Society" appea
 characters who are at odds with their social context.
 
 Topic 70: "Myth and splendor - Wealth and Castles" is prominent for authors like Charles Maturin, Arthur Machen and Walpole, and indicating a focus on grandeur, historical settings, and perhaps a reflection 
-on the role of the past in shaping individual identities and social structures. Oscar Wilds most prevalent topics 52: Adventure, Spendor, Power and Challenges, History and 39: Quest for Meaning - Self-Discovery, Transformation mirror these tendencies of a nostalgic fascination with the past and a drive for self-actualization.
+on the role of the past in shaping individual identities and social structures. Oscar Wilds most prevalent topics 52: Adventure, Spendor, Power and Challenges, History and 39: Quest for Meaning - Self-Discovery,
+Transformation mirror these tendencies of a nostalgic fascination with the past and a drive for self-actualization.
 
 Sleath Eleanor, Parsons Eliza, Lee Sophia and Reeve Clara have a significant presence of Topic 65: "Atmospheric Battle Descriptions and Royalty", which could reflect their works that delve into grand conflicts 
 and courtship.
@@ -417,7 +418,8 @@ Learning and Secrets" are significant.
 Authors: Le Fanu, Shelley, Wilde, Polderige and Hogg
 
 Gothic Romanticism Group:
-This category includes authors whose works have a strong element of romance intertwined with the Gothic, often exploring the tension between desire and morality. Topics like Topic 28: "Communion in Nature - Transformation, Relationships and Identity" and Topic 44: "Companionship in Times of Trial and Distress" or "Topic 6": "Nature and Reasoning - \n Creativity, Understanding, mixed with Fauna.", are indicative.
+This category includes authors whose works have a strong element of romance intertwined with the Gothic, often exploring the tension between desire and morality. Topics like Topic 28: "Communion in Nature - 
+Transformation, Relationships and Identity" and Topic 44: "Companionship in Times of Trial and Distress" or "Topic 6": "Nature and Reasoning - \n Creativity, Understanding, mixed with Fauna.", are indicative.
 Authors: Poe, Kippling, Le Fanu, Hawthorne
 
 Supernatural and Horror Group:
@@ -427,7 +429,8 @@ Authors: Stoker, Byron, Stevenson
 Social and Political Commentary Group:
 These authors use Gothic elements to critique social and political structures. Topics that stand out include Topic 36: "Individualism vs. Conformity - Rebellion and Social Norms" and Topic 51: "Disillusionment 
 with Society - Resistance, Protest, Retreat".
-Authors: Hawthorne, Brown, Lytton, Gaskell, Chambers, Ainsworth, Machen, Scott, Lee Vernon, Smith Charlotte, Stoker, Shelly Mary, Radcliff, Blackwood, Wharton, Le Fanu, Corelli share a method of expressing social discontent with the use of topic 51.
+Authors: Hawthorne, Brown, Lytton, Gaskell, Chambers, Ainsworth, Machen, Scott, Lee Vernon, Smith Charlotte, Stoker, Shelly Mary, Radcliff, Blackwood, Wharton, Le Fanu, Corelli share a method of expressing social 
+discontent with the use of topic 51.
 
 Historical and Mythic Reconstruction Group:
 Works by these authors are characterized by a strong sense of history and the interweaving of myth within their narratives. Prominent topics are Topic 54: "Medieval Cities, Castles and Courtship" and 
@@ -496,4 +499,83 @@ Brontë or Kipling. (Related Topics: Poe, Bierce)
 
 ## Gender distribution:
 
+It is difficult to pass any judgment on these topics, especially not any readily gender coded one, given that they seem to mirror one another in the general content.
+Both groupings share a topic related to some form of entertainment, some associations with traveling, some mythical and fantastical associations and some associations with distress.
+Both have topics with associations of romance and emotions. Only a mild differnetiation might be put forth, that the strongly male topics covering emotions have a stronger assiciation with 
+Trials, Honor, and with courtship offering a more formal and restrained type of interaction. "Companionship in Times of Trial and Distress." encompasses terms like brood, firmness, accomodate,
+acceptance, conducted equilibrium." those carry more oise at that. Meanwhile the topic "Emotional Dynamics and Interactions" with words like "breathless, hug, vociferating, moan, ruffled, brazen"
+has a more immediate, unmediated and passionate note to them. 
 
+While none of these gender coded ones are among the most defining topics for the whole corpus, "38 - Psychology Traum and Secrets" is definitely prevalent enough to be ranked among the 20 most 
+influencial ones, showing up for Mary Shelly, Charlotte Smith, but also Charles Brockden Brown, Parson Eliza and Edward Bulwer Lyt Lytton as defining elements. Among the most influential texts for this topic
+there are also texts by Ann Radcliffe, Marie Corelli, Lee Sophia and many other female authors within the corpus.
+
+The same holds true for "28 - Communion in Nature - Transformation, Relationships and Identity", which can be considered the topic of Romanticists and Decadence writers with texts from Poe, Byron, Wilde and 
+Hawthorne contributing most strongly to them.
+
+
+## Nationality distribution:
+
+The overwhelming majority of the contributions of distinctly American voices seem to be bound to the strongly masculine topics about poise, but also the one about Romanticism
+we had previously uncovered, with an overwhelming influence being Poe, Chambers, Brown and Hawthorne, even if the most highly associated one of them somehow ranking 
+"The Tell-Tale-Heart" which quizically subverts the posed expectations.
+
+
+The distinctly British voices arry a much stronger weight than any of the other nationalities, with two of them rrising form the list of distinctly female topics:
+"22 - Emotional Dynamics and Interactions" and "38 - Psychology, Trauma and Secrets", while 38 has a very dense rate of Mary Shelly and Ann Radcliffe texts,
+22 is a very diverse topic in terms authors contributing to it, but the topic carries a strong heterogeneitiy with regards to nationality.
+As mentioned above, it carries with it a lot of strongly passionate vocabluary with the highes contribution by Lee Vernon's "Hauntings" or Godwin's "The Adventures of Caleb Williams".
+
+
+
+## Sentiment Distribution:
+
+The connection between sentiment and differnt topics is not particulary strong, but in those cases where it is present the connection seems very natural and intuitive,
+with texts that ean strongly towards topics that mark carnage, crime, death and tense judgments being leaning towards a more negative sentiment, while those focusing on self-expression, ambition intimacy seduction leaning towards a positive sentiment.
+
+But given that only three entries have a higher value than 0,1 the connections are not overly strong to begin with.
+
+
+### Cluster Analysis:
+
+### PCA and K-Means:
+
+The grouping into clusters shows a even distribution of topics into two groups with a smaller thrid party that has a much narrower distribution that focuses on a few specific topics, but their more narrower focus on fewer topics is concentrated on a few oics, but of those two carry exceptional weight on the corpus as a whole: 70 "Myth and splendor - Wealth and Castles" and 12 "Home Invasion - Domestic Mystery and Conflict", with 12 being particularly focused in its influence on a select few influencial authors that stand a part: XXXX
+
+The importance of 70 might on the otherhand reflect its weight on some of the major voices within the corpus, such as Hawthorne and Mary Corell.
+
+Further important influences to investigate aretopics 49 - "Departure and Music", 50 - "Myth, Nature, Wonder and Despair" and to a lesser degree 51 - "Dissilusionment with Society - \n Resistance, Protest, Retreat".
+
+Closer inspection is warranted for he pares cluster  with only a few entries for 35 - "Mental Illness, Law and Outcasts - Fear, Suspicion and Struggles", 36 - "Individualism vs. Conformity - Rebellion and Social Norms", 52 - "Adventure, Spendor, Power and Challenges, History" and lot of weight onto 70.
+
+
+
+The outlying texts make up the following:
+
+{1: ['Hawthorne_SundayatHo_1',
+  'Jacobs_TheMonkeyS_1',
+  'Jacobs_TheMonkeys_1',
+  'Keats_LaBelleDam_1'],
+ 3: ['Aikin_SirBertran_1',
+  'Hawthorne_LittleAnni_1',
+  'Hawthorne_TheLilysQu_1',
+  'Hawthorne_TheMiniste_1',
+  'Hawthorne_TheWhiteOl_1'],
+ 4: ['Bangs_GhostsIHav_1',
+  'Bierce_AnOccurren_1',
+  'Holcroft_AnnaStIves_1',
+  'Lewis_AlonzoTheB_1',
+  'Machen_TheHouseof_1',
+  'Stagg_TheVampyre_1',
+  'Stoker_TheLairOfT_1',
+  'unsigned_CountRoder_1']}#
+
+
+Further investigation into the major texts for these topics and the relationship of these texts to one another or to the genre as a whole is warranted.
+
+
+### Hierarchical Clustering:
+
+Here the grouping seems to create two outgroups composed of 31 - "Exploration, Gloom, Caverns",a very neiche topic with little weight on the larger whole, 29 - "Bickering, Fighting and Mountains", a highly concentrated topic with impect on the wider grouping and 60 - "Confession and marriage before  Conscription and Battle" also a very niche topic with litte weight to it.
+
+The other outgroup cluster is composed of 65 - "Atmospheric Battle Descriptions and Royalty", 51 - "Dissilusionment with Society - Resistance, Protest, Retreat", 5 - "Excitablity, Madness and Deceit -  Aggression, conflict and glee" and 38 - "Psychology, Trauma and Secrets". The latter posing a very powerful group of topics that carry a large weight on the corpus within a small selection.
