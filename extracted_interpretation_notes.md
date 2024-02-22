@@ -548,6 +548,24 @@ Further important influences to investigate aretopics 49 - "Departure and Music"
 
 Closer inspection is warranted for he pares cluster  with only a few entries for 35 - "Mental Illness, Law and Outcasts - Fear, Suspicion and Struggles", 36 - "Individualism vs. Conformity - Rebellion and Social Norms", 52 - "Adventure, Spendor, Power and Challenges, History" and lot of weight onto 70.
 
+The grouping into clusters shows a even distribution of topics into two groups with a smaller thrid party that has a much narrower distribution that focuses on a few specific topics, but their more narrower focus on fewer topics is concentrated on a few oics, but of those two carry exceptional weight on the corpus as a whole: 70 "Myth and splendor - Wealth and Castles" and 12 "Home Invasion - Domestic Mystery and Conflict", with 12 being particularly focused in its influence on a select few influencial authors that stand a part: XXXX
+
+The importance of 70 might on the otherhand reflect its weight on some of the major voices within the corpus, such as Hawthorne and Mary Corell.
+
+Further important influences to investigate aretopics 49 - "Departure and Music", 50 - "Myth, Nature, Wonder and Despair" and to a lesser degree 51 - "Dissilusionment with Society - \n Resistance, Protest, Retreat".
+
+Closer inspection is warranted for he pares cluster  with only a few entries for 35 - "Mental Illness, Law and Outcasts - Fear, Suspicion and Struggles", 36 - "Individualism vs. Conformity - Rebellion and Social Norms", 52 - "Adventure, Spendor, Power and Challenges, History" and lot of weight onto 70, "Myth and splendor - Wealth and Castles".
+
+A subsection of the text seem to be deeling heavily in topics focused around societal retreat, solitude, personal autonomy and rebellion for the sake of ones convictions. But there seems to be a split within the interpretation of those topics grouping them into a section, one about adventure, exploration, marveling at discoveries and forgotten splendor. Meanwhile the other grouping of texts is equally dilillusioned and in opposition to or active departure from society, but does not enjoy what it finds and is haunted by foreign forces that bring conflict and grief.
+
+
+Jacobs "Monkey's Paw" and Keats "La Belle Dame sans Merci" both tell a tale of a tempting encountner with an alluring other, a magical artifact and a fairy and detail the anguish that their wants  brought them.
+
+Similarily, Machens the house of Souls is a collection of short texts, most prominent of them "The Inmost Light" and "The Great God Pan"  and "The White People" which deal with humans that cross the veil of what was for their kind to perceive and experience and the disturbing or corrupting experiences that ensued. 
+
+
+Meanwhile Hawthorne's "the Minister's Black Veil" tells the story of a man of faith turning away from life in his community and his old life, only to rise in esteeem, influence and power through his personal renouncement. 
+While "Sunday at Home" is an ambiguous text about worship and community and a mixture of longing and contempt for a church congregation.
 
 
 The outlying texts make up the following:
@@ -571,7 +589,7 @@ The outlying texts make up the following:
   'unsigned_CountRoder_1']}#
 
 
-Further investigation into the major texts for these topics and the relationship of these texts to one another or to the genre as a whole is warranted.
+
 
 
 ### Hierarchical Clustering:
@@ -579,3 +597,26 @@ Further investigation into the major texts for these topics and the relationship
 Here the grouping seems to create two outgroups composed of 31 - "Exploration, Gloom, Caverns",a very neiche topic with little weight on the larger whole, 29 - "Bickering, Fighting and Mountains", a highly concentrated topic with impect on the wider grouping and 60 - "Confession and marriage before  Conscription and Battle" also a very niche topic with litte weight to it.
 
 The other outgroup cluster is composed of 65 - "Atmospheric Battle Descriptions and Royalty", 51 - "Dissilusionment with Society - Resistance, Protest, Retreat", 5 - "Excitablity, Madness and Deceit -  Aggression, conflict and glee" and 38 - "Psychology, Trauma and Secrets". The latter posing a very powerful group of topics that carry a large weight on the corpus within a small selection.
+
+
+
+# Network Analysis:
+
+## Authors influence based on averaged topic distribution:
+
+The network shows a few clear centers of similariy. The biggest collection of influential nodes is a grouping comprised of Mary Shelly, William Godwin, Frances Burney and Charles Brockden Brown, with a number of smaller authors surrunding them. 
+
+Another center is composed of Percy Shelly, Horace Walpole, Elenor Sleath and Thomas Leland.
+
+A smaller and less densely connected grouping covers Sheridian le Fanu, Charlotte Bronte and Elizabeth Gaskell.
+
+
+
+## Network of texts based on avereaged topic distribution:
+
+xxx
+
+
+# Network Graph on Textual Influence Through out time:
+
+xxx
