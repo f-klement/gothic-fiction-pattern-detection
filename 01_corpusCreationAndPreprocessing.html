@@ -7486,6 +7486,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The following notebook will cover the creation of a corpus for a thesis centered around the quantitative exploration of the literary genre Gothic Fiction with the help of a number of tools established within the distant reading community. A community of literary scholars and digital humanists set on approaching, analyzing and interpreting texts from afar with computational means.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7507,6 +7518,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Corpus-Creation">Corpus Creation<a class="anchor-link" href="#Corpus-Creation">¶</a></h2>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7516,7 +7538,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Download and cache the Project Gutenberg Metadata to query it</span>
-<span class="c1">#GutenbergCache.create() #refresh=False, download=True, unpack=True, parse=True, cache=True, deleteTemp=True)</span>
+<span class="n">GutenbergCache</span><span class="o">.</span><span class="n">create</span><span class="p">()</span> <span class="c1">#refresh=False, download=True, unpack=True, parse=True, cache=True, deleteTemp=True)</span>
 </pre></div>
 </div>
 </div>
@@ -7529,7 +7551,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The titles for the corpus are taken from several sources: While the list of books collected by Caroline Winter and Eleanor Stribling as part of their works on exploring the color space in use in texts of gothic fiction, contributed both names and texts themselves, all further texts have been taken from Project Gutenberg. Ted Underwood created a dataframe of metadata on texs that David Punters and Glennis Byrons regard as the most prominent contributors to the genre within their seminal works on the Gothic. Many of the titles on that list have been gathered and enriched with further titles form authors mentioned in their text 'The Gothic' as well as the titles that Project Gutenberg attributes to this or closely related genres.</p>
+<p>The titles for the corpus are taken from several sources:</p>
+<ol>
+<li>The list of books collected by Caroline Winter and Eleanor Stribling as part of their works on exploring the color space in use in texts of gothic fiction. Their work contributed both names and texts themselves.</li>
+<li>All further texts have been taken from Project Gutenberg. Titles that Project Gutenberg attributes to these or closely related genres were retrieved with the help of the gutenbergpy library.</li>
+<li>Ted Underwood created a dataframe of metadata on texs that David Punter and Glennis Byron regard as the most prominent contributors to the genre within their seminal works on the Gothic. Many of the titles on that list have been gathered and enriched with further titles form authors mentioned in their text 'The Gothic'.</li>
+</ol>
+<p>Note:   Given that gutenbergpy has not been under development in a few years, the library has only partial access to their databases, newer entries were not retrievable and the results of these queries make up far fewer entries than as expected and wanted, so step 2 included a last manual retrieval of texts from their website that ted Underwood had provided metadata for.</p>
+<p>All the texts not provided by the Color Corpus were also manually enriched with metadata on their creation, publication and station within the canon, as well as demographic details about their creators.</p>
 </div>
 </div>
 </div>
@@ -7541,70 +7570,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#cache = GutenbergCache.get_cache()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># cursor=cache.native_query("""</span>
-<span class="c1">#                           SELECT </span>
-<span class="c1">#                            MAX(b.gutenbergbookid) as book_id,</span>
-<span class="c1">#                            CASE </span>
-<span class="c1">#                                 WHEN MAX(a.name) = 'Boz' THEN 'Dickens, Charles'</span>
-<span class="c1">#                                 WHEN MAX(a.name) = 'Marshall, William' THEN 'Walpole, Horace'</span>
-<span class="c1">#                                 WHEN MAX(a.name) = 'Grile, Dod' THEN 'Bierce, Ambrose'</span>
-<span class="c1">#                                 ELSE MAX(a.name) </span>
-<span class="c1">#                             END as authors,</span>
-<span class="c1">#                             t.name as titles</span>
-<span class="c1">#                           FROM books b </span>
-<span class="c1">#                           join languages l on l.id=b.languageid and l.name='en'</span>
-<span class="c1">#                           join book_subjects bsu on b.id=bsu.bookid</span>
-<span class="c1">#                           join bookshelves bsh on b.bookshelveid=bsh.id</span>
-<span class="c1">#                           join subjects s on s.id=bsu.subjectid</span>
-<span class="c1">#                           join titles t on t.bookid=b.id</span>
-<span class="c1">#                           join book_authors ba on ba.bookid=b.id</span>
-<span class="c1">#                           join authors a on ba.authorid=a.id</span>
-<span class="c1">#                           where </span>
-<span class="c1">#                                 (lower(bsh.name) like '%horror%'</span>
-<span class="c1">#                                 or lower(s.name) like '%horror%'</span>
-<span class="c1">#                                 or lower(bsh.name) like '%gothic%'</span>
-<span class="c1">#                                 or lower(s.name) like '%gothic%'</span>
-<span class="c1">#                                 or lower(bsh.name) like '%supernatural%'</span>
-<span class="c1">#                                 or lower(s.name) like '%supernatural%'</span>
-<span class="c1">#                                 or lower(bsh.name) like '%paranormal%'</span>
-<span class="c1">#                                 or lower(s.name) like '%paranormal%'</span>
-<span class="c1">#                                 or lower(bsh.name) like '%vampire%'</span>
-<span class="c1">#                                 or lower(s.name) like '%vampire%'</span>
-<span class="c1">#                                 or lower(bsh.name) like '%ghost%'</span>
-<span class="c1">#                                 or lower(s.name) like '%ghost%')</span>
-<span class="c1">#                                 and a.name not in </span>
-<span class="c1">#                                 ('Arthur, Robert','Baker, Frank','Baldwin, Edward','Birkhead, Edith',</span>
-<span class="c1">#                                 'Blackwood, Algernon','Bloxam, Matthew Holbeche','De Quincey, Thomas',</span>
-<span class="c1">#                                 'DeQuincey, Thomas',</span>
-<span class="c1">#                                 'De Vet, Charles V.','Glad, Victoria','Hammond, Keith', 'Hodgson, William Hope',</span>
-<span class="c1">#                                 'Hopkins, R. Thurston (Robert Thurston)','Kafka, F. (Franz)','La Spina, Greye',</span>
-<span class="c1">#                                 'Leroux, Gaston','Littlewit, Humphrey','Marks, Winston K. (Winston Kinney)',</span>
-<span class="c1">#                                 'O''Donnell, Elliot', 'Oliver, George', 'Olivieri, David', 'Kafka, Franz',</span>
-<span class="c1">#                                 'Peterson, Don', 'Lovecraft, H. P. (Howard Phillips)','Phillips, Forbes',</span>
-<span class="c1">#                                 'Tenneshaw, S. M.','Weinbaum, Stanley G. (Stanley Grauman)')</span>
-<span class="c1">#                                 and b.id not in (12728, 12739, 12751, 12762) -- collected works</span>
-<span class="c1">#                                 and b.gutenbergbookid not in (2147, 31469, 50133, 50133,2040, 42324, 41445, 9629,</span>
-<span class="c1">#                                 50133, 24022, 20673, 20038, 13334, 6542, 19505, 19337, 18233,20034,14317,</span>
-<span class="c1">#                                 14168,32076,18233,20034,14317, 24350, 25037) -- ill-fitting titles</span>
-<span class="c1">#                             GROUP BY t.name</span>
-<span class="c1">#                           """)</span>
-
-<span class="c1"># results = cursor.fetchall()</span>
-<span class="c1"># df = pd.DataFrame(results, columns=[column[0] for column in cursor.description])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#caching the libraries db</span>
+<span class="n">cache</span> <span class="o">=</span> <span class="n">GutenbergCache</span><span class="o">.</span><span class="n">get_cache</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7617,7 +7584,81 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Given that the package does not fetch biographical data on the authors or original publication dates, the filtering process had to be done manually.</p>
+<p>First call, purely based on keywords and Project Gutenberg's subsections - many entries were not retrievable at all. (80 texts)</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">cursor</span><span class="o">=</span><span class="n">cache</span><span class="o">.</span><span class="n">native_query</span><span class="p">(</span><span class="s2">"""</span>
+<span class="s2">                          SELECT </span>
+<span class="s2">                           MAX(b.gutenbergbookid) as book_id,</span>
+<span class="s2">                           CASE </span>
+<span class="s2">                                WHEN MAX(a.name) = 'Boz' THEN 'Dickens, Charles'</span>
+<span class="s2">                                WHEN MAX(a.name) = 'Marshall, William' THEN 'Walpole, Horace'</span>
+<span class="s2">                                WHEN MAX(a.name) = 'Grile, Dod' THEN 'Bierce, Ambrose'</span>
+<span class="s2">                                ELSE MAX(a.name) </span>
+<span class="s2">                            END as authors,</span>
+<span class="s2">                            t.name as titles</span>
+<span class="s2">                          FROM books b </span>
+<span class="s2">                          join languages l on l.id=b.languageid and l.name='en'</span>
+<span class="s2">                          join book_subjects bsu on b.id=bsu.bookid</span>
+<span class="s2">                          join bookshelves bsh on b.bookshelveid=bsh.id</span>
+<span class="s2">                          join subjects s on s.id=bsu.subjectid</span>
+<span class="s2">                          join titles t on t.bookid=b.id</span>
+<span class="s2">                          join book_authors ba on ba.bookid=b.id</span>
+<span class="s2">                          join authors a on ba.authorid=a.id</span>
+<span class="s2">                          where </span>
+<span class="s2">                                (lower(bsh.name) like '</span><span class="si">%ho</span><span class="s2">rror%'</span>
+<span class="s2">                                or lower(s.name) like '</span><span class="si">%ho</span><span class="s2">rror%'</span>
+<span class="s2">                                or lower(bsh.name) like '</span><span class="si">%g</span><span class="s2">othic%'</span>
+<span class="s2">                                or lower(s.name) like '</span><span class="si">%g</span><span class="s2">othic%'</span>
+<span class="s2">                                or lower(bsh.name) like '</span><span class="si">%s</span><span class="s2">upernatural%'</span>
+<span class="s2">                                or lower(s.name) like '</span><span class="si">%s</span><span class="s2">upernatural%'</span>
+<span class="s2">                                or lower(bsh.name) like '%paranormal%'</span>
+<span class="s2">                                or lower(s.name) like '%paranormal%'</span>
+<span class="s2">                                or lower(bsh.name) like '%vampire%'</span>
+<span class="s2">                                or lower(s.name) like '%vampire%'</span>
+<span class="s2">                                or lower(bsh.name) like '</span><span class="si">%g</span><span class="s2">host%'</span>
+<span class="s2">                                or lower(s.name) like '</span><span class="si">%g</span><span class="s2">host%')</span>
+<span class="s2">                                and a.name not in </span>
+<span class="s2">                                ('Arthur, Robert','Baker, Frank','Baldwin, Edward','Birkhead, Edith',</span>
+<span class="s2">                                'Blackwood, Algernon','Bloxam, Matthew Holbeche','De Quincey, Thomas',</span>
+<span class="s2">                                'DeQuincey, Thomas',</span>
+<span class="s2">                                'De Vet, Charles V.','Glad, Victoria','Hammond, Keith', 'Hodgson, William Hope',</span>
+<span class="s2">                                'Hopkins, R. Thurston (Robert Thurston)','Kafka, F. (Franz)','La Spina, Greye',</span>
+<span class="s2">                                'Leroux, Gaston','Littlewit, Humphrey','Marks, Winston K. (Winston Kinney)',</span>
+<span class="s2">                                'O''Donnell, Elliot', 'Oliver, George', 'Olivieri, David', 'Kafka, Franz',</span>
+<span class="s2">                                'Peterson, Don', 'Lovecraft, H. P. (Howard Phillips)','Phillips, Forbes',</span>
+<span class="s2">                                'Tenneshaw, S. M.','Weinbaum, Stanley G. (Stanley Grauman)')</span>
+<span class="s2">                                and b.id not in (12728, 12739, 12751, 12762) -- collected works</span>
+<span class="s2">                                and b.gutenbergbookid not in (2147, 31469, 50133, 50133,2040, 42324, 41445, 9629,</span>
+<span class="s2">                                50133, 24022, 20673, 20038, 13334, 6542, 19505, 19337, 18233,20034,14317,</span>
+<span class="s2">                                14168,32076,18233,20034,14317, 24350, 25037) -- ill-fitting titles</span>
+<span class="s2">                            GROUP BY t.name</span>
+<span class="s2">                          """</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">column</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">description</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Given that the package does not fetch biographical data on the authors or original publication dates, the filtering process by publication date had to be done manually. And the corpus built here maintains a soft threshold of 1900.</p>
 </div>
 </div>
 </div>
@@ -7629,19 +7670,19 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># # This function downloads a book by its Gutenberg ID</span>
-<span class="c1"># def download_book(book_id):</span>
-<span class="c1">#     raw_book = gutenbergpy.textget.get_text_by_id(book_id)  # with headers</span>
-<span class="c1">#     clean_book = gutenbergpy.textget.strip_headers(raw_book)  # without headers</span>
-<span class="c1">#     return clean_book</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># This function downloads a book by its Gutenberg ID</span>
+<span class="k">def</span> <span class="nf">download_book</span><span class="p">(</span><span class="n">book_id</span><span class="p">):</span>
+    <span class="n">raw_book</span> <span class="o">=</span> <span class="n">gutenbergpy</span><span class="o">.</span><span class="n">textget</span><span class="o">.</span><span class="n">get_text_by_id</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>  <span class="c1"># with headers</span>
+    <span class="n">clean_book</span> <span class="o">=</span> <span class="n">gutenbergpy</span><span class="o">.</span><span class="n">textget</span><span class="o">.</span><span class="n">strip_headers</span><span class="p">(</span><span class="n">raw_book</span><span class="p">)</span>  <span class="c1"># without headers</span>
+    <span class="k">return</span> <span class="n">clean_book</span>
 
-<span class="c1"># df['text'] = ''</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'text'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span>
 
-<span class="c1"># for idx, row in df.iterrows():</span>
-<span class="c1">#     try:</span>
-<span class="c1">#         df.loc[idx, 'text'] = download_book(row['book_id'])</span>
-<span class="c1">#     except Exception:</span>
-<span class="c1">#         continue</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="s1">'text'</span><span class="p">]</span> <span class="o">=</span> <span class="n">download_book</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">'book_id'</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">continue</span>
 </pre></div>
 </div>
 </div>
@@ -7655,7 +7696,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df.to_csv('./preprocessing/corpora/Gutenberg_texts.csv', index=False)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./preprocessing/corpora/Gutenberg_texts.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7680,15 +7721,26 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># names= ['William Harrison Ainsworth','William Beckford','E. F. Benson','Ambrose Bierce','Elizabeth Bowen','Mary Elizabeth Braddon',</span>
-<span class="c1"># 'Charles Brockden Brown','Robert W. Chambers','Wilkie Collins','Marie Corelli','Charlotte Dacre','Walter de la Mare',</span>
-<span class="c1"># 'Isak Dinesen','Elizabeth Gaskell','William Godwin','H. Rider Haggard','Nathaniel Hawthorne', 'William Hope Hodgson',</span>
-<span class="c1"># 'James Hogg','Washington Irving','G. P. R. James','Henry James','Francis Lathom','J. Sheridan Le Fanu','Sophia Lee','Vernon Lee','Matthew Lewis',</span>
-<span class="c1"># 'Bulwer Lytton','George MacDonald','Arthur Machen', 'James Macpherson','Charles Robert Maturin','Herman Melville','Margaret Oliphant','Edgar Allan Poe',</span>
-<span class="c1"># 'John Polidori','Ann Radcliffe','Clara Reeve','G. W. M. Reynolds','Walter Scott','Mary Wollstonecraft Shelley','Charlotte Smith','Tobias Smollett',</span>
-<span class="c1"># 'Robert Louis Stevenson','Bram Stoker','Horace Walpole']</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">names</span><span class="o">=</span> <span class="p">[</span><span class="s1">'William Harrison Ainsworth'</span><span class="p">,</span><span class="s1">'William Beckford'</span><span class="p">,</span><span class="s1">'E. F. Benson'</span><span class="p">,</span><span class="s1">'Ambrose Bierce'</span><span class="p">,</span><span class="s1">'Elizabeth Bowen'</span><span class="p">,</span><span class="s1">'Mary Elizabeth Braddon'</span><span class="p">,</span>
+<span class="s1">'Charles Brockden Brown'</span><span class="p">,</span><span class="s1">'Robert W. Chambers'</span><span class="p">,</span><span class="s1">'Wilkie Collins'</span><span class="p">,</span><span class="s1">'Marie Corelli'</span><span class="p">,</span><span class="s1">'Charlotte Dacre'</span><span class="p">,</span><span class="s1">'Walter de la Mare'</span><span class="p">,</span>
+<span class="s1">'Isak Dinesen'</span><span class="p">,</span><span class="s1">'Elizabeth Gaskell'</span><span class="p">,</span><span class="s1">'William Godwin'</span><span class="p">,</span><span class="s1">'H. Rider Haggard'</span><span class="p">,</span><span class="s1">'Nathaniel Hawthorne'</span><span class="p">,</span> <span class="s1">'William Hope Hodgson'</span><span class="p">,</span>
+<span class="s1">'James Hogg'</span><span class="p">,</span><span class="s1">'Washington Irving'</span><span class="p">,</span><span class="s1">'G. P. R. James'</span><span class="p">,</span><span class="s1">'Henry James'</span><span class="p">,</span><span class="s1">'Francis Lathom'</span><span class="p">,</span><span class="s1">'J. Sheridan Le Fanu'</span><span class="p">,</span><span class="s1">'Sophia Lee'</span><span class="p">,</span><span class="s1">'Vernon Lee'</span><span class="p">,</span><span class="s1">'Matthew Lewis'</span><span class="p">,</span>
+<span class="s1">'Bulwer Lytton'</span><span class="p">,</span><span class="s1">'George MacDonald'</span><span class="p">,</span><span class="s1">'Arthur Machen'</span><span class="p">,</span> <span class="s1">'James Macpherson'</span><span class="p">,</span><span class="s1">'Charles Robert Maturin'</span><span class="p">,</span><span class="s1">'Herman Melville'</span><span class="p">,</span><span class="s1">'Margaret Oliphant'</span><span class="p">,</span><span class="s1">'Edgar Allan Poe'</span><span class="p">,</span>
+<span class="s1">'John Polidori'</span><span class="p">,</span><span class="s1">'Ann Radcliffe'</span><span class="p">,</span><span class="s1">'Clara Reeve'</span><span class="p">,</span><span class="s1">'G. W. M. Reynolds'</span><span class="p">,</span><span class="s1">'Walter Scott'</span><span class="p">,</span><span class="s1">'Mary Wollstonecraft Shelley'</span><span class="p">,</span><span class="s1">'Charlotte Smith'</span><span class="p">,</span><span class="s1">'Tobias Smollett'</span><span class="p">,</span>
+<span class="s1">'Robert Louis Stevenson'</span><span class="p">,</span><span class="s1">'Bram Stoker'</span><span class="p">,</span><span class="s1">'Horace Walpole'</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Formatting the list of names in the same format that names are stored in the Gutenberg database to ease their retrieval</p>
 </div>
 </div>
 </div>
@@ -7700,17 +7752,28 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># formatted_names = []</span>
-<span class="c1"># for name in names:</span>
-<span class="c1">#     name_parts = name.split(" ")</span>
-<span class="c1">#     last_name = name_parts[-1]</span>
-<span class="c1">#     other_names = name_parts[:-1]</span>
-<span class="c1">#     formatted_name = last_name + ', ' + " ".join(other_names)</span>
-<span class="c1">#     formatted_names.append(formatted_name)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">formatted_names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="n">name_parts</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">name_parts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">other_names</span> <span class="o">=</span> <span class="n">name_parts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">formatted_name</span> <span class="o">=</span> <span class="n">last_name</span> <span class="o">+</span> <span class="s1">', '</span> <span class="o">+</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">other_names</span><span class="p">)</span>
+    <span class="n">formatted_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">formatted_name</span><span class="p">)</span>
 
-<span class="c1"># names_string = ', '.join(f"'{name}'" for name in formatted_names)</span>
+<span class="n">names_string</span> <span class="o">=</span> <span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">'"</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">formatted_names</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Adding additional texts of potential interest on the side - sadly many were not retrievable, and for those that were, the format was corrupted and in need of cleanup.</p>
 </div>
 </div>
 </div>
@@ -7722,54 +7785,54 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># cursor=cache.native_query(f"""</span>
-<span class="c1">#                           SELECT </span>
-<span class="c1">#                             MAX(b.gutenbergbookid) as book_id,</span>
-<span class="c1">#                             MAX(a.name) as authors,</span>
-<span class="c1">#                             t.name as titles</span>
-<span class="c1">#                           FROM books b </span>
-<span class="c1">#                           join languages l on l.id=b.languageid and l.name='en'</span>
-<span class="c1">#                           join book_subjects bsu on b.id=bsu.bookid</span>
-<span class="c1">#                           join bookshelves bsh on b.bookshelveid=bsh.id</span>
-<span class="c1">#                           join subjects s on s.id=bsu.subjectid</span>
-<span class="c1">#                           join titles t on t.bookid=b.id</span>
-<span class="c1">#                           join book_authors ba on ba.bookid=b.id</span>
-<span class="c1">#                           join authors a on ba.authorid=a.id</span>
-<span class="c1">#                           where </span>
-<span class="c1">#                           (a.name in ({names_string}) or t.name in ('Wuthering Heights', 'Hieroglyphic Tales', 'Dreams, Waking Thoughts, and Incidents','Vathek; An Arabian Tale',</span>
-<span class="c1">#                           'Melmoth the Wanderer, Vol. 1','Melmoth the Wanderer, Vol. 2','Melmoth the Wanderer, Vol. 3','A Sicilian Romance','The Evil Guest',</span>
-<span class="c1">#                           'Melmoth the Wanderer, Vol. 4','Auriol; or, The Elixir of Life', 'The Children of the Abbey: A Tale', 'The Dead Secret: A Novel',</span>
-<span class="c1">#                           'The Wyvern mystery', 'A Stable for Nightmares; or, Weird Tales', 'The House by the Church-Yard', 'Green Tea; Mr. Justice Harbottle',</span>
-<span class="c1">#                           'After Dark', 'The Haunted Hotel: A Mystery of Modern Venice', 'Armadale', 'The Queen of Hearts', </span>
-<span class="c1">#                           'The Frozen Deep', 'The Dead Secret: A Novel', 'The Legacy of Cain', 'The Black Robe','Heart and Science: A Story of the Present Time',</span>
-<span class="c1">#                           'Phantom Fortune, a Novel', 'The Little Red Foot', 'In Search of the Unknown', 'The Moonlit Way: A Novel', 'The Slayer of Souls',</span>
-<span class="c1">#                           'The Hidden Children', 'Phantastes: A Faerie Romance for Men and Women', 'The Old English Baron: a Gothic Story', 'Wagner, the Wehr-Wolf',</span>
-<span class="c1">#                           'Emmeline, the Orphan of the Castle', 'The House on the Borderland', 'Carnacki, the Ghost Finder', 'A Phantom Lover', 'The People of the Mist',</span>
-<span class="c1">#                           'The Sorrows of Satan', 'The soul of Lilith'))</span>
-<span class="c1">#                           and a.name not in ('Mare, Walter de la', 'Melville, Herman','Arthur, Robert','Baker, Frank',</span>
-<span class="c1">#                           'Baldwin, Edward','Birkhead, Edith','Blackwood, Algernon','Bloxam, Matthew Holbeche',</span>
-<span class="c1">#                           'De Quincey, Thomas','DeQuincey, Thomas','De Vet, Charles V.','Glad, Victoria',</span>
-<span class="c1">#                           'Hammond, Keith', 'Hodgson, William Hope','Mare, Walter de la',</span>
-<span class="c1">#                           'Hopkins, R. Thurston (Robert Thurston)','Kafka, F. (Franz)','La Spina, Greye',</span>
-<span class="c1">#                           'Leroux, Gaston','Littlewit, Humphrey','Marks, Winston K. (Winston Kinney)',</span>
-<span class="c1">#                           'O''Donnell, Elliot', 'Oliver, George', 'Olivieri, David', 'Kafka, Franz',</span>
-<span class="c1">#                           'Peterson, Don', 'Lovecraft, H. P. (Howard Phillips)','Phillips, Forbes',</span>
-<span class="c1">#                           'Tenneshaw, S. M.','Weinbaum, Stanley G. (Stanley Grauman)')</span>
-<span class="c1">#                           and b.id not in (12728, 12739, 12751, 12762) </span>
-<span class="c1">#                           and b.gutenbergbookid not in (2147,8939, 8940,7023,7024, 31469, 50133, 50133,2040, 42324, 41445, 9629,</span>
-<span class="c1">#                           50133, 24022, 20673, 20038, 13334, 6542,4964, 4965,4966, 864,25611,14535,19505, 19337, 18233,20034,14317,12396,12397,120,</span>
-<span class="c1">#                           14168,32076,18233,20034,14317, 24350, 25037, 13334, 14082, 6942, 6943,2590, 5355, 5354, 5353, 6661,616,26458,</span>
-<span class="c1">#                           13334,9377, 771, 30486, 3606, 15697, 20656, 2834, 2833, 12031, 12032,23545, 12031, 589, 382, 421,441,322, 25617,848)</span>
-<span class="c1">#                           and t.name not in ('The Star-Chamber: An Historical Romance, Volume 2', 'The Star-Chamber: An Historical Romance, Volume 1',</span>
-<span class="c1">#                           'True Stories of History and Biography','The Scarlet Letter','Twice-told tales', 'Old Christmas: from the Sketch Book of Washington Irving',</span>
-<span class="c1">#                           'Astoria; Or, Anecdotes of an Enterprise Beyond the Rocky Mountains','The Portrait of a Lady — Volume 1',</span>
-<span class="c1">#                           'The Portrait of a Lady — Volume 1', 'The Light Princess and Other Fairy Stories')</span>
-<span class="c1">#                           GROUP BY t.name</span>
-<span class="c1">#                           ORDER BY a.name, t.name</span>
-<span class="c1">#                           """)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">cursor</span><span class="o">=</span><span class="n">cache</span><span class="o">.</span><span class="n">native_query</span><span class="p">(</span><span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">                          SELECT </span>
+<span class="s2">                            MAX(b.gutenbergbookid) as book_id,</span>
+<span class="s2">                            MAX(a.name) as authors,</span>
+<span class="s2">                            t.name as titles</span>
+<span class="s2">                          FROM books b </span>
+<span class="s2">                          join languages l on l.id=b.languageid and l.name='en'</span>
+<span class="s2">                          join book_subjects bsu on b.id=bsu.bookid</span>
+<span class="s2">                          join bookshelves bsh on b.bookshelveid=bsh.id</span>
+<span class="s2">                          join subjects s on s.id=bsu.subjectid</span>
+<span class="s2">                          join titles t on t.bookid=b.id</span>
+<span class="s2">                          join book_authors ba on ba.bookid=b.id</span>
+<span class="s2">                          join authors a on ba.authorid=a.id</span>
+<span class="s2">                          where </span>
+<span class="s2">                          (a.name in (</span><span class="si">{</span><span class="n">names_string</span><span class="si">}</span><span class="s2">) or t.name in ('Wuthering Heights', 'Hieroglyphic Tales', 'Dreams, Waking Thoughts, and Incidents','Vathek; An Arabian Tale',</span>
+<span class="s2">                          'Melmoth the Wanderer, Vol. 1','Melmoth the Wanderer, Vol. 2','Melmoth the Wanderer, Vol. 3','A Sicilian Romance','The Evil Guest',</span>
+<span class="s2">                          'Melmoth the Wanderer, Vol. 4','Auriol; or, The Elixir of Life', 'The Children of the Abbey: A Tale', 'The Dead Secret: A Novel',</span>
+<span class="s2">                          'The Wyvern mystery', 'A Stable for Nightmares; or, Weird Tales', 'The House by the Church-Yard', 'Green Tea; Mr. Justice Harbottle',</span>
+<span class="s2">                          'After Dark', 'The Haunted Hotel: A Mystery of Modern Venice', 'Armadale', 'The Queen of Hearts', </span>
+<span class="s2">                          'The Frozen Deep', 'The Dead Secret: A Novel', 'The Legacy of Cain', 'The Black Robe','Heart and Science: A Story of the Present Time',</span>
+<span class="s2">                          'Phantom Fortune, a Novel', 'The Little Red Foot', 'In Search of the Unknown', 'The Moonlit Way: A Novel', 'The Slayer of Souls',</span>
+<span class="s2">                          'The Hidden Children', 'Phantastes: A Faerie Romance for Men and Women', 'The Old English Baron: a Gothic Story', 'Wagner, the Wehr-Wolf',</span>
+<span class="s2">                          'Emmeline, the Orphan of the Castle', 'The House on the Borderland', 'Carnacki, the Ghost Finder', 'A Phantom Lover', 'The People of the Mist',</span>
+<span class="s2">                          'The Sorrows of Satan', 'The soul of Lilith'))</span>
+<span class="s2">                          and a.name not in ('Mare, Walter de la', 'Melville, Herman','Arthur, Robert','Baker, Frank',</span>
+<span class="s2">                          'Baldwin, Edward','Birkhead, Edith','Blackwood, Algernon','Bloxam, Matthew Holbeche',</span>
+<span class="s2">                          'De Quincey, Thomas','DeQuincey, Thomas','De Vet, Charles V.','Glad, Victoria',</span>
+<span class="s2">                          'Hammond, Keith', 'Hodgson, William Hope','Mare, Walter de la',</span>
+<span class="s2">                          'Hopkins, R. Thurston (Robert Thurston)','Kafka, F. (Franz)','La Spina, Greye',</span>
+<span class="s2">                          'Leroux, Gaston','Littlewit, Humphrey','Marks, Winston K. (Winston Kinney)',</span>
+<span class="s2">                          'O''Donnell, Elliot', 'Oliver, George', 'Olivieri, David', 'Kafka, Franz',</span>
+<span class="s2">                          'Peterson, Don', 'Lovecraft, H. P. (Howard Phillips)','Phillips, Forbes',</span>
+<span class="s2">                          'Tenneshaw, S. M.','Weinbaum, Stanley G. (Stanley Grauman)')</span>
+<span class="s2">                          and b.id not in (12728, 12739, 12751, 12762) </span>
+<span class="s2">                          and b.gutenbergbookid not in (2147,8939, 8940,7023,7024, 31469, 50133, 50133,2040, 42324, 41445, 9629,</span>
+<span class="s2">                          50133, 24022, 20673, 20038, 13334, 6542,4964, 4965,4966, 864,25611,14535,19505, 19337, 18233,20034,14317,12396,12397,120,</span>
+<span class="s2">                          14168,32076,18233,20034,14317, 24350, 25037, 13334, 14082, 6942, 6943,2590, 5355, 5354, 5353, 6661,616,26458,</span>
+<span class="s2">                          13334,9377, 771, 30486, 3606, 15697, 20656, 2834, 2833, 12031, 12032,23545, 12031, 589, 382, 421,441,322, 25617,848)</span>
+<span class="s2">                          and t.name not in ('The Star-Chamber: An Historical Romance, Volume 2', 'The Star-Chamber: An Historical Romance, Volume 1',</span>
+<span class="s2">                          'True Stories of History and Biography','The Scarlet Letter','Twice-told tales', 'Old Christmas: from the Sketch Book of Washington Irving',</span>
+<span class="s2">                          'Astoria; Or, Anecdotes of an Enterprise Beyond the Rocky Mountains','The Portrait of a Lady — Volume 1',</span>
+<span class="s2">                          'The Portrait of a Lady — Volume 1', 'The Light Princess and Other Fairy Stories')</span>
+<span class="s2">                          GROUP BY t.name</span>
+<span class="s2">                          ORDER BY a.name, t.name</span>
+<span class="s2">                          """</span><span class="p">)</span>
 
-<span class="c1"># results = cursor.fetchall()</span>
-<span class="c1"># df = pd.DataFrame(results, columns=[column[0] for column in cursor.description])</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">column</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">description</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -7783,21 +7846,32 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># # This function downloads a book by its Gutenberg ID</span>
-<span class="c1"># def download_book(book_id):</span>
-<span class="c1">#     raw_book = gutenbergpy.textget.get_text_by_id(book_id)  # with headers</span>
-<span class="c1">#     clean_book = gutenbergpy.textget.strip_headers(raw_book)  # without headers</span>
-<span class="c1">#     return clean_book</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># This function downloads a book by its Gutenberg ID</span>
+<span class="k">def</span> <span class="nf">download_book</span><span class="p">(</span><span class="n">book_id</span><span class="p">):</span>
+    <span class="n">raw_book</span> <span class="o">=</span> <span class="n">gutenbergpy</span><span class="o">.</span><span class="n">textget</span><span class="o">.</span><span class="n">get_text_by_id</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>  <span class="c1"># with headers</span>
+    <span class="n">clean_book</span> <span class="o">=</span> <span class="n">gutenbergpy</span><span class="o">.</span><span class="n">textget</span><span class="o">.</span><span class="n">strip_headers</span><span class="p">(</span><span class="n">raw_book</span><span class="p">)</span>  <span class="c1"># without headers</span>
+    <span class="k">return</span> <span class="n">clean_book</span>
 
-<span class="c1"># df['text'] = ''</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'text'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span>
 
-<span class="c1"># for idx, row in df.iterrows():</span>
-<span class="c1">#     try:</span>
-<span class="c1">#         df.loc[idx, 'text'] = download_book(row['book_id'])</span>
-<span class="c1">#     except Exception:</span>
-<span class="c1">#         continue</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="s1">'text'</span><span class="p">]</span> <span class="o">=</span> <span class="n">download_book</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">'book_id'</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">continue</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Saving, connecting and labeling the individual attempts to later on look at any differences in the distribution between the sources and lists.</p>
 </div>
 </div>
 </div>
@@ -7809,12 +7883,12 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># df_init=pd.read_csv('./preprocessing/corpora/Gutenberg_texts.csv')</span>
-<span class="c1"># df['source'] = 'liste'</span>
-<span class="c1"># df_init['source'] = 'bookshelf'</span>
-<span class="c1"># union_df = pd.concat([df, df_init])</span>
-<span class="c1"># sorted_df = union_df.sort_values('authors')</span>
-<span class="c1"># unique_df = sorted_df.drop_duplicates(subset='titles')</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_init</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./preprocessing/corpora/Gutenberg_texts.csv'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'liste'</span>
+<span class="n">df_init</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'bookshelf'</span>
+<span class="n">union_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">df_init</span><span class="p">])</span>
+<span class="n">sorted_df</span> <span class="o">=</span> <span class="n">union_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'authors'</span><span class="p">)</span>
+<span class="n">unique_df</span> <span class="o">=</span> <span class="n">sorted_df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">'titles'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7828,7 +7902,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># unique_df.to_csv('./preprocessing/corpora/Gutenberg_texts_full.csv', index=False)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">unique_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./preprocessing/corpora/Gutenberg_texts_full.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7842,7 +7916,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df_gutenberg=pd.read_csv('./preprocessing/corpora/Gutenberg_texts_full.csv')</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_gutenberg</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./preprocessing/corpora/Gutenberg_texts_full.csv'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7855,7 +7929,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Given the limitet amount that the python package is capable of retrieving, manual downloads will be necessary as well. Given the quality of the texts and the excessive paratexts, some cleaning will be necessary as well.</p>
+<p>Given the limited amount that the Python package is capable of retrieving, manual downloads were necessary as well. Given the quality of the texts and the excessive paratexts, some manual cleanup was necessary as well to not include lengthy biographies, subsections on publishing houses or indexes in the corpus.</p>
 </div>
 </div>
 </div>
@@ -7866,7 +7940,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The gothic colors corpus contains a number of intersting texts, as well as highly relevant metadata, we shall make us of here.</p>
+<p>The gothic colors corpus contains a number of interesting texts, as well as highly relevant metadata, which will come in handy later.</p>
 </div>
 </div>
 </div>
@@ -7877,7 +7951,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>It shall be restricted to relevant texts, joined with our existing dataframe and the files read in.</p>
+<p>Given that the color corpus chronicles many more texts than it includes itself, as well as including adjacent non-fiction texts or some from other languages. The selection from it was restricted to relevant texts, joined with the existing dataframe and the previously cleaned files was read in again.</p>
 </div>
 </div>
 </div>
@@ -7889,9 +7963,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># df_colors=pd.read_csv('./preprocessing/corpora/gothic_texts.csv')</span>
-<span class="c1"># df_colors = df_colors[~(df_colors['Nationality'].isin(['French', 'German', 'Italian', 'Sicilian', 'Swiss']) | </span>
-<span class="c1">#            df_colors['Genre'].isin(['Aesthetic Theory','Criticism', 'Literary Theory', 'Memoir/Biography', 'Review', 'Travel Writing']))]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_colors</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./preprocessing/corpora/gothic_texts.csv'</span><span class="p">)</span>
+<span class="n">df_colors</span> <span class="o">=</span> <span class="n">df_colors</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df_colors</span><span class="p">[</span><span class="s1">'Nationality'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'French'</span><span class="p">,</span> <span class="s1">'German'</span><span class="p">,</span> <span class="s1">'Italian'</span><span class="p">,</span> <span class="s1">'Sicilian'</span><span class="p">,</span> <span class="s1">'Swiss'</span><span class="p">])</span> <span class="o">|</span> 
+           <span class="n">df_colors</span><span class="p">[</span><span class="s1">'Genre'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'Aesthetic Theory'</span><span class="p">,</span><span class="s1">'Criticism'</span><span class="p">,</span> <span class="s1">'Literary Theory'</span><span class="p">,</span> <span class="s1">'Memoir/Biography'</span><span class="p">,</span> <span class="s1">'Review'</span><span class="p">,</span> <span class="s1">'Travel Writing'</span><span class="p">]))]</span>
 </pre></div>
 </div>
 </div>
@@ -7905,20 +7979,20 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># df_colors['Text'] = ""</span>
-<span class="c1"># dir_path = "/Storage/Studium/DigitalHumanities/Semester5/Thesis/code_notebooks/color_corpus/corpora/"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_colors</span><span class="p">[</span><span class="s1">'Text'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="n">dir_path</span> <span class="o">=</span> <span class="s2">"/Storage/Studium/DigitalHumanities/Semester5/Thesis/code_notebooks/color_corpus/corpora/"</span>
 
 
-<span class="c1"># for index, row in df_colors.iterrows():</span>
-<span class="c1">#     if pd.notnull(row['Filename']):  </span>
-<span class="c1">#         file_path = os.path.join(dir_path, row['Filename'])</span>
-<span class="c1">#         with open(file_path, 'r') as file:</span>
-<span class="c1">#             text = file.read()  </span>
-<span class="c1">#         df_colors.at[index, 'Text'] = text </span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_colors</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">'Filename'</span><span class="p">]):</span>  
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">'Filename'</span><span class="p">])</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  
+        <span class="n">df_colors</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">'Text'</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span> 
 
 
-<span class="c1"># filled_rows = df_colors[df_colors['Text'] != ''].shape[0]</span>
-<span class="c1"># print(filled_rows)</span>
+<span class="n">filled_rows</span> <span class="o">=</span> <span class="n">df_colors</span><span class="p">[</span><span class="n">df_colors</span><span class="p">[</span><span class="s1">'Text'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filled_rows</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7943,14 +8017,14 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># df_colors.columns = df_colors.columns.str.lower()</span>
-<span class="c1"># df_colors['source'] = 'colors corpus'</span>
-<span class="c1"># df_gutenberg = df_gutenberg.rename(columns={'authors': 'author','titles': 'title'})</span>
-<span class="c1"># df_combined = pd.concat([df_colors, df_gutenberg])</span>
-<span class="c1"># df_combined['text'].replace('', np.nan, inplace=True)</span>
-<span class="c1"># df_combined['text_filled'] = df_combined['text'].notna().astype(int)</span>
-<span class="c1"># df_combined["sort_helper"] = df_combined["source"].apply(lambda x: 0 if x == "colors corpus" else 1)</span>
-<span class="c1"># df_combined = df_combined.sort_values(by=['text_filled', 'author', 'title', 'sort_helper'], ascending=[False, True, True, True])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_colors</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df_colors</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">df_colors</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'colors corpus'</span>
+<span class="n">df_gutenberg</span> <span class="o">=</span> <span class="n">df_gutenberg</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'authors'</span><span class="p">:</span> <span class="s1">'author'</span><span class="p">,</span><span class="s1">'titles'</span><span class="p">:</span> <span class="s1">'title'</span><span class="p">})</span>
+<span class="n">df_combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_colors</span><span class="p">,</span> <span class="n">df_gutenberg</span><span class="p">])</span>
+<span class="n">df_combined</span><span class="p">[</span><span class="s1">'text'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_combined</span><span class="p">[</span><span class="s1">'text_filled'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_combined</span><span class="p">[</span><span class="s1">'text'</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">df_combined</span><span class="p">[</span><span class="s2">"sort_helper"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_combined</span><span class="p">[</span><span class="s2">"source"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">"colors corpus"</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df_combined</span> <span class="o">=</span> <span class="n">df_combined</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'text_filled'</span><span class="p">,</span> <span class="s1">'author'</span><span class="p">,</span> <span class="s1">'title'</span><span class="p">,</span> <span class="s1">'sort_helper'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -7964,8 +8038,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># #Export of the first five columns for manual correction before unification</span>
-<span class="c1">#df_combined.iloc[:, :5].to_csv('./preprocessing/intermediary_steps/Combined_texts_non_tidy.csv', index=False)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Export of the first five columns for manual emta data enrichment and name-disambiguation.</span>
+<span class="n">df_combined</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/Combined_texts_non_tidy.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7979,29 +8053,13 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># # Import the data back into a DataFrame</span>
-<span class="c1"># df_imported = pd.read_csv('./preprocessing/intermediary_steps/Combined_texts_non_tidy.csv')</span>
-<span class="c1"># df_combined[df_imported.columns] = df_imported</span>
-<span class="c1"># df_combined = df_combined.sort_values(by=['text_filled', 'author', 'title', 'sort_helper'], ascending=[False, True, True, True])</span>
-<span class="c1"># df_combined = df_combined.drop_duplicates(subset=['author', 'title'], keep='first')</span>
-<span class="c1"># df_combined.drop(['text_filled', 'sort_helper'], axis=1, inplace=True)</span>
-<span class="c1"># df_combined = df_combined.dropna(subset=['text'])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df_combined.drop(['publisher', 'pseudonym', 'publishing house', 'city of publication', 'location/street of publication','authority', 'full text source', 'illustrator', 'translator', 'ebook source','more info', 'notes', 'etext publisher', 'ebook no.', 'etext pub date','date accessed', 'editor', 'edition', 'color_word_list','color_word_summary','unnamed: 29', 'unnamed: 30', 'unnamed: 31'], axis=1, inplace=True)</span>
-<span class="c1">#df_combined.insert(8, 'gender', np.nan)</span>
-<span class="c1">#df_combined.insert(9, 'birthdate', np.nan)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import the data back into a DataFrame</span>
+<span class="n">df_imported</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/Combined_texts_non_tidy.csv'</span><span class="p">)</span>
+<span class="n">df_combined</span><span class="p">[</span><span class="n">df_imported</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_imported</span>
+<span class="n">df_combined</span> <span class="o">=</span> <span class="n">df_combined</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'text_filled'</span><span class="p">,</span> <span class="s1">'author'</span><span class="p">,</span> <span class="s1">'title'</span><span class="p">,</span> <span class="s1">'sort_helper'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+<span class="n">df_combined</span> <span class="o">=</span> <span class="n">df_combined</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'author'</span><span class="p">,</span> <span class="s1">'title'</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">'first'</span><span class="p">)</span>
+<span class="n">df_combined</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'text_filled'</span><span class="p">,</span> <span class="s1">'sort_helper'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_combined</span> <span class="o">=</span> <span class="n">df_combined</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'text'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -8014,7 +8072,34 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Given that the features gende, publication date, birthyear and nationality provided by the colors corpus seem very promisingn and useful, but are not prvided by any of the other sources, The gap will need to be filled with manual research</p>
+<p>stripping it of columns which are not needed</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_combined</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'publisher'</span><span class="p">,</span> <span class="s1">'pseudonym'</span><span class="p">,</span> <span class="s1">'publishing house'</span><span class="p">,</span> <span class="s1">'city of publication'</span><span class="p">,</span> <span class="s1">'location/street of publication'</span><span class="p">,</span><span class="s1">'authority'</span><span class="p">,</span> <span class="s1">'full text source'</span><span class="p">,</span> <span class="s1">'illustrator'</span><span class="p">,</span> <span class="s1">'translator'</span><span class="p">,</span> <span class="s1">'ebook source'</span><span class="p">,</span><span class="s1">'more info'</span><span class="p">,</span> <span class="s1">'notes'</span><span class="p">,</span> <span class="s1">'etext publisher'</span><span class="p">,</span> <span class="s1">'ebook no.'</span><span class="p">,</span> <span class="s1">'etext pub date'</span><span class="p">,</span><span class="s1">'date accessed'</span><span class="p">,</span> <span class="s1">'editor'</span><span class="p">,</span> <span class="s1">'edition'</span><span class="p">,</span> <span class="s1">'color_word_list'</span><span class="p">,</span><span class="s1">'color_word_summary'</span><span class="p">,</span><span class="s1">'unnamed: 29'</span><span class="p">,</span> <span class="s1">'unnamed: 30'</span><span class="p">,</span> <span class="s1">'unnamed: 31'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_combined</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">'gender'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">df_combined</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">'birthdate'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Given that the features gender, publication date, birthyear and nationality provided by the colors corpus seem very promising and useful, but are not provided by any of the other sources, The gap will need to be filled with manual research.</p>
 </div>
 </div>
 </div>
@@ -8026,7 +8111,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df_combined.to_csv('./preprocessing/intermediary_steps/Combined_texts_work_in_progress.csv', index=False)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_combined</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/Combined_texts_work_in_progress.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8040,8 +8125,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##Now that it is clear which rows will remain we will do some manual enrichment to fill up the values of the gutenberg data.</span>
-<span class="c1">#df_combined.iloc[:, :10].to_csv('./preprocessing/intermediary_steps/combined_texts_to_be_enriched.csv', index=False)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Now that it is clear which rows will remain some manual enrichment to fill up the values of the gutenberg data will follow</span>
+<span class="n">df_combined</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/combined_texts_to_be_enriched.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8054,7 +8139,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Now we import and finalize the texts.</p>
+<p>Importing and finalizing these texts</p>
 </div>
 </div>
 </div>
@@ -8066,9 +8151,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df_combined=pd.read_csv('./preprocessing/intermediary_steps/Combined_texts_work_in_progress.csv')</span>
-<span class="c1">#df_enriched = pd.read_csv('./preprocessing/intermediary_steps/Combined_texts_non_tidy.csv')</span>
-<span class="c1">#df_combined[df_enriched.columns] = df_enriched</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_combined</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/Combined_texts_work_in_progress.csv'</span><span class="p">)</span>
+<span class="n">df_enriched</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/Combined_texts_non_tidy.csv'</span><span class="p">)</span>
+<span class="n">df_combined</span><span class="p">[</span><span class="n">df_enriched</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_enriched</span>
 </pre></div>
 </div>
 </div>
@@ -8081,7 +8166,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We import the texts poreviously used by Ted Underwood in one of his papers and reduce it to two categories, the stanford gothic collection and the byron and punther gothic selection: Ted Underwood, “The Life Cycles of Genres,” Cultural Analytics May 23, 2016.
+<p>Importing the texts previously used by Ted Underwood in one of his papers and reducing it to two categories, the Stanford gothic collection and the Byron and Punther gothic selection: Ted Underwood, “The Life Cycles of Genres,” Cultural Analytics May 23, 2016.
 DOI: 10.22148/16.005</p>
 </div>
 </div>
@@ -8097,6 +8182,17 @@ DOI: 10.22148/16.005</p>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>His data frame full of metadata on a multitude of genres is imported and stripped of all rows but those related to our task at hand - the Stanford Gothic collection 'stangothic' and the entries of Punter and Byron titled 'pbgothic'</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8105,17 +8201,17 @@ DOI: 10.22148/16.005</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># stan_df = pd.DataFrame()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">stan_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
-<span class="c1"># for index, row in df_genre.iterrows():</span>
-<span class="c1">#     # Check if 'stangothic' is in 'genretags' column for the row</span>
-<span class="c1">#     tags = [tag.strip() for tag in row['genretags'].split('|')]</span>
-<span class="c1">#     if 'stangothic' in tags:</span>
-<span class="c1">#         # Append the row to stan_df</span>
-<span class="c1">#         stan_df = pd.concat([stan_df, pd.DataFrame(row).T])</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_genre</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="c1"># Check if 'stangothic' is in 'genretags' column for the row</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="p">[</span><span class="n">tag</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="s1">'genretags'</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'|'</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="s1">'stangothic'</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
+        <span class="c1"># Append the row to stan_df</span>
+        <span class="n">stan_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">stan_df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">])</span>
 
-<span class="c1"># # Reset index for the new DataFrame</span>
-<span class="c1"># stan_df = stan_df.reset_index(drop=True)</span>
+<span class="c1"># Reset index for the new DataFrame</span>
+<span class="n">stan_df</span> <span class="o">=</span> <span class="n">stan_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8129,19 +8225,30 @@ DOI: 10.22148/16.005</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># pb_df = pd.DataFrame()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pb_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
-<span class="c1"># for index, row in df_genre.iterrows():</span>
-<span class="c1">#     # Check if 'pbgothic' is in 'genretags' column for the row</span>
-<span class="c1">#     tags = [tag.strip() for tag in row['genretags'].split('|')]</span>
-<span class="c1">#     if 'pbgothic' in tags:</span>
-<span class="c1">#         # Append the row to pb_df</span>
-<span class="c1">#         pb_df = pd.concat([pb_df, pd.DataFrame(row).T])</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_genre</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="c1"># Check if 'pbgothic' is in 'genretags' column for the row</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="p">[</span><span class="n">tag</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="s1">'genretags'</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'|'</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="s1">'pbgothic'</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
+        <span class="c1"># Append the row to pb_df</span>
+        <span class="n">pb_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pb_df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">])</span>
 
-<span class="c1"># # Reset index for the new DataFrame</span>
-<span class="c1"># pb_df = pb_df.reset_index(drop=True)</span>
+<span class="c1"># Reset index for the new DataFrame</span>
+<span class="n">pb_df</span> <span class="o">=</span> <span class="n">pb_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Normalization and removal of columns</p>
 </div>
 </div>
 </div>
@@ -8153,17 +8260,28 @@ DOI: 10.22148/16.005</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#stan_df.drop(['enumcron', 'date', 'imprint', 'locnum','oclc', 'recordid'], axis=1, inplace=True)</span>
-<span class="c1">#pb_df.drop(['enumcron', 'date', 'imprint', 'locnum','oclc', 'recordid'], axis=1, inplace=True)</span>
-<span class="c1">#pb_df['source'] = 'life cycle: pb'</span>
-<span class="c1">#stan_df['source'] = 'life cycle: stan'</span>
-<span class="c1">#stan_df.rename(columns={'firstpub': 'date'}, inplace=True)</span>
-<span class="c1">#pb_df.rename(columns={'firstpub': 'date'}, inplace=True)</span>
-<span class="c1">#stan_df['nationality'].replace({'uk': 'English', 'ir': 'Irish', 'us': 'American'}, inplace=True)</span>
-<span class="c1">#pb_df['nationality'].replace({'uk': 'English', 'ir': 'Irish', 'us': 'American'}, inplace=True)</span>
-<span class="c1">#pb_df = pb_df[pb_df['date'] &lt;= 1910]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">stan_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'enumcron'</span><span class="p">,</span> <span class="s1">'date'</span><span class="p">,</span> <span class="s1">'imprint'</span><span class="p">,</span> <span class="s1">'locnum'</span><span class="p">,</span><span class="s1">'oclc'</span><span class="p">,</span> <span class="s1">'recordid'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pb_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'enumcron'</span><span class="p">,</span> <span class="s1">'date'</span><span class="p">,</span> <span class="s1">'imprint'</span><span class="p">,</span> <span class="s1">'locnum'</span><span class="p">,</span><span class="s1">'oclc'</span><span class="p">,</span> <span class="s1">'recordid'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pb_df</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'life cycle: pb'</span>
+<span class="n">stan_df</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'life cycle: stan'</span>
+<span class="n">stan_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'firstpub'</span><span class="p">:</span> <span class="s1">'date'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pb_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'firstpub'</span><span class="p">:</span> <span class="s1">'date'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">stan_df</span><span class="p">[</span><span class="s1">'nationality'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">'uk'</span><span class="p">:</span> <span class="s1">'English'</span><span class="p">,</span> <span class="s1">'ir'</span><span class="p">:</span> <span class="s1">'Irish'</span><span class="p">,</span> <span class="s1">'us'</span><span class="p">:</span> <span class="s1">'American'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pb_df</span><span class="p">[</span><span class="s1">'nationality'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">'uk'</span><span class="p">:</span> <span class="s1">'English'</span><span class="p">,</span> <span class="s1">'ir'</span><span class="p">:</span> <span class="s1">'Irish'</span><span class="p">,</span> <span class="s1">'us'</span><span class="p">:</span> <span class="s1">'American'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pb_df</span> <span class="o">=</span> <span class="n">pb_df</span><span class="p">[</span><span class="n">pb_df</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1910</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Importing the manually retrieved texts</p>
 </div>
 </div>
 </div>
@@ -8175,20 +8293,20 @@ DOI: 10.22148/16.005</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># df_colors['Text'] = ""</span>
-<span class="c1"># dir_path = "/Storage/Studium/DigitalHumanities/Semester5/Thesis/code_notebooks/preprocessing/color_corpus/"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_colors</span><span class="p">[</span><span class="s1">'Text'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="n">dir_path</span> <span class="o">=</span> <span class="s2">"/Storage/Studium/DigitalHumanities/Semester5/Thesis/code_notebooks/preprocessing/color_corpus/"</span>
 
 
-<span class="c1"># for index, row in df_colors.iterrows():</span>
-<span class="c1">#     if pd.notnull(row['Filename']):  </span>
-<span class="c1">#         file_path = os.path.join(dir_path, row['Filename'])</span>
-<span class="c1">#         with open(file_path, 'r') as file:</span>
-<span class="c1">#             text = file.read()  </span>
-<span class="c1">#         df_colors.at[index, 'Text'] = text </span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_colors</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">'Filename'</span><span class="p">]):</span>  
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">'Filename'</span><span class="p">])</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  
+        <span class="n">df_colors</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">'Text'</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span> 
 
 
-<span class="c1"># filled_rows = df_colors[df_colors['Text'] != ''].shape[0]</span>
-<span class="c1"># print(filled_rows)</span>
+<span class="n">filled_rows</span> <span class="o">=</span> <span class="n">df_colors</span><span class="p">[</span><span class="n">df_colors</span><span class="p">[</span><span class="s1">'Text'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filled_rows</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8202,22 +8320,9 @@ DOI: 10.22148/16.005</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># pb_df.to_csv('./preprocessing/intermediary_steps/Underwood_punter_selection.csv', index=False)</span>
-<span class="c1"># stan_df.to_csv('./preprocessing/intermediary_steps/Underwood_stanford_selection.csv', index=False)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df_text=pd.read_csv('./preprocessing/intermediary_steps/df_books_v2.csv')</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pb_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/Underwood_punter_selection.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">stan_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/Underwood_stanford_selection.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_text</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/df_books_v2.csv'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8230,7 +8335,7 @@ DOI: 10.22148/16.005</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Correcting Mojibake in Project Gutenberg package texts. First we replace the \n sequences with actual newlines. The decode_match function is used to convert each matched sequence to its actual UTF-8 character. Then a regular expression is used to find all byte-like sequences (e.g., \xe2) and allow for recognition and removal of these characters.</p>
+<p>Correcting Mojibake in Project Gutenberg package texts. First, the \n sequences are replaced with actual newlines. The decode_match function is used to convert each matched sequence to its actual UTF-8 character. Then a regular expression is used to find all byte-like sequences (e.g., \xe2) and allow for recognition and removal of these characters.</p>
 </div>
 </div>
 </div>
@@ -8272,23 +8377,8 @@ DOI: 10.22148/16.005</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># # Apply the cleaning function to the  gutenberg books</span>
-<span class="c1"># df_text.loc[df_text['book_id'].notna(), 'text'] = df_text.loc[df_text['book_id'].notna(), 'text'].apply(clean_text)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># df_text['source'].replace({'liste': 'pb-manual', 'colors corpus': 'colors', 'life cycle: pb': 'pb-under', 'bookshelf': 'gutenberg'}, inplace=True)</span>
-<span class="c1"># df_text.drop(['filename', 'subjects','book_id','Unnamed: 0', 'docid', 'genretags'], axis=1, inplace=True)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Applying the cleaning function to the gutenberg books</span>
+<span class="n">df_text</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_text</span><span class="p">[</span><span class="s1">'book_id'</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">(),</span> <span class="s1">'text'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_text</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_text</span><span class="p">[</span><span class="s1">'book_id'</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">(),</span> <span class="s1">'text'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8301,8 +8391,34 @@ DOI: 10.22148/16.005</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Now we intruduce a telling identifier to use for further text identification.
-The first up to ten letters of both authors last name and title of the text. In the scant cases of overlapping ids we shall ad a distinguishing number at the end</p>
+<p>More cleaning and renaming</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_text</span><span class="p">[</span><span class="s1">'source'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">'liste'</span><span class="p">:</span> <span class="s1">'pb-manual'</span><span class="p">,</span> <span class="s1">'colors corpus'</span><span class="p">:</span> <span class="s1">'colors'</span><span class="p">,</span> <span class="s1">'life cycle: pb'</span><span class="p">:</span> <span class="s1">'pb-under'</span><span class="p">,</span> <span class="s1">'bookshelf'</span><span class="p">:</span> <span class="s1">'gutenberg'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_text</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'filename'</span><span class="p">,</span> <span class="s1">'subjects'</span><span class="p">,</span><span class="s1">'book_id'</span><span class="p">,</span><span class="s1">'Unnamed: 0'</span><span class="p">,</span> <span class="s1">'docid'</span><span class="p">,</span> <span class="s1">'genretags'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Now a telling identifier is reduced to use as a label in graphs and identify text segments stemming from the same text.</p>
+<p>The first up to ten letters of both the author's last name and the title of the text. In the scant cases of overlapping ids, a distinguishing number shall be added at the end</p>
 </div>
 </div>
 </div>
@@ -8343,13 +8459,24 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># # Apply the function to each row and store the result in a temporary variable</span>
-<span class="c1"># reference_values = df_text.apply(generate_unique_value, axis=1)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Apply the function to each row and store the result in a temporary variable</span>
+<span class="n">reference_values</span> <span class="o">=</span> <span class="n">df_text</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">generate_unique_value</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># # Insert the reference column as the first column in the DataFrame</span>
-<span class="c1"># df_text.insert(1, 'reference', reference_values)</span>
+<span class="c1"># Insert the reference column as the first column in the DataFrame</span>
+<span class="n">df_text</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'reference'</span><span class="p">,</span> <span class="n">reference_values</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Checking for duplicated labels</p>
 </div>
 </div>
 </div>
@@ -8361,16 +8488,16 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># def check_for_duplicates(df):</span>
-<span class="c1">#     # Check for duplicates in the reference column</span>
-<span class="c1">#     duplicates = df[df['reference'].duplicated(keep=False)]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">check_for_duplicates</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1"># Check for duplicates in the reference column</span>
+    <span class="n">duplicates</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'reference'</span><span class="p">]</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
 
-<span class="c1">#     # Print the duplicates</span>
-<span class="c1">#     if not duplicates.empty:</span>
-<span class="c1">#         print("Duplicate values in the reference column:")</span>
-<span class="c1">#         print(duplicates[['reference']])</span>
-<span class="c1">#     else:</span>
-<span class="c1">#         print("No duplicate values found in the reference column.")</span>
+    <span class="c1"># Print the duplicates</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">duplicates</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Duplicate values in the reference column:"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">duplicates</span><span class="p">[[</span><span class="s1">'reference'</span><span class="p">]])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No duplicate values found in the reference column."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8384,7 +8511,7 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#check_for_duplicates(df_text)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">check_for_duplicates</span><span class="p">(</span><span class="n">df_text</span><span class="p">)</span> <span class="c1"># returned the followign ids: 228, 173, 174, 14</span>
 </pre></div>
 </div>
 </div>
@@ -8397,7 +8524,7 @@ The first up to ten letters of both authors last name and title of the text. In 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>lets adjust the relevant entries, there were still some duplicate books in there and two books sadly are identical in their reference till the 10th character</p>
+<p>The relevant entries shall be adjusted, there were still some duplicate books in there and two books sadly are identical in their reference till the 10th character</p>
 </div>
 </div>
 </div>
@@ -8409,8 +8536,8 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># values_to_remove = [228, 173, 174, 14]</span>
-<span class="c1"># df_text = df_text[~df_text['index'].isin(values_to_remove)]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">values_to_remove</span> <span class="o">=</span> <span class="p">[</span><span class="mi">228</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
+<span class="n">df_text</span> <span class="o">=</span> <span class="n">df_text</span><span class="p">[</span><span class="o">~</span><span class="n">df_text</span><span class="p">[</span><span class="s1">'index'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">values_to_remove</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -8424,11 +8551,11 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># # Identify the second occurrence of duplicates</span>
-<span class="c1"># second_occurrences = df_text[df_text.duplicated(subset='reference', keep='first')]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Identify the second occurrence of duplicates</span>
+<span class="n">second_occurrences</span> <span class="o">=</span> <span class="n">df_text</span><span class="p">[</span><span class="n">df_text</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">'reference'</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">'first'</span><span class="p">)]</span>
 
-<span class="c1"># # Add '2' to the end of the reference value for these rows</span>
-<span class="c1"># df_text.loc[second_occurrences.index, 'reference'] = second_occurrences['reference'] + '2'</span>
+<span class="c1"># Add '2' to the end of the reference value for these rows</span>
+<span class="n">df_text</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">second_occurrences</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">'reference'</span><span class="p">]</span> <span class="o">=</span> <span class="n">second_occurrences</span><span class="p">[</span><span class="s1">'reference'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'2'</span>
 </pre></div>
 </div>
 </div>
@@ -8442,7 +8569,7 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#check_for_duplicates(df_text)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">check_for_duplicates</span><span class="p">(</span><span class="n">df_text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8467,7 +8594,7 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df_text.to_csv('./preprocessing/intermediary_steps/df_books_completed.csv', index=False)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_text</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/df_books_completed.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8481,7 +8608,7 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df_reg=pd.read_csv('./preprocessing/intermediary_steps/df_books_completed.csv')</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_reg</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./preprocessing/intermediary_steps/df_books_completed.csv'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8494,7 +8621,18 @@ The first up to ten letters of both authors last name and title of the text. In 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Now we will go on to finalize the preprocessing for the following modelling in the subsequent notebook.</p>
+<h2 id="Preprocessing">Preprocessing<a class="anchor-link" href="#Preprocessing">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Now the corpus ill be finalized by stripping any elements from it which are not of meaning to the analysis that follows or might hinder its interpretability. The following spacy preprocessing method requires a length parameter to be set for full books to be processed. The literature suggests that nouns, verbs, adjectives and adverbs are the most important and salient types of words for topic modelling. Those are extracted with the use of a spacy language model which tags individual words with the syntactic type it can assign it by analyzing its context. This is followed by a regex-based cleaning of unwanted terms, punctuation, symbols and spaces. Lastly, the texts are tokenised - reduced to lists of individual words, segmented into smaller sections to increase the performance of the following models and a vector space representation of the Corpus is trained to aid in the tasks to come.</p>
 </div>
 </div>
 </div>
@@ -8506,21 +8644,10 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [98]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># max_length = df_reg['text'].apply(len).max()</span>
-<span class="c1"># print(f"The maximum text length in the 'text' column is: {max_length}")</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">max_length</span> <span class="o">=</span> <span class="n">df_reg</span><span class="p">[</span><span class="s1">'text'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The maximum text length in the 'text' column is: </span><span class="si">{</span><span class="n">max_length</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The literature suggests that the most important and salient types of words for topic modeling are nouns, verbs, adjectives and adverbs. Those are extracted with the use of a spacy language model. Followed by regex based cleaning</p>
 </div>
 </div>
 </div>
@@ -8532,22 +8659,22 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># # Load English tokenizer, tagger, parser, NER and word vectors</span>
-<span class="c1"># nlp = spacy.load("en_core_web_lg")</span>
-<span class="c1"># nlp.max_length = 1640523</span>
-<span class="c1"># # Define the function to preprocess text</span>
-<span class="c1"># def preprocess_text(doc):</span>
-<span class="c1">#     # Parse the sentence using the loaded 'en' model object `nlp`</span>
-<span class="c1">#     doc = nlp(doc)</span>
-<span class="c1">#     # Lower case the text, remove stop words, punctuation and words not chosen for the modeling</span>
-<span class="c1">#     result = []</span>
-<span class="c1">#     for token in doc:</span>
-<span class="c1">#         if token.pos_ in ('NOUN', 'VERB', 'ADJ', 'ADV') and not token.is_stop and not token.is_punct:</span>
-<span class="c1">#             result.append(token.text.lower())</span>
-<span class="c1">#     return ' '.join(result)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load English tokenizer, tagger, parser, NER and word vectors</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"en_core_web_lg"</span><span class="p">)</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">max_length</span> <span class="o">=</span> <span class="mi">1640523</span>
+<span class="c1"># Define the function to preprocess text</span>
+<span class="k">def</span> <span class="nf">preprocess_text</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="c1"># Parse the sentence using the loaded 'en' model object `nlp`</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+    <span class="c1"># Lower case the text, remove stop words, punctuation and words not chosen for the modeling</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">token</span><span class="o">.</span><span class="n">pos_</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'NOUN'</span><span class="p">,</span> <span class="s1">'VERB'</span><span class="p">,</span> <span class="s1">'ADJ'</span><span class="p">,</span> <span class="s1">'ADV'</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">token</span><span class="o">.</span><span class="n">is_stop</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">token</span><span class="o">.</span><span class="n">is_punct</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="k">return</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
-<span class="c1"># # Now apply this function to the 'text' column in the dataframe</span>
-<span class="c1"># df_reg['preprocessed_text'] = df_reg['text'].apply(preprocess_text)</span>
+<span class="c1"># Now apply this function to the 'text' column in the dataframe</span>
+<span class="n">df_reg</span><span class="p">[</span><span class="s1">'preprocessed_text'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_reg</span><span class="p">[</span><span class="s1">'text'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">preprocess_text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8561,41 +8688,40 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># def remove_unwanted_elements(text):</span>
-<span class="c1">#     # Define the pattern to match unwanted symbols</span>
-<span class="c1">#     symbols_pattern = re.compile(r"[+\-|\\\"\“\[\]â~▪–◊\‘‘’\(\)\•€\•\?\,\’\;\—”\*\{\}!?\./':\_\&lt;\&gt;;=,?\d+]")</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">remove_unwanted_elements</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="c1"># Define the pattern to match unwanted symbols</span>
+    <span class="n">symbols_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"[+\-|</span><span class="se">\\\"</span><span class="s2">\“\[\]â~▪–◊\‘‘’\(\)\•€\•\?\,\’\;\—”\*\{\}!?\./':\_\&lt;\&gt;;=,?\d+]"</span><span class="p">)</span>
     
-<span class="c1">#     # Define the pattern to match unwanted words</span>
-<span class="c1">#     words_pattern = re.compile(r"\b(illustration|use|cost|restriction|restrictions|proofreading|proofread|"</span>
-<span class="c1">#                                r"chapter|ebook|ebooks|chapters|contents|author|published|illustrated|publisher|introduction|online|html|"</span>
-<span class="c1">#                                r"httpswwwpgdpnet|ὑπ᾽|version|file|original|volume|copyright|copy|volumes)\b", re.IGNORECASE)</span>
+    <span class="c1"># Define the pattern to match unwanted words</span>
+    <span class="n">words_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\b(illustration|use|cost|restriction|restrictions|proofreading|proofread|"</span>
+                               <span class="sa">r</span><span class="s2">"chapter|ebook|ebooks|chapters|contents|author|published|illustrated|publisher|introduction|online|html|"</span>
+                               <span class="sa">r</span><span class="s2">"httpswwwpgdpnet|ὑπ᾽|version|file|original|volume|copyright|copy|volumes)\b"</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
 
-<span class="c1">#     # Read the additional unwanted words from a file</span>
-<span class="c1">#     with open('./preprocessing/unwanted_terms.txt', 'r') as file:</span>
-<span class="c1">#         additional_words = [line.strip() for line in file if line.strip()]</span>
+    <span class="c1"># Read the additional unwanted words from a file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'./preprocessing/unwanted_terms.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">additional_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>
 
 
-<span class="c1">#     # Create a regex pattern for the additional unwanted words</span>
-<span class="c1">#     additional_words_pattern = re.compile(r'\b(' + '|'.join(additional_words) + r')\b', re.IGNORECASE)</span>
+    <span class="c1"># Create a regex pattern for the additional unwanted words</span>
+    <span class="n">additional_words_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\b('</span> <span class="o">+</span> <span class="s1">'|'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">additional_words</span><span class="p">)</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">')\b'</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
     
-<span class="c1">#     # Remove unwanted symbols</span>
-<span class="c1">#     text = symbols_pattern.sub(" ", text)</span>
+    <span class="c1"># Remove unwanted symbols</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">symbols_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
     
-<span class="c1">#     # Remove unwanted words</span>
-<span class="c1">#     text = words_pattern.sub("", text)</span>
+    <span class="c1"># Remove unwanted words</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">words_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 
-<span class="c1">#     # Regex for additional unwanted words - mostly in old greek and latin found in later steps of the processing.</span>
-<span class="c1">#     #Those are too long to be displayed here, so theyx aqre read-in from a file</span>
+    <span class="c1"># Regex for additional unwanted words - mostly in old greek and latin found in later steps of the OCTIS processing.</span>
+    <span class="c1">#Those are too long to be displayed here, so theyx aqre read-in from a file</span>
 
-<span class="c1">#     text = additional_words_pattern.sub("", text)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">additional_words_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
     
-<span class="c1">#     # Remove extra spaces</span>
-<span class="c1">#     text = re.sub(' +', ' ', text).strip()</span>
+    <span class="c1"># Remove extra spaces</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">' +'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
     
-<span class="c1">#     return text</span>
+    <span class="k">return</span> <span class="n">text</span>
 
-<span class="c1"># # Example of applying the function to a dataframe column</span>
-<span class="c1"># df_reg['preprocessed_text'] = df_reg['preprocessed_text'].apply(remove_unwanted_elements)</span>
+<span class="n">df_reg</span><span class="p">[</span><span class="s1">'preprocessed_text'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_reg</span><span class="p">[</span><span class="s1">'preprocessed_text'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_unwanted_elements</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8609,7 +8735,7 @@ The first up to ten letters of both authors last name and title of the text. In 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df_reg.to_csv('./preprocessing/results/df_books_prep.csv', index=False)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_reg</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./preprocessing/results/df_books_prep.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">df_prep</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./preprocessing/results/df_books_prep.csv'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8623,8 +8749,7 @@ The first up to ten letters of both authors last name and title of the text. In 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Now for a final clean up to remove further texts from the selection.
-After the modeling had been completed, due to unsatisfactory results and a skew in the data, many of the entries from the pb-under, as well as some of the color and many of the color works had been manually re-evaluated and taken out of the corpus.</p>
+<p>After legthy deliberation a number of texts which had been present in the first model run had to be removed in the final run. The results had proven unsatisfactory, the dataset was skewed and many of the entries from the pb-under, as well as some of the color and many of the color works had been manually re-evaluated and taken out of the corpus because they were found to be too far removed from the core contents of the genre to be fit for an assessment of the core features of Gothic Fiction.</p>
 </div>
 </div>
 </div>
@@ -8677,7 +8802,7 @@ After the modeling had been completed, due to unsatisfactory results and a skew 
  <span class="s1">'The Talisman'</span><span class="p">,</span>
  <span class="s2">"Waverley; Or, 'Tis Sixty Years Since"</span><span class="p">]</span>
 
-<span class="c1">#df_prep = df_prep[~df_prep['title'].isin(to_remove)]</span>
+<span class="n">df_prep</span> <span class="o">=</span> <span class="n">df_prep</span><span class="p">[</span><span class="o">~</span><span class="n">df_prep</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">to_remove</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -8706,7 +8831,7 @@ After the modeling had been completed, due to unsatisfactory results and a skew 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Word2vec embeddings, a representation of the language space of the corpus is generated in order to use this as an input for our evaluation metrics in the modeling, as well as input for the ETM</p>
+<h2 id="Word2Vec">Word2Vec<a class="anchor-link" href="#Word2Vec">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8717,7 +8842,7 @@ After the modeling had been completed, due to unsatisfactory results and a skew 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="According-to-research,-the-quality-for-vector-representations-improves-as-you-increase-the-vector-size-until-you-reach-300-dimensions.-After-300-dimensions,-the-quality-of-vectors-starts-to-decrease.">According to research, the quality for vector representations improves as you increase the vector size until you reach 300 dimensions. After 300 dimensions, the quality of vectors starts to decrease.<a class="anchor-link" href="#According-to-research,-the-quality-for-vector-representations-improves-as-you-increase-the-vector-size-until-you-reach-300-dimensions.-After-300-dimensions,-the-quality-of-vectors-starts-to-decrease.">¶</a></h1>
+<p>Word2vec embeddings are a vector representation of the language space of a corpus of texts. Word2Vec models are foundational for the use of many language-based machine learning models because they allow the evaluation of the context of a word. These embeddings are generated to use them as an input for our evaluation metrics in the modeling section, as well input for one of the models itself "ETM: Topic Modeling in Embedding Spaces". While the representations within Word2Vec put more emphasis on situating a given word within the context of a few sentences, another, lesser used technique called GloVe is focused on situating a given word within a text segment as a whole. However it is sadly not supported by many model architectures.</p>
 </div>
 </div>
 </div>
@@ -8729,12 +8854,12 @@ After the modeling had been completed, due to unsatisfactory results and a skew 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># # # Train Word2Vec Model</span>
-<span class="c1"># # # Train the model on the tokenized sentences</span>
-<span class="c1"># word2vec_model = Word2Vec(sentences=df_prep['tokenized_text'].tolist(), vector_size=300, window=10, min_count=1, workers=8)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># # Train Word2Vec Model</span>
+<span class="c1"># # Train the model on the tokenized sentences</span>
+<span class="n">word2vec_model</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="p">(</span><span class="n">sentences</span><span class="o">=</span><span class="n">df_prep</span><span class="p">[</span><span class="s1">'tokenized_text'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">vector_size</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">workers</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 
-<span class="c1"># # # # If you want to save the model to disk</span>
-<span class="c1"># word2vec_model.save("./word2vec/word2vec_model")</span>
+<span class="c1"># # # If you want to save the model to disk</span>
+<span class="n">word2vec_model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"./word2vec/word2vec_model"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8748,9 +8873,9 @@ After the modeling had been completed, due to unsatisfactory results and a skew 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># word2vec_model = Word2Vec.load("./word2vec/word2vec_model")</span>
-<span class="c1"># word_vectors = word2vec_model.wv</span>
-<span class="c1"># print(word_vectors['human']) #looking good</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">word2vec_model</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"./word2vec/word2vec_model"</span><span class="p">)</span>
+<span class="n">word_vectors</span> <span class="o">=</span> <span class="n">word2vec_model</span><span class="o">.</span><span class="n">wv</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word_vectors</span><span class="p">[</span><span class="s1">'human'</span><span class="p">])</span> <span class="c1">#looking good</span>
 </pre></div>
 </div>
 </div>
@@ -8851,7 +8976,7 @@ After the modeling had been completed, due to unsatisfactory results and a skew 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#word2vec_model=Word2Vec.load("./word2vec/word2vec_model")</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">word2vec_model</span><span class="o">=</span><span class="n">Word2Vec</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"./word2vec/word2vec_model"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8888,7 +9013,7 @@ After the modeling had been completed, due to unsatisfactory results and a skew 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The texts are finally seperated into 5000 word chunks in order to improve the quality of the the topic modeling, a common practice recommended in the literature.</p>
+<p>The texts are finally separated into 5000-word chunks to improve the quality of the topic modeling, a common practice recommended in the distant reading literature.</p>
 </div>
 </div>
 </div>

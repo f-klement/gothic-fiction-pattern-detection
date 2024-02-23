@@ -7482,7 +7482,19 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Modelling">Modelling<a class="anchor-link" href="#Modelling">¶</a></h1>
+<h1 id="Modeling">Modeling<a class="anchor-link" href="#Modeling">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The following notebook continues the work of a thesis centered around the quantitative exploration of the literary genre Gothic Fiction with the help of a number of tools established within the distant reading community. A community of literary scholars and digital humanists set on approaching, analyzing and interpreting texts from afar with computational means.</p>
+<p>This section deals with the creation and optimization of topic models, as well as the enrichment of the topic distribution by document with the features taken from the preprocessing section. For the creation of these models the Python library OCTIS: Optimizing and Comparing Topic Models is Simple! is used, the model is optimized with Scikit-Optimize, enriched with NLTK sentiment scores on the texts.</p>
 </div>
 </div>
 </div>
@@ -7535,7 +7547,13 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Three different variants of OCTIS models will be optimized and trained: The standard Latent Dirichlet Allocation (LDA) in its Gensim Implementation, a Contextualized Topic Model (CTM) relying heavily on the use of contextualized transformer models like Bert, as well as a Topic Model with which draws its topics and words from the embedding space of the original coprus (ETM) using word2vec.</p>
+<p>Three different variants of OCTIS models will be optimized and trained:</p>
+<ol>
+<li>The standard latent dirichlet allocation (LDA) in its Gensim implementation.</li>
+<li>A contextualized topic model (CTM) relying heavily on the use of contextualized transformer models like Bert.</li>
+<li>(ETM) - "Topic Modeling in Embedding Spaces", a topic model which draws its topics and words from the embedding space of the original corpus using word2vec.</li>
+</ol>
+<p>Note: The structure is identical for all three models and in the subsequent section only the LDA will be used for analysis. The CTM and ETM mainly serve as a source of comparison for the topic distribution throughout time to test for its consistency.</p>
 </div>
 </div>
 </div>
@@ -7544,7 +7562,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">word2vec_model</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"./word2vec/word2vec_model"</span><span class="p">)</span>
@@ -7563,7 +7581,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df_input['tokenized_text'] = df_input['preprocessed_text'].apply(lambda text: text.split())</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_input</span><span class="p">[</span><span class="s1">'tokenized_text'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_input</span><span class="p">[</span><span class="s1">'preprocessed_text'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">text</span><span class="p">:</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -7576,8 +7594,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In order to improve the salience of the results Mimno et all have argued for the importance of filtering a corpus to remove the most freuqent, as well as the most rare terms in order to make for more meaningful results.
-As threshhods they have proposed removing the top 5 to 10 percent of most frequent terms, as well as removing everyingth that doens't appear at least 5-10 times in the whole corpus.</p>
+<p>To improve the salience of the results Mimno et all have argued for the importance of filtering a corpus to remove the most frequent, as well as the rarest terms to make for more meaningful results.
+As thresholds, they have proposed removing the top 5 to 10 percent of the most frequent terms, as well as removing everything that doesn't appear at least 5-10 times in the whole corpus.</p>
 </div>
 </div>
 </div>
@@ -7589,23 +7607,23 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 <div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># # Create a frequency distribution</span>
-<span class="c1"># word_freq = Counter(word for doc in df_input['tokenized_text'] for word in doc)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a frequency distribution</span>
+<span class="n">word_freq</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">df_input</span><span class="p">[</span><span class="s1">'tokenized_text'</span><span class="p">]</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">)</span>
 
-<span class="c1"># # Identify words to filter</span>
-<span class="c1"># total_words = len(word_freq)</span>
-<span class="c1"># top_5_percent = int(total_words * 0.05)</span>
-<span class="c1"># most_common_words = set(word for word, freq in word_freq.most_common(top_5_percent))</span>
-<span class="c1"># least_frequent_words = set(word for word, freq in word_freq.items() if freq &lt; 5)</span>
+<span class="c1"># Identify words to filter</span>
+<span class="n">total_words</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_freq</span><span class="p">)</span>
+<span class="n">top_5_percent</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">total_words</span> <span class="o">*</span> <span class="mf">0.05</span><span class="p">)</span>
+<span class="n">most_common_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">word_freq</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">top_5_percent</span><span class="p">))</span>
+<span class="n">least_frequent_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">word_freq</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">freq</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="c1"># # Combine the sets of words to remove</span>
-<span class="c1"># words_to_remove = most_common_words.union(least_frequent_words)</span>
+<span class="c1"># Combine the sets of words to remove</span>
+<span class="n">words_to_remove</span> <span class="o">=</span> <span class="n">most_common_words</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">least_frequent_words</span><span class="p">)</span>
 
-<span class="c1"># # Filter words from each document</span>
-<span class="c1"># df_input['filtered_tokens'] = df_input['tokenized_text'] .apply(lambda doc: [word for word in doc if word not in words_to_remove])</span>
+<span class="c1"># Filter words from each document</span>
+<span class="n">df_input</span><span class="p">[</span><span class="s1">'filtered_tokens'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_input</span><span class="p">[</span><span class="s1">'tokenized_text'</span><span class="p">]</span> <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">doc</span><span class="p">:</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">doc</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words_to_remove</span><span class="p">])</span>
 
-<span class="c1"># # Optionally, rejoin tokens into a single string</span>
-<span class="c1"># df_input['filtered_text'] = df_input['filtered_tokens'].apply(' '.join)</span>
+<span class="c1"># Optionally, rejoin tokens into a single string</span>
+<span class="n">df_input</span><span class="p">[</span><span class="s1">'filtered_text'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_input</span><span class="p">[</span><span class="s1">'filtered_tokens'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7618,7 +7636,7 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We start with  transforming the corpus in the necessary input format required for the octis model topic modeling implementations.</p>
+<p>Transforming the corpus in the necessary input format required for the OCTIS topic modeling implementations.</p>
 </div>
 </div>
 </div>
@@ -7635,7 +7653,7 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
     <span class="k">for</span> <span class="n">preprocessed_text</span> <span class="ow">in</span> <span class="n">df_input</span><span class="p">[</span><span class="s1">'filtered_text'</span><span class="p">]:</span>
         <span class="n">corpus_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">preprocessed_text</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
-<span class="c1">#creating an input vocabulary file</span>
+<span class="c1"># creating an input vocabulary file</span>
 
 <span class="n">vocabulary</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
@@ -7658,21 +7676,10 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 <div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#octis expects a binary, not a model object</span>
-<span class="c1">#word2vec_model.wv.save_word2vec_format('./word2vec/word2vec_model.bin', binary=True)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># octis expects a binary, not a model object</span>
+<span class="n">word2vec_model</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">save_word2vec_format</span><span class="p">(</span><span class="s1">'./word2vec/word2vec_model.bin'</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Latent Dirichlet Allocation, LDA is yet another transformation from bag-of-words counts into a topic space of lower dimensionality. LDA is a probabilistic extension of LSA (also called multinomial PCA), so LDA’s topics can be interpreted as probability distributions over words. These distributions are, just like with LSA, inferred automatically from a training corpus. Documents are in turn interpreted as a (soft) mixture of these topics (again, just like with LSA).</p>
 </div>
 </div>
 </div>
@@ -7695,17 +7702,15 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># preprocessor = Preprocessing(vocabulary=None, save_original_indexes=True, max_features=None,</span>
-<span class="c1">#                              remove_punctuation=True, punctuation=string.punctuation, </span>
-<span class="c1">#                              lemmatize=False, stopword_list='english',</span>
-<span class="c1">#                              min_chars=1, min_words_docs=0)</span>
-<span class="c1"># # preprocess</span>
-<span class="c1"># dataset = Dataset()</span>
-<span class="c1"># dataset = preprocessor.preprocess_dataset(documents_path=r'/Storage/Studium/DigitalHumanities/Semester5/Thesis/code_notebooks/octis/corpus.txt')</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">preprocessor</span> <span class="o">=</span> <span class="n">Preprocessing</span><span class="p">(</span><span class="n">vocabulary</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_original_indexes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                             <span class="n">remove_punctuation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">punctuation</span><span class="o">=</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">,</span> 
+                             <span class="n">lemmatize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stopword_list</span><span class="o">=</span><span class="s1">'english'</span><span class="p">,</span>
+                             <span class="n">min_chars</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_words_docs</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># preprocess</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">preprocess_dataset</span><span class="p">(</span><span class="n">documents_path</span><span class="o">=</span><span class="sa">r</span><span class="s1">'/Storage/Studium/DigitalHumanities/Semester5/Thesis/code_notebooks/octis/corpus.txt'</span><span class="p">)</span>
 
-<span class="c1"># # # #save the preprocessed dataset</span>
-
-<span class="c1"># dump(dataset, './octis/dataset.joblib')</span>
+<span class="n">dump</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="s1">'./octis/dataset.joblib'</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">=</span><span class="n">load</span><span class="p">(</span><span class="s1">'./octis/dataset.joblib'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7720,15 +7725,15 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># preprocessor = Preprocessing(vocabulary=None, save_original_indexes=True, max_features=None,</span>
-<span class="c1">#                              remove_punctuation=True, punctuation=string.punctuation, </span>
-<span class="c1">#                              lemmatize=False, stopword_list='english',split=False, </span>
-<span class="c1">#                              min_chars=1, min_words_docs=0)</span>
-<span class="c1"># # preprocess</span>
-<span class="c1"># dataset_final = Dataset()</span>
-<span class="c1"># dataset_final = preprocessor.preprocess_dataset(documents_path=r'/Storage/Studium/DigitalHumanities/Semester5/Thesis/code_notebooks/octis/corpus.txt')</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">preprocessor</span> <span class="o">=</span> <span class="n">Preprocessing</span><span class="p">(</span><span class="n">vocabulary</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_original_indexes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                             <span class="n">remove_punctuation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">punctuation</span><span class="o">=</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">,</span> 
+                             <span class="n">lemmatize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stopword_list</span><span class="o">=</span><span class="s1">'english'</span><span class="p">,</span><span class="n">split</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                             <span class="n">min_chars</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_words_docs</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># preprocess</span>
+<span class="n">dataset_final</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">()</span>
+<span class="n">dataset_final</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">preprocess_dataset</span><span class="p">(</span><span class="n">documents_path</span><span class="o">=</span><span class="sa">r</span><span class="s1">'/Storage/Studium/DigitalHumanities/Semester5/Thesis/code_notebooks/octis/corpus.txt'</span><span class="p">)</span>
 
-<span class="c1"># dump(dataset_final, './octis/dataset_final.joblib')</span>
+<span class="n">dump</span><span class="p">(</span><span class="n">dataset_final</span><span class="p">,</span> <span class="s1">'./octis/dataset_final.joblib'</span><span class="p">)</span>
 <span class="n">dataset_final</span><span class="o">=</span><span class="n">load</span><span class="p">(</span><span class="s1">'./octis/dataset_final.joblib'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7764,7 +7769,18 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>OCTIS - intrinsic optimization pipeline with skopt. All three models are optimized on the basis of on Word Embedding Coherence Centroid, a normalized metric which draws from an embedding space drawn from the original corpus in order to allow for a more domain specific and closer fit to the texts in use. In addition, as a secondary metric Diversity Centroid was chosen to influence the choice of model parameters towards a broader coverage of content inherent in the texts. The optimization method chosen by OCTIS by default is bayesian, which is a resource intensive stochastic approach well suited for otherwise difficult to optimize or evaluate models, which are taḱen as a black-box input.</p>
+<p>Latent Dirichlet Allocation, LDA is yet another transformation from bag-of-words counts into a topic space of lower dimensionality. LDA is a probabilistic extension of LSA (also called multinomial PCA), so LDA’s topics can be interpreted as probability distributions over words. These distributions are, inferred automatically from a training corpus. Documents are in turn interpreted as a (soft) mixture of these topics.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>OCTIS - intrinsic optimization pipeline is skopt. All three models are optimized based on Word Embedding Coherence Centroid, a normalized metric which draws from an embedding space drawn from the original corpus to allow for a more domain-specific and closer fit to the texts in use. In addition, as a secondary metric, Diversity Centroid was chosen to influence the choice of model parameters towards a broader coverage of content inherent in the texts. The optimization method chosen by OCTIS by default is Bayesian, which is a resource-intensive stochastic approach well suited for otherwise difficult-to-optimize or evaluate models, which are treated as a black-box input.</p>
 </div>
 </div>
 </div>
@@ -7789,11 +7805,9 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 <span class="n">optimization_runs</span><span class="o">=</span><span class="mi">200</span>
 <span class="n">model_runs</span><span class="o">=</span><span class="mi">3</span>
 
-<span class="c1">#npmi = Coherence(texts=dataset.get_corpus())</span>
 <span class="n">coherence_centroid</span> <span class="o">=</span> <span class="n">WECoherenceCentroid</span><span class="p">(</span><span class="n">topk</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">word2vec_path</span><span class="o">=</span><span class="s1">'./word2vec/word2vec_model.bin'</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
 <span class="c1">#topic_diversity = TopicDiversity(topk=10)</span>
 <span class="n">DiversityCentroid</span><span class="o">=</span><span class="n">WordEmbeddingsInvertedRBOCentroid</span><span class="p">(</span><span class="n">topk</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">word2vec_path</span><span class="o">=</span><span class="s1">'./word2vec/word2vec_model.bin'</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1">#coherece_score = metric_coherence.score(dataset.get_corpus())</span>
 <span class="c1"># Run the hyperparameter optimization</span>
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
@@ -7865,7 +7879,7 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># the optimization process here is one of maximization, yet the provided function for plotting </span>
-<span class="c1"># assumes the oposite, so we shall invert the result.</span>
+<span class="c1"># assumes the opposite, so the result is inverted here.</span>
 
 <span class="n">values_to_plot_LDA</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">optimizer_results_LDA</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'f_val'</span><span class="p">]]</span>
 
@@ -7897,7 +7911,7 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#The image is just dumped into the working directory, we shall move it somewhere more fitting</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#The image is just dumped into the working directory, but moved somewhere more fitting</span>
 <span class="n">os</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'./LDA_Optimization_Convergence.png'</span><span class="p">,</span> <span class="s1">'./octis/results/LDA_Optimization_Convergence.png'</span><span class="p">)</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">'./octis/results/LDA_Optimization_Convergence.png'</span><span class="p">)</span>
@@ -7926,11 +7940,11 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 <div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plotting WECoherenceCentroid' and 'WordEmbeddingsInvertedRBOCentroid' our two metrics</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plotting WECoherenceCentroid' and 'WordEmbeddingsInvertedRBOCentroid', our two metrics</span>
 <span class="n">coherence_scores_LDA</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">optimizer_results_LDA</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'dict_model_runs'</span><span class="p">][</span><span class="s1">'WECoherenceCentroid'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 <span class="n">diversity_scores_LDA</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">optimizer_results_LDA</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'dict_model_runs'</span><span class="p">][</span><span class="s1">'0_WordEmbeddingsInvertedRBOCentroid'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 
-<span class="c1"># Create a figure with twin y-axis for the second metric</span>
+<span class="c1"># Creating a figure with twin y-axis for the second metric</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Iteration'</span><span class="p">)</span>
@@ -7973,7 +7987,7 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>for the choice of the best hyperparameters, we primarily take the coherence values into account, but use diversity as a form of secondary criterion. Of the ten best coherence scores we shall select the parameter set with the highest diversity score.</p>
+<p>For the choice of the best hyperparameters, the coherence values are primarily taken into account, but Diversity is used as a secondary criterion. Of the ten best coherence scores the parameter set with the highest diversity score is selected.</p>
 </div>
 </div>
 </div>
@@ -7989,7 +8003,7 @@ As threshhods they have proposed removing the top 5 to 10 percent of most freque
 <span class="n">coherence_scores_LDA</span> <span class="o">=</span> <span class="n">optimizer_results_LDA</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'dict_model_runs'</span><span class="p">][</span><span class="s1">'WECoherenceCentroid'</span><span class="p">]</span>
 <span class="n">diversity_scores_LDA</span> <span class="o">=</span> <span class="n">optimizer_results_LDA</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'dict_model_runs'</span><span class="p">][</span><span class="s1">'0_WordEmbeddingsInvertedRBOCentroid'</span><span class="p">]</span>
 
-<span class="c1"># Extracting scores and hyperparameter configurations</span>
+<span class="c1"># Extract scores and hyperparameter configurations</span>
 <span class="n">combined_scores</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">coherence_run</span><span class="p">,</span> <span class="n">diversity_run</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">coherence_scores_LDA</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">diversity_scores_LDA</span><span class="o">.</span><span class="n">values</span><span class="p">())):</span>
     <span class="n">max_coherence</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">coherence_run</span><span class="p">)</span>
@@ -8049,7 +8063,6 @@ Best Configuration: num_topics = 73 , alpha = 0.06460320991688963 , eta = 2.9415
 <span class="c1"># Disable partitioning to use the entire dataset</span>
 <span class="n">best_model_LDA</span><span class="o">.</span><span class="n">partitioning</span><span class="p">(</span><span class="n">use_partitions</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="c1"># Train the model with the dataset</span>
 <span class="n">best_model_LDA</span> <span class="o">=</span> <span class="n">best_model_LDA</span><span class="o">.</span><span class="n">train_model</span><span class="p">(</span><span class="n">dataset_final</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8064,23 +8077,8 @@ Best Configuration: num_topics = 73 , alpha = 0.06460320991688963 , eta = 2.9415
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#dump(best_model_LDA,'./octis/models/best_model_LDA.joblib', compress=('lzma', 9))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dump</span><span class="p">(</span><span class="n">best_model_LDA</span><span class="p">,</span><span class="s1">'./octis/models/best_model_LDA.joblib'</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="p">(</span><span class="s1">'lzma'</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
 <span class="n">best_model_LDA</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s1">'./octis/models/best_model_LDA.joblib'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#dump(best_model_LDA,'./octis/models/best_model_LDA_overall.joblib', compress=('lzma', 9))</span>
-<span class="c1">#best_model_LDA = load('./octis/models/best_model_LDA_overall.joblib')</span>
 </pre></div>
 </div>
 </div>
@@ -8234,6 +8232,17 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4 id="Preparing-the-results-for-further-analysis">Preparing the results for further analysis<a class="anchor-link" href="#Preparing-the-results-for-further-analysis">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We extract the topic distribution from the model and combine it with the metadata and features from the original dataframe.</p>
 </div>
 </div>
 </div>
@@ -8626,7 +8635,7 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The rows of the original document are sampled in a random order when passed into octis as a dataset in case the default split=True prameter is set. A choice whihc is necessary to allow for hold out date in the parameter optization. Thus the document order is scrambled. For the sake of retraining a model with optimal paramters on the full corpus, the parameter is set to False, the order of documents is maintained and can be easily rejoined. For safeties sake, we will join according to order of the indices function nonetheless.</p>
+<p>The rows of the original document are sampled in random order when passed into octis as a dataset in case the default split=True parameter is set. A choice is necessary to allow for hold-out data in the parameter optimization. Thus the document order is scrambled. For the sake of retraining a model with optimal parameters on the full corpus, when the parameter is set to False, the order of documents is maintained and can be easily rejoined. For safety's sake, we will join according to the order of the indices nonetheless.</p>
 </div>
 </div>
 </div>
@@ -8637,7 +8646,7 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In order to further enrich the data, we will add the sentiment to the dataframe using the defacto sentiment analysis standard VADER.</p>
+<p>In order to further enrich the data, we will add the sentiment to the dataframe using the defacto standard for sentiment analysis VADER.</p>
 </div>
 </div>
 </div>
@@ -9003,7 +9012,7 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># merging of topic distribution with features</span>
-<span class="c1"># reorganizing the order of columns and clean up</span>
+<span class="c1"># reorganizing the order of columns and cleanup</span>
 <span class="n">df_txt_features_LDA</span> <span class="o">=</span> <span class="n">df_merge</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">topic_distribution_df_LDA</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">'Original Document Index'</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">'input_index'</span><span class="p">)</span>
 <span class="n">df_txt_features_LDA</span><span class="o">=</span><span class="n">df_txt_features_LDA</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'text'</span><span class="p">,</span> <span class="s1">'preprocessed_text_y'</span><span class="p">,</span><span class="s1">'tokenized_text'</span><span class="p">,</span><span class="s1">'preprocessed_text_x'</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">,</span> <span class="s1">'ref'</span><span class="p">,</span> <span class="s1">'Original Document Index'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">df_txt_features_LDA</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'reference_x'</span><span class="p">:</span> <span class="s1">'reference'</span><span class="p">,</span><span class="s1">'reference_y'</span><span class="p">:</span> <span class="s1">'text_key'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -9213,7 +9222,7 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="creating-exportable-model-elements-for-use-in-pyLDAdavis-in-a-alter-step">creating exportable model elements for use in pyLDAdavis in a alter step<a class="anchor-link" href="#creating-exportable-model-elements-for-use-in-pyLDAdavis-in-a-alter-step">¶</a></h4>
+<p>creating exportable model metrics to use them in pyLDAdavis in the next notebook</p>
 </div>
 </div>
 </div>
@@ -9309,7 +9318,29 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="The-following-two-sections-replicate-the-same-set-up-for-the-other-two-models,-in-order-to-provide-a-source-of-comparison-on-the-topic-distribution-throughout-time">The following two sections replicate the same set up for the other two models, in order to provide a source of comparison on the topic distribution throughout time<a class="anchor-link" href="#The-following-two-sections-replicate-the-same-set-up-for-the-other-two-models,-in-order-to-provide-a-source-of-comparison-on-the-topic-distribution-throughout-time">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4 id="CTM">CTM<a class="anchor-link" href="#CTM">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A contextualized topic model (CTM) relying heavily on the use of contextualized transformer models, again evaluated on the basis of Word Embedding Coherence Centroid and Diversity Centroid.</p>
 </div>
 </div>
 </div>
@@ -9409,7 +9440,7 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># the optimization process here is one of maximization, yet the provided function for plotting </span>
-<span class="c1"># assumes the oposite, so we shall invert the result.</span>
+<span class="c1"># assumes the opposite, so the result is inverted</span>
 
 <span class="n">values_to_plot_CTM</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">optimizer_results_CTM</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'f_val'</span><span class="p">]]</span>
 
@@ -9429,7 +9460,7 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>This optimization was less smooth and clear, additional runs could potentially still improve upon the model</p>
+<p>This optimization was less smooth and clear, but reruns could not provide any improvement</p>
 </div>
 </div>
 </div>
@@ -9441,7 +9472,7 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 <div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#The image is just dumped into the working directory, we shall move it somewhere more fitting</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#The image is just dumped into the working directory, but is moved somewhere more fitting</span>
 <span class="n">os</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'./CTM_Optimization_Convergence.png'</span><span class="p">,</span> <span class="s1">'./octis/results/CTM_Optimization_Convergence.png'</span><span class="p">)</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">'./octis/results/CTM_Optimization_Convergence.png'</span><span class="p">)</span>
@@ -9470,7 +9501,7 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 <div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plotting WECoherenceCentroid' and 'WordEmbeddingsInvertedRBOCentroid' our two metrics</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plotting WECoherenceCentroid' and 'WordEmbeddingsInvertedRBOCentroid' the two metrics</span>
 <span class="n">coherence_scores_CTM</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">optimizer_results_CTM</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'dict_model_runs'</span><span class="p">][</span><span class="s1">'WECoherenceCentroid'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 <span class="n">diversity_scores_CTM</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">optimizer_results_CTM</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'dict_model_runs'</span><span class="p">][</span><span class="s1">'0_WordEmbeddingsInvertedRBOCentroid'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 
@@ -9609,7 +9640,7 @@ Best Configuration: num_topics = 52 , num_layers = 1 , num_neurons = 1000 , lear
 <div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#dump(best_model_CTM, './octis/models/best_model_CTM.joblib', compress=('lzma', 9))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dump</span><span class="p">(</span><span class="n">best_model_CTM</span><span class="p">,</span> <span class="s1">'./octis/models/best_model_CTM.joblib'</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="p">(</span><span class="s1">'lzma'</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
 <span class="n">best_model_CTM</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s1">'./octis/models/best_model_CTM.joblib'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -9721,6 +9752,17 @@ Topic 52 : ['mill', 'abbot', 'gallery', 'helmet', 'sailor', 'godly', 'vault', 'l
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>['./analysis/top_words_per_topic_CTM.joblib']</pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We extract the topic distribution from the model and combine it with the metadata and features from the original dataframe.</p>
 </div>
 </div>
 </div>
@@ -10076,6 +10118,17 @@ Topic 52 : ['mill', 'abbot', 'gallery', 'helmet', 'sailor', 'godly', 'vault', 'l
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>recasting and minor dataframe adaptations</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10281,7 +10334,7 @@ Topic 52 : ['mill', 'abbot', 'gallery', 'helmet', 'sailor', 'godly', 'vault', 'l
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># merging of topic distribution with features</span>
-<span class="c1"># reorganizing the order of columns and clean up</span>
+<span class="c1"># reorganizing the order of columns and cleanup</span>
 <span class="n">df_txt_features_CTM</span><span class="o">=</span> <span class="n">df_merge</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">topic_distribution_df_CTM</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">'Original Document Index'</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">'input_index'</span><span class="p">)</span>
 <span class="n">df_txt_features_CTM</span><span class="o">=</span><span class="n">df_txt_features_CTM</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'text'</span><span class="p">,</span> <span class="s1">'preprocessed_text_y'</span><span class="p">,</span><span class="s1">'tokenized_text'</span><span class="p">,</span><span class="s1">'preprocessed_text_x'</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">,</span> <span class="s1">'ref'</span><span class="p">,</span> <span class="s1">'Original Document Index'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">df_txt_features_CTM</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'reference_x'</span><span class="p">:</span> <span class="s1">'reference'</span><span class="p">,</span><span class="s1">'reference_y'</span><span class="p">:</span> <span class="s1">'text_key'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -10479,7 +10532,7 @@ Topic 52 : ['mill', 'abbot', 'gallery', 'helmet', 'sailor', 'godly', 'vault', 'l
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_txt_features_CTM</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./analysis/df_txt_features_CTM.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1"># df_txt_features_CTM=pd.read_csv('./analysis/df_txt_features_CTM.csv')</span>
+<span class="n">df_txt_features_CTM</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./analysis/df_txt_features_CTM.csv'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -10550,6 +10603,17 @@ Topic 52 : ['mill', 'abbot', 'gallery', 'helmet', 'sailor', 'godly', 'vault', 'l
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>(ETM) - "Topic Modeling in Embedding Spaces", a topic model which draws its topics and words from the embedding space of the original corpus using word2vec, again evaluated on the basis of Word Embedding Coherence Centroid and Diversity Centroid.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10558,10 +10622,10 @@ Topic 52 : ['mill', 'abbot', 'gallery', 'helmet', 'sailor', 'godly', 'vault', 'l
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize the CTM model with some default parameters</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize the ETM model with some default parameters</span>
 <span class="n">etm_model</span> <span class="o">=</span> <span class="n">ETM</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">embeddings_path</span><span class="o">=</span><span class="s1">'word2vec_model.bin'</span><span class="p">)</span>
 
-<span class="c1"># Define the hyperparameter space for CTM</span>
+<span class="c1"># Define the hyperparameter space for ETM</span>
 <span class="n">parameter_space</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'num_topics'</span><span class="p">:</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
     <span class="s1">'num_layers'</span><span class="p">:</span> <span class="n">Categorical</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>
@@ -10648,7 +10712,7 @@ Topic 52 : ['mill', 'abbot', 'gallery', 'helmet', 'sailor', 'godly', 'vault', 'l
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># the optimization process here is one of maximization, yet the provided function for plotting </span>
-<span class="c1"># assumes the oposite, so we shall invert the result.</span>
+<span class="c1"># assumes the opposite, so the result is inverted.</span>
 
 <span class="n">values_to_plot_ETM</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">optimizer_results_ETM</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'f_val'</span><span class="p">]]</span>
 
@@ -10668,7 +10732,7 @@ Topic 52 : ['mill', 'abbot', 'gallery', 'helmet', 'sailor', 'godly', 'vault', 'l
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The ETM seems to have performed best on this constellation. It seems that the quality of this model is highly dependant on the size of the text segments and imporves with fewer splits within one document. Which is in  intuitive, given that word2vec embeddings put a lot of mphasis on the ducument context and the relatins between its words.</p>
+<p>The ETM seems to have performed best on this constellation. It seems that the quality of this model is highly dependent on the size of the text segments and the size of the corpus overall. It improves with fewer splits within one document. This is intuitive, given that word2vec embeddings put a lot of emphasis on the document context and the relations between its words.</p>
 </div>
 </div>
 </div>
@@ -10680,7 +10744,7 @@ Topic 52 : ['mill', 'abbot', 'gallery', 'helmet', 'sailor', 'godly', 'vault', 'l
 <div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#The image is just dumped into the working directory, we shall move ti somewhere more fitting</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#The image is just dumped into the working directory, but is moved somewhere more fitting</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'./ETM_Optimization_Convergence.png'</span><span class="p">,</span> <span class="s1">'./octis/results/ETM_Optimization_Convergence.png'</span><span class="p">)</span>
 
@@ -10710,7 +10774,7 @@ Topic 52 : ['mill', 'abbot', 'gallery', 'helmet', 'sailor', 'godly', 'vault', 'l
 <div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plotting WECoherenceCentroid' and 'WordEmbeddingsInvertedRBOCentroid' our two metrics</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plotting WECoherenceCentroid' and 'WordEmbeddingsInvertedRBOCentroid' the two metrics</span>
 <span class="n">coherence_scores_ETM</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">optimizer_results_ETM</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'dict_model_runs'</span><span class="p">][</span><span class="s1">'WECoherenceCentroid'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 <span class="n">diversity_scores_ETM</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">optimizer_results_ETM</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'dict_model_runs'</span><span class="p">][</span><span class="s1">'0_WordEmbeddingsInvertedRBOCentroid'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 
@@ -10829,7 +10893,7 @@ Best Configuration: num_topics = 99 , num_layers = 1 , num_neurons = 750 , learn
 <span class="n">best_optimizer</span> <span class="o">=</span> <span class="n">best_overall_ETM</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
 <span class="n">best_dropout</span> <span class="o">=</span> <span class="n">best_overall_ETM</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
 
-<span class="c1"># Now we instantiate the ETM model with the best hyperparameters</span>
+<span class="c1"># Now the ETM model is instantiated with the best hyperparameters</span>
 <span class="n">best_model_ETM</span> <span class="o">=</span> <span class="n">ETM</span><span class="p">(</span><span class="n">num_topics</span><span class="o">=</span><span class="n">best_num_topics</span><span class="p">,</span>
                      <span class="c1">#num_layers=best_num_layers,</span>
                      <span class="c1">#num_neurons=best_num_neurons,</span>
@@ -11575,7 +11639,7 @@ Topic 99 : ['examined', 'understanding', 'stage', 'enemies', 'willing', 'serve',
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># merging of topic distribution with features</span>
-<span class="c1"># reorganizing the order of columns and clean up</span>
+<span class="c1"># reorganizing the order of columns and cleanup</span>
 <span class="n">df_txt_features_ETM</span> <span class="o">=</span> <span class="n">df_merge</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">topic_distribution_df_ETM</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">'Original Document Index'</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">'input_index'</span><span class="p">)</span>
 <span class="n">df_txt_features_ETM</span><span class="o">=</span><span class="n">df_txt_features_ETM</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'text'</span><span class="p">,</span> <span class="s1">'preprocessed_text_y'</span><span class="p">,</span><span class="s1">'tokenized_text'</span><span class="p">,</span><span class="s1">'preprocessed_text_x'</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">,</span> <span class="s1">'ref'</span><span class="p">,</span> <span class="s1">'Original Document Index'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">df_txt_features_ETM</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'reference_x'</span><span class="p">:</span> <span class="s1">'reference'</span><span class="p">,</span><span class="s1">'reference_y'</span><span class="p">:</span> <span class="s1">'text_key'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -11773,7 +11837,7 @@ Topic 99 : ['examined', 'understanding', 'stage', 'enemies', 'willing', 'serve',
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_txt_features_ETM</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'./analysis/df_txt_features_ETM.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1">#df_txt_features_ETM=pd.read_csv('./analysis/df_txt_features_ETM.csv')</span>
+<span class="n">df_txt_features_ETM</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./analysis/df_txt_features_ETM.csv'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
