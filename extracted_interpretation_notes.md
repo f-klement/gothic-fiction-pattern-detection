@@ -604,17 +604,33 @@ The other outgroup cluster is composed of 65 - "Atmospheric Battle Descriptions 
 
 ## Authors influence based on averaged topic distribution:
 
-The network shows a few clear centers of similariy. The biggest collection of influential nodes is a grouping comprised of Mary Shelly, William Godwin, Frances Burney and Charles Brockden Brown, with a number of smaller authors surrunding them. 
+The network shows a few clear centers of similariy and influence:
+1) The biggest collection of influential nodes is a grouping comprised of Mary Shelly, William Godwin, Frances Burney and Charles Brockden Brown, with a number of smaller authors surrunding them. 
 
-Another center is composed of Percy Shelly, Horace Walpole, Elenor Sleath and Thomas Leland.
+2) Another center is composed of Percy Shelly, Horace Walpole, Elenor Sleath and Thomas Leland.
 
-A smaller and less densely connected grouping covers Sheridian le Fanu, Charlotte Bronte and Elizabeth Gaskell.
+3) A smaller and less densely connected grouping covers Sheridian le Fanu, Charlotte Bronte and Elizabeth Gaskell.
+
+4) Additional points of interest are, how 1 and 2 are connected thorugh Regina Maria Roche. 2 and 3 are connected through Eaton Stannard Barret and 1 and 3 through Hogg James and Beckford William.
+5) Furthermore noteworthy is the fact that Hawthrone, who was arguably overrepresented any many other graphs is entirely absent here. By uniqueness of style, idiosyncracy or the result of the aggregation of such a broad range of topics. The  same goes for Stoker.
 
 
+## Network of texts based on averaged topic distribution:
 
-## Network of texts based on avereaged topic distribution:
+Taking the lenghth of texts and the amount of contributions out of the picture, but potentially also lessening the weight an individual unique pieces a contribution might carry, the averaged distribution shows a slightly differet picture.
 
-xxx
+This network has a number of similarities with the previous one:
+
+1) It moves Godwin's Caleb Williams into a center piece position connecting the first and the second group, while the works of Mary Shelly drift into the centers of all the major groupings. Pieces from Le Fanu, Gaskell, Shelly and Lewis intermix with Roche's The Children of the Abby carrying particulary much weight and Brown's Edgard Huntly and Arthus Mervyn and DeQuincey's Klosterheim in a mix.  
+
+2) Firmly Grouping Walpole, Percy Shelly, Elenore Sleath and Thomas Leland in a shared circle of influence, and it shift Mary Shelly's Frankenstein also into this cluster, with Eaton Barrett's The Heroine as a new outer center piece carring a lot of traction.
+
+3) The third smaller ub has largely fractured and has gotten reabsorbed, leaving Francis Burney's Carmilla as a central piece with some others, like Richard Burtons Vikram, Mary Shelly's Lodore, Brown's Wieland aroudn him and circulating around ti with fewer so in its orbit.
+
+4) At the outskirts of this orbit Machen and Blackwood are united again, as opposed to the other display, with Godwin's St. Leon and Carver's Horros of Oakendale connecting them with the ircles of the third branch. Once again, Hoggs connects groups 2 and 3, but Beckford is absent and in his stead Lytton and Polidori have shifted.
+
+5) Hawthornes works appear on the fringes on the network disconnected from most other pieces, mainly self-referential. Stoker and Byron are largely absent as well.
+   
 
 
 # Network Graph on Textual Influence Through out time:
