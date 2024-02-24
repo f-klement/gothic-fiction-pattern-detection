@@ -7636,7 +7636,7 @@ As thresholds, they have proposed removing the top 5 to 10 percent of the most f
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Transforming the corpus in the necessary input format required for the OCTIS topic modeling implementations.</p>
+<p>Transforming the corpus in the necessary input format required for the OCTIS imput data pipeline</p>
 </div>
 </div>
 </div>
@@ -7690,7 +7690,7 @@ As thresholds, they have proposed removing the top 5 to 10 percent of the most f
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The variant of the dataset for model training and the variant for final later use only differ by the former carrying a split into training, test and validation set.</p>
+<p>The variant of the dataset for model training and the variant for final analysis and interpretation differ only by the former carrying a split into a training, test and validation set.</p>
 </div>
 </div>
 </div>
@@ -7780,7 +7780,7 @@ As thresholds, they have proposed removing the top 5 to 10 percent of the most f
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>OCTIS - intrinsic optimization pipeline is skopt. All three models are optimized based on Word Embedding Coherence Centroid, a normalized metric which draws from an embedding space drawn from the original corpus to allow for a more domain-specific and closer fit to the texts in use. In addition, as a secondary metric, Diversity Centroid was chosen to influence the choice of model parameters towards a broader coverage of content inherent in the texts. The optimization method chosen by OCTIS by default is Bayesian, which is a resource-intensive stochastic approach well suited for otherwise difficult-to-optimize or evaluate models, which are treated as a black-box input.</p>
+<p>OCTIS - intrinsic optimization pipeline is skopt. All three models are optimized based on Word Embedding Coherence Centroid, a normalized metric which draws from an embedding space drawn from the original corpus to allow for a more domain-specific evaluation and closer fit to the texts in use. In addition, as a secondary metric, Diversity Centroid was chosen to influence the choice of model parameters towards a broader coverage of content inherent in the texts. The optimization method chosen by OCTIS by default is Bayesian, which is a resource-intensive stochastic approach well suited for otherwise difficult-to-optimize or evaluate models, which are treated as a black-box input.</p>
 </div>
 </div>
 </div>
@@ -7987,7 +7987,7 @@ As thresholds, they have proposed removing the top 5 to 10 percent of the most f
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>For the choice of the best hyperparameters, the coherence values are primarily taken into account, but Diversity is used as a secondary criterion. Of the ten best coherence scores the parameter set with the highest diversity score is selected.</p>
+<p>For the choice of the best hyperparameters, the coherence values are primarily taken into account, but diversity is used as a secondary criterion. Of the ten best coherence scores the parameter set with the highest diversity score is selected.</p>
 </div>
 </div>
 </div>
@@ -8635,7 +8635,7 @@ Topic 73 : ['the', 'mistake', 'dressing', 'understanding', 'housekeeper', 'angel
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The rows of the original document are sampled in random order when passed into octis as a dataset in case the default split=True parameter is set. A choice is necessary to allow for hold-out data in the parameter optimization. Thus the document order is scrambled. For the sake of retraining a model with optimal parameters on the full corpus, when the parameter is set to False, the order of documents is maintained and can be easily rejoined. For safety's sake, we will join according to the order of the indices nonetheless.</p>
+<p>The rows of the original document are sampled in random order when passed into octis as a dataset in case the default split=True parameter is set. A necessity to allow for hold-out data in the parameter optimization. Thus the document order is scrambled. For the sake of retraining a model with optimal parameters on the full corpus, when the parameter is set to False, the order of documents is maintained and can be easily rejoined. For safety's sake, we will join according to the order of the indices nonetheless.</p>
 </div>
 </div>
 </div>
