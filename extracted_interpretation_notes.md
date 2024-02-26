@@ -261,7 +261,7 @@ This could reflect societal concerns about the individual's place in a rapidly c
 
 Topic 4: Myths, Trials, and Death - Persecution of Crime, Telling Tales, magic, and ants.
 
-Shows a consistent presence across the timeline with notable peaks in the late 1770s and mid-1850s. Indicating peaks in the preoccupation with justice, mortality, and the supernatural.
+Shows a consistent presence across the timeline with notable peaks in the late 1770s and mid-1850s.
 
 Topic 5: Excitability, Madness, and Deceit - Aggression, conflict, and glee.
 
@@ -270,7 +270,7 @@ reflecting the tumultuous nature of the times.
 
 Topic 36: Individualism vs. Conformity - Rebellion and Social Norms.
 
-There's an interesting surge in the early 1790s, a sentiment that is concurrently explored by the Romantic thinkers, some of them overlapping with the authors of Gothic novels.
+There's an interesting surge in the early 1790s, a sentiment that is concurrently explored by the Romantic thinkers, some of them overlapping with the authors of Gothic novels. Several topics explore their themes further.
 
 Topic 51 & 52: Disillusionment with Society - Resistance, Protest, Retreat. Adventure, Splendor, Power and Challenges, History.
 
@@ -282,7 +282,7 @@ Shows a peak around 1810, concurrent with the Napoleonic Wars, while the reconte
 
 Topic 70: Myth and Splendor - Wealth and Castles.
 
-Peaks sharply in the late 1780s and has another smaller peak in the 1830s, aligning with the genre's fascination with the aristocracy and ancient edifices.
+Peaks sharply in the late 1780s and has another smaller peak in the 1830s, aligning with the genre's fascination with the aristocracy and ancient sights.
 
 
 
@@ -323,7 +323,7 @@ for Oscar Wilde, 34: Secrets and Suspense - \n Mystery, Devils and Assassination
 Changes, Death and Construction. and 69 for Coleridge, 36: Individualism vs. Conformity - \n Rebellion and Social Norms and 52: Adventure, Spendor, Power and Challenges, History for Aikin, 21 for Gilman
 and a general heavy reliance on 5: Excitability, Madness, and Deceit, With Walpole carrying the highest values for 5, and Shelly's second ex aequo with Lee Sophia and Reeve Clara.
 
-Generally speaking Topic 5: "Excitability, Madness and Deceit" is a prevalent theme across many authors, reinforcing the idea that Gothic literature frequently explores psychological instability and darker aspects of human behavior. Topic 51: "Disillusionment with Society" appears significantly for several authors as well, suggesting themes of resistance against societal norms and the exploration of characters who are at odds with their social context.
+Generally speaking Topic 5: "Excitability, Madness and Deceit" is a prevalent theme across many authors, reinforcing the idea that Gothic literature frequently explores psychological instability and darker aspects of human behavior. Topic 51: "Disillusionment with Society" appears significant for several authors as well, suggesting themes of resistance against societal norms and the exploration of characters who are at odds with their social context.
 
 Topic 70: "Myth and splendor - Wealth and Castles" is prominent for authors like Charles Maturin, Arthur Machen, and Walpole, and indicates a focus on grandeur, historical settings, and perhaps a reflection on the role of the past in shaping individual identities and social structures. Oscar Wilde's most prevalent topics 52: Adventure, Spendor, Power and Challenges, History and 39: Quest for Meaning - Self-Discovery, Transformation mirror these tendencies of a nostalgic fascination with the past and a drive for self-actualization.
 
@@ -387,7 +387,6 @@ Stoker, most famous for "Dracula," prominently features themes of vampirism, whi
 
 Effect: Stoker’s work creates a contrast between the allure of the aristocratic vampire and the horror of its predatory nature. This theme often explores the fear of the foreign and the taboo, reflecting societal concerns about purity, invasion, and the breakdown of rigid Victorian social structures.
 
-Each of these authors has contributed to the richness of Gothic fiction by exploring distinct themes that resonate with the core of human experience—fear, identity, morality, and the social order.
 
 Metaphysical and Philosophical Inquiry Group:
 Authors in this group explore themes of existence, the supernatural, and the search for meaning. Topics like Topic 39: "Quest for Meaning - Self-Discovery, Transformation" and Topic 66: "Hidden Knowledge, Learning and Secrets" are significant.
@@ -445,7 +444,7 @@ Secrets and Suspense - Mystery, Devils and Assassinations (Topic 34) Influence: 
 There's a notable peak around the 1790s, potentially reflecting the influence of the French Revolution and the rise of Romanticism, with its emphasis on emotion and individual experience, as seen in the works of authors like Radcliffe and Lewis.
 
 Psychology, Trauma, and Secrets (Topic 38) Influence: 10, 17, 15
-A steady increase into the 19th century reflects the growing interest in human psychology and the exploration of trauma, possibly influenced by the psychoanalytical theories emerging at the time and explored in Gothic fiction by authors like Poe.
+A steady increase into the 19th century reflects the growing interest in human psychology and the exploration of trauma, possibly influenced by the psychological theories emerging at the time and explored in Gothic fiction by authors like Poe.
 
 Status and Individuality - Striving, Misery and Plentifullness - Excess (Topic 3) Influence: 6, 5, 70
 The peak in the late 1700s may be associated with the social upheavals of the time, such as the American and French revolutions, which challenged existing hierarchies and social structures, themes explored in the literature of authors like Hawthorne. (Related Topics: Chambers)
@@ -461,7 +460,7 @@ The graph shows a steady presence with a few peaks, particularly in the mid-1800
 It is difficult to pass any judgment on these topics, especially not any readily gender-coded ones, given that they seem to mirror one another in the general content.
 Both groupings share a topic related to some form of entertainment, some associations with traveling, some mythical and fantastical associations, and some associations with distress.
 Both have topics with associations of romance and emotions. Only a mild difference might be put forth, that the strongly male topics covering emotions have a stronger association with
-Trials, Honor, and courtship offer a more formal and restrained type of interaction. "Companionship in Times of Trial and Distress." encompasses terms like brood, firmness, accommodate,
+Trials, Honor, and courtship offer a more formal and restrained type of interaction. "Companionship in Times of Trial and Distress." encompasses terms like "brood, firmness, accommodate,
 acceptance, and conducted equilibrium." those carry more noise at that. Meanwhile the topic "Emotional Dynamics and Interactions" with words like "breathless, hug, vociferating, moan, ruffled, brazen"
 has a more immediate, unmediated, and passionate note to them.
 
@@ -482,7 +481,7 @@ we had previously uncovered, with an overwhelming influence being Poe, Chambers,
 The distinctly British voices carry a much stronger weight than any of the other nationalities, with two of them arising from the list of distinctly female topics:
 "22 - Emotional Dynamics and Interactions" and "38 - Psychology, Trauma, and Secrets", while 38 has a very dense rate of Mary Shelly and Ann Radcliffe texts,
 22 is a very diverse topic in terms of authors contributing to it, but the topic carries a strong heterogeneity concerning nationality.
-As mentioned above, it carries with it a lot of strongly passionate vocabularies with the highest contribution by Lee Vernon's "Hauntings" or Godwin's "The Adventures of Caleb Williams".
+As mentioned above, it carries with it a lot of strongly passionate vocabularies like "breathless, hug, vociferating, moan, ruffled, brazen" with the highest contribution by Lee Vernon's "Hauntings" or Godwin's "The Adventures of Caleb Williams".
 
 
 
@@ -499,7 +498,7 @@ But given that only three entries have a higher value than 0,1 the connections a
 ### PCA and K-Means:
 The grouping into clusters shows an even distribution of topics into two groups with a smaller third party that has a much narrower distribution that focuses on a few specific topics, but their narrower focus is concentrated on some that carry exceptional weight on the corpus as a whole: 70 "Myth and splendor - Wealth and Castles" and 12 "Home Invasion - Domestic Mystery and Conflict", with 12 being particularly focused in its influence on a select few influential authors that stand apart:
 
-The importance of 70 might on the other hand reflect its weight on some of the major voices within the corpus, such as Hawthorne and Mary Corell.
+The importance of 70 might on the other hand reflect its weight on some of the major voices within the corpus, such as Hawthorne and Marie Corelli.
 
 Further important influences to investigate are topics 49 - "Departure and Music", 50 - "Myth, Nature, Wonder and Despair" and to a lesser degree 51 - "Disillusionment with Society - \n Resistance, Protest, Retreat".
 
@@ -583,4 +582,4 @@ This network has many similarities with the previous one:
 
 # Network Graph on Textual Influence Through out time:
 
-xxx
+
