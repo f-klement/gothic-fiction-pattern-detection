@@ -580,5 +580,14 @@ This grouping puts more emphasis on Mary Shelly and Willaim Godwin as a thematic
 # Network Graph on Textual Influence Through out time:
 
 
+This grouping, which takes chronology into consideration brings a few previously unheard of texts to the forefront, but on the big picture strengthens the 
+
+
+
+
+
+## Contextual Comparison:
+
+While the comparisons on the level of influential topics and authorial contribution to a given topic put more emphasis on the uniqueness of certain voices towards a specific theme and association put a lot of focus on authors with a succinctly unique voice that carried a wide reach, such as Poe, Le Fanu, Stoker and Hawthorne, The network analysis showed that while their contributions were influential and formative for a certain aestetic, they did not invite the same kind of imitation and formation of a movement as such as the likes of Walpole, Leiland, Brown, Sleathe. The voice of Walpole fell unheard in the topical part of the analysis, while his influence carried exceedingly far on the level of textual similarity at the start of a movement. Influencial and formative, yet not distinct in the same manner. The influencail, exceptional voices which combined both analysis are Godwin, Mary Shelly and to a lesser degree Ann Radcliffe.
 
 
