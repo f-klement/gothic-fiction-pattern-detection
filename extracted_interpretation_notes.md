@@ -548,15 +548,15 @@ The other outgroup cluster is composed of 65 - "Atmospheric Battle Descriptions 
 
 The network shows a few clear centers of similarity and influence:
 
-1) The biggest collection of influential nodes is a grouping composed of Mary Shelly, William Godwin, Frances Burney, and Charles Brockden Brown, with several smaller authors surrounding them.
+1) The biggest collection of influential nodes is a grouping composed of Mary Shelly, William Godwin, Frances Burney, and Charles Brockden Brown, with several smaller authors surrounding them. Their influence and central position is reflected in their topic distribution as well, Brown, Godwin and Shelly represent all of the most central and influential topics within the corpus, making them pivotal in shaping the gothic fiction genre. Their central location and the number of connections imply that they could have had a considerable influence on their contemporaries and possibly on those who followed.
 
-2) Another center is composed of Percy Shelly, Horace Walpole, Elenor Sleath, and Thomas Leland.
+2) Another center is composed of Percy Shelly, Horace Walpole, Elenor Sleath, and Thomas Leland. Making for a very early group of authors, all active before 1800, carrying a pioneering position.
 
-3) A smaller and less densely connected grouping covers Sheridan le Fanu, Charlotte Bronte, and Elizabeth Gaskell.
+3) A smaller and less densely connected grouping covers Sheridan le Fanu, the Bronte sisters, Elizabeth Gaskell and Corelli Marie, whose texts share topics with an emphasis on psychological exploration and internal struggles, potentially influenced by Romanticism.
 
 4) Additional points of interest are, how 1 and 2 are connected through Regina Maria Roche. 2 and 3 are connected through Eaton Stannard Barret, and 1 and 3 through Hogg James and Beckford William.
 
-5) Furthermore noteworthy is the fact that Hawthorne, who was arguably overrepresented any many other graphs is absent here. By uniqueness of style, idiosyncrasy, or the result of the aggregation of such a broad range of topics. The same goes for Stoker.
+5) Furthermore noteworthy is the fact that Hawthorne, who was arguably overrepresented any many other graphs is absent here. By uniqueness of style, idiosyncrasy, or the result of the aggregation of such a broad range of topics. The same goes for Stoker and Ann Radcliffe.
 
 
 ## Network of texts based on averaged topic distribution:
@@ -567,15 +567,15 @@ This network has many similarities with the previous one:
 
 1) It moves Godwin's Caleb Williams into a centerpiece position connecting the first and the second group, while the works of Mary Shelly drift into the centers of all the major groupings. Pieces from Le Fanu, Gaskell, Shelly, and Lewis intermix with Roche's The Children of the Abby carrying particularly much weight and Brown's Edgard Huntly and Arthus Mervyn and DeQuincey's Klosterheim in a mix. 
 
-2) Firmly grouping Walpole, Percy Shelly, Elenore Sleath, and Thomas Leland in a shared circle of influence, and it shifts Mary Shelly's Frankenstein also into this cluster, with Eaton Barrett's The Heroine as a new outer centerpiece carrying a lot of traction.
+2) Firmly grouping Walpole, Percy Shelly, Elenore Sleath, and Thomas Leland in a shared circle of influence, and it shifts Mary Shelly's Frankenstein also into this cluster, with Eaton Barrett's The Heroine as a new outer centerpiece carrying a lot of traction. Here finally the figure of Ann Radcliffe emerges, positioning here centrally within the early pioneers of the genre.
 
 3) The third smaller hub has largely fractured and has gotten reabsorbed, leaving Francis Burney's Carmilla as a centerpiece with some others, like Richard Burton's Vikram, Mary Shelly's Lodore, Brown's Wieland around him, but there are fewer circulating in its orbit.
 
-4) At the outskirts of this orbit Machen and Blackwood have united again, as opposed to the other display, with Godwin's St. Leon and Carver's Horror of Oakendale connecting them with the circles of the third branch. Once again, Hoggs connects groups 2 and 3, but Beckford is absent and in his stead, Lytton and Polidori have shifted.
+4) At the outskirts of this orbit Machen and Blackwood have united again, as opposed to the other display, with Godwin's St. Leon and Carver's Horror of Oakendale connecting them with the circles of the third branch. Once again, Hoggs connects groups 2 and 3, but Beckford is absent and in his stead, Lytton and Polidori have shifted. This highlights the crystalization of a cluster of texts surrounding the intrusion of outsiders and forbidden knowledge.
 
-5) Hawthorne's works appear on the fringes of the network disconnected from most other pieces, mainly self-referential. Stoker and Byron are largely absent as well.
-   
+5) Hawthorne's works appear on the fringes of the network disconnected from most other pieces, mainly self-referential. Stoker and Byron are largely absent as well, influencing most of all each other.
 
+This grouping puts more emphasis on Mary Shelly and Willaim Godwin as a thematic bridge between differnt groupings of Gothic fiction authors highlighting their thematic sway over the genre formation as a whole.
 
 # Network Graph on Textual Influence Through out time:
 
