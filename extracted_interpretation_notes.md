@@ -201,8 +201,6 @@ Hawthorne -> Home Invasion, Witchcraft, Status & Individuality, Deceit & Institu
 
 Rymer, James -> Rituals (13)
 
-Coderidge -> COnflict, Emotions (14)
-
 Machen -> Undead (17)
 
 La Spina Grey -> Festivities, Intimacy, and Disgust (19)
@@ -215,10 +213,9 @@ Smith Charlotte -> (38)
 
 Shelley Mary -> Psychological Trauma, Madness & Aggression, Trickery and Science, Science & Animalistic Violence (15,10, 38, 5)
 
-Coleridge -> Secrets and Demons (34)
+Coleridge -> Conflict and Emotions, Secrets and Demons (14, 34)
 
 Brown Charles Brockden -> Psychological Trauma (38)
-
 
 
 
@@ -460,7 +457,7 @@ The graph shows a steady presence with a few peaks, particularly in the mid-1800
 It is difficult to pass any judgment on these topics, especially not any readily gender-coded ones, given that they seem to mirror one another in the general content.
 Both groupings share a topic related to some form of entertainment, some associations with traveling, some mythical and fantastical associations, and some associations with distress.
 Both have topics with associations of romance and emotions. Only a mild difference might be put forth, that the strongly male topics covering emotions have a stronger association with
-Trials, Honor, and courtship offer a more formal and restrained type of interaction. "Companionship in Times of Trial and Distress." encompasses terms like "brood, firmness, accommodate,
+trials, honor, and courtship offer a more formal and restrained type of interaction. "Companionship in Times of Trial and Distress." encompasses terms like "brood, firmness, accommodate,
 acceptance, and conducted equilibrium." those carry more noise at that. Meanwhile the topic "Emotional Dynamics and Interactions" with words like "breathless, hug, vociferating, moan, ruffled, brazen"
 has a more immediate, unmediated, and passionate note to them.
 
@@ -488,7 +485,7 @@ As mentioned above, it carries with it a lot of strongly passionate vocabularies
 ## Sentiment Distribution:
 
 The connection between sentiment and different topics is not particularly strong, but in those cases where it is present the connection seems very natural and intuitive,
-with texts that are strongly towards topics that mark carnage, crime, death and tense judgments being leaning towards a more negative sentiment, while those focusing on self-expression, ambition, intimacy seduction leaning towards a positive sentiment.
+with texts that are strongly associated with topics that mark carnage, crime, death and tense judgments being leaning towards a more negative sentiment, while those focusing on self-expression, ambition, intimacy seduction leaning towards a positive sentiment.
 
 But given that only three entries have a higher value than 0,1 the connections are not overly strong to begin with.
 
@@ -504,11 +501,11 @@ Further important influences to investigate are topics 49 - "Departure and Music
 
 A closer inspection is warranted for these sparse clusters with only a few entries for 35 - "Mental Illness, Law and Outcasts - Fear, Suspicion and Struggles", 36 - "Individualism vs. Conformity - Rebellion and Social Norms", 52 - "Adventure, Spendor, Power and Challenges, History" and a lot of weight onto 70, "Myth and splendor - Wealth and Castles".
 
-A subsection of the text seems to be dealing heavily with topics focused on societal retreat, solitude, personal autonomy, and rebellion for the sake of one's convictions. But there seems to be a split within the interpretation of those topics grouping them into a section, one about adventure, exploration, marveling at discoveries, and forgotten splendor. Meanwhile, the other grouping of texts is equally disillusioned and in opposition to or active departure from society, but does not enjoy what it finds and is haunted by foreign forces that bring conflict and grief.
+A subsection of the text seems to be dealing heavily with topics focused on societal retreat, solitude, personal autonomy, and rebellion for the sake of one's convictions. But there seems to be a split within the interpretation of those topics grouping them into one category focused on adventure, exploration, marveling at discoveries, and forgotten splendor. Meanwhile, the other grouping of texts is equally disillusioned and in opposition to or active departure from society, but does not enjoy what it finds and is haunted by foreign forces that bring conflict and grief.
 
 Jacobs's "Monkey's Paw" and Keats's "La Belle Dame sans Merci," both tell a tale of a tempting encounter with an alluring other, a magical artifact and a fairy, and detail the anguish that their wants brought them.
 
-Similarly, Machens the House of Souls is a collection of short texts, the most prominent of them "The Inmost Light" "The Great God Pan"  and "The White People" which deal with humans that cross the veil of what was for their kind to perceive and experience and the disturbing or corrupting experiences that ensued.
+Similarly, Machen's "The House of Souls" is a collection of short texts, the most prominent of them "The Inmost Light" "The Great God Pan"  and "The White People" which deal with humans that cross the veil of what was for their kind to perceive and experience and the disturbing or corrupting experiences that ensued.
 
 Meanwhile Hawthorne's "The Minister's Black Veil” tells the story of a man of faith turning away from life in his community and his old life, only to rise in esteem, influence, and power through his renouncement of personal connection. "Sunday at Home" is an ambiguous text about worship and community and a mixture of longing and contempt for a church congregation.
 
@@ -570,7 +567,7 @@ This network has many similarities with the previous one:
 
 1) It moves Godwin's Caleb Williams into a centerpiece position connecting the first and the second group, while the works of Mary Shelly drift into the centers of all the major groupings. Pieces from Le Fanu, Gaskell, Shelly, and Lewis intermix with Roche's The Children of the Abby carrying particularly much weight and Brown's Edgard Huntly and Arthus Mervyn and DeQuincey's Klosterheim in a mix. 
 
-2) Firmly Grouping Walpole, Percy Shelly, Elenore Sleath, and Thomas Leland in a shared circle of influence, and it shifts Mary Shelly's Frankenstein also into this cluster, with Eaton Barrett's The Heroine as a new outer centerpiece carrying a lot of traction.
+2) Firmly grouping Walpole, Percy Shelly, Elenore Sleath, and Thomas Leland in a shared circle of influence, and it shifts Mary Shelly's Frankenstein also into this cluster, with Eaton Barrett's The Heroine as a new outer centerpiece carrying a lot of traction.
 
 3) The third smaller hub has largely fractured and has gotten reabsorbed, leaving Francis Burney's Carmilla as a centerpiece with some others, like Richard Burton's Vikram, Mary Shelly's Lodore, Brown's Wieland around him, but there are fewer circulating in its orbit.
 
@@ -581,5 +578,7 @@ This network has many similarities with the previous one:
 
 
 # Network Graph on Textual Influence Through out time:
+
+
 
 
