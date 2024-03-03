@@ -595,6 +595,9 @@ This grouping, which takes chronology into consideration brings a few previously
 13 + 31: William Godwin's St. Leon and Ann Radcliffe's A Sicilian Romance: The former deals with fallen nobility, madness, faustian bargains and a retreat from society in despair. The latter deals with fallen nobility, shamefull secrets and psychological terror in a fallen castle.
 27 + 33 + 47 + 48: Arthur Machen's The great God Pan, AM Bernard's The Abbots Ghost, Mary Shelley's Lodore and William Beckford's Caliph Vathek: The Great God Pan deals with a metaphysical and moral transgression meddling with higher forces that create a corrupted, daemonic femme fatale. The Abbots Ghost is a tale of intrigue, ghost, forbidden love and miracles. Lodore covers power, responsibilty and the role of women within a family structure. Caliph Vathek is an orientalist tale dealing in ambition, greed, pacts with the devil and the consequences of unbridled desire.
 
+More central pieces:
+
+34: Eaton Barrett's The Heroine: A popular bestseller that combined the style of Radcliffes othic romances with a quixotic adventure and exploration ark of a female protagonist, with a paternal call or domestic submissivness at the end.  
 
 ## Contextual Comparison:
 
