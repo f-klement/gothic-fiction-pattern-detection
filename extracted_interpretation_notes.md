@@ -597,7 +597,7 @@ This grouping, which takes chronology into consideration brings a few previously
 
 More central pieces:
 
-34: Eaton Barrett's The Heroine: A popular bestseller that combined the style of Radcliffes othic romances with a quixotic adventure and exploration ark of a female protagonist, with a paternal call or domestic submissivness at the end.  
+34: Eaton Barrett's The Heroine: A popular bestseller that combined the style of Radcliffes gothic romances with an over the top comedic and quixotic adventure and exploration ark of a female protagonist, with a paternal call or domestic submissivness at the end.  
 
 ## Contextual Comparison:
 
