@@ -597,7 +597,24 @@ This grouping, which takes chronology into consideration brings a few previously
 
 More central pieces:
 
-34: Eaton Barrett's The Heroine: A popular bestseller that combined the style of Radcliffes gothic romances with an over the top comedic and quixotic adventure and exploration ark of a female protagonist, with a paternal call or domestic submissivness at the end.  
+I - IV quadrant:
+34: Eaton Barrett's The Heroine: A popular bestseller that combined the style of Radcliffes gothic romances with an over the top comedic and quixotic adventure and exploration ark of a female protagonist, with a paternal call or domestic submissivness at the end. This text had already  appeared as highly influental in the visualizations above and there are numerous quotes on its reach and influence.
+61 + 12: William Ainsworth's Rookwood and Tobias Smollet's The Adventures Of Ferdinand Count Fathom: The former is a gothic romance detailing royal inheritence disputes after an ill-fated death, while the latter chronicles the travels of a villanous, deceitful dandy with a supernatural undercurrent.
+9 + 29: Charlotte Smith's Emmeline, Or The Orphan Of The Castle and Montague James' Ghost Stories of an Antiquary: The former a cinderella story of female emancipation, gaining property and standing, where ownership over masonry and bodily authonomy blend. gothic in style. The latter deals with the veiled invasion of outside forces in the rural retreal of a scholar. (reminiscent of Sheridia or Machen)
+78 + 24 + 6: Charlotte Smith's The Emmigrants, Eliza Parsons' The Castle Of Wolfenbach and Charles Brockden Browns Wieland: Emmigrants deals with the trauma and alienation French emmigrants fter the revolution carry with them. The castle of Wolfenbach is an important early piece predating many Radcliff texts, lauded by Jane Austin as essential. (early outlier) A gothic royal romance with abundant frenzied expressions of emotion, fainting, weeping and struggles of identity formation. Wieland deals with madness, religious fanatism, psychologicla turmoil and supernatural gruesom violence (early american transposition of the genre after Godwin).
+
+II quadrant:
+10 + 8 :
+32 + 76 :
+22 :
+39 + 44 + 65 + 38 + 54 :
+
+dead center:
+30 + 1 + 3 :
+2 + 28 + 59 + 20
+
+
+
 
 ## Contextual Comparison:
 
