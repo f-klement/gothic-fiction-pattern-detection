@@ -548,7 +548,7 @@ The other outgroup cluster is composed of 65 - "Atmospheric Battle Descriptions 
 
 The network shows a few clear centers of similarity and influence:
 
-1) The biggest collection of influential nodes is a grouping composed of Mary Shelly, William Godwin, Frances Burney, and Charles Brockden Brown, with several smaller authors surrounding them. Their influence and central position is reflected in their topic distribution as well, Brown, Godwin and Shelly represent all of the most central and influential topics within the corpus, making them pivotal in shaping the gothic fiction genre. Their central location and the number of connections imply that they could have had a considerable influence on their contemporaries and possibly on those who followed.
+1) The biggest collection of influential nodes is a grouping composed of Mary Shelly, William Godwin, Frances Burney, and Charles Brockden Brown, with several smaller authors surrounding them. Their influence and central position is reflected in their topic distribution as well, Brown, Godwin and Shelly represent all the most central and influential topics within the corpus, making them pivotal in shaping the gothic fiction genre. Their central location and the number of connections imply that they could have had a considerable influence on their contemporaries and possibly on those who followed.
 
 2) Another center is composed of Percy Shelly, Horace Walpole, Elenor Sleath, and Thomas Leland. Making for a very early group of authors, all active before 1800, carrying a pioneering position.
 
@@ -556,7 +556,9 @@ The network shows a few clear centers of similarity and influence:
 
 4) Additional points of interest are, how 1 and 2 are connected through Regina Maria Roche. 2 and 3 are connected through Eaton Stannard Barret, and 1 and 3 through Hogg James and Beckford William.
 
-5) Furthermore noteworthy is the fact that Hawthorne, who was arguably overrepresented any many other graphs is absent here. By uniqueness of style, idiosyncrasy, or the result of the aggregation of such a broad range of topics. The same goes for Stoker and Ann Radcliffe.
+5) Furthermore noteworthy is the fact that Hawthorne, who was arguably overrepresented in many other graphs, is absent here. By uniqueness of style, idiosyncrasy, or the result of the aggregation of such a broad range of topics. The same goes for Stoker and Ann Radcliffe.
+
+
 
 
 ## Network of texts based on averaged topic distribution:
@@ -565,44 +567,58 @@ Taking the length of texts and the number of contributions out of the picture, b
 
 This network has many similarities with the previous one:
 
-1) It moves Godwin's Caleb Williams into a centerpiece position connecting the first and the second group, while the works of Mary Shelly drift into the centers of all the major groupings. Pieces from Le Fanu, Gaskell, Shelly, and Lewis intermix with Roche's The Children of the Abby carrying particularly much weight and Brown's Edgard Huntly and Arthus Mervyn and DeQuincey's Klosterheim in a mix. 
+1) It moves Godwin's Caleb Williams into a centerpiece position connecting the first and the second group, while the works of Mary Shelly drift into the centers of all the major groupings. Pieces from Le Fanu, Gaskell, Shelly, and Lewis intermix with Roche's The Children of the Abby carrying particularly much weight and Brown's Edgard Huntly and Arthus Mervyn and DeQuincey's Klosterheim in a mix.
 
 2) Firmly grouping Walpole, Percy Shelly, Elenore Sleath, and Thomas Leland in a shared circle of influence, and it shifts Mary Shelly's Frankenstein also into this cluster, with Eaton Barrett's The Heroine as a new outer centerpiece carrying a lot of traction. Here finally the figure of Ann Radcliffe emerges, positioning here centrally within the early pioneers of the genre.
 
 3) The third smaller hub has largely fractured and has gotten reabsorbed, leaving Francis Burney's Carmilla as a centerpiece with some others, like Richard Burton's Vikram, Mary Shelly's Lodore, Brown's Wieland around him, but there are fewer circulating in its orbit.
 
-4) At the outskirts of this orbit Machen and Blackwood have united again, as opposed to the other display, with Godwin's St. Leon and Carver's Horror of Oakendale connecting them with the circles of the third branch. Once again, Hoggs connects groups 2 and 3, but Beckford is absent and in his stead, Lytton and Polidori have shifted. This highlights the crystalization of a cluster of texts surrounding the intrusion of outsiders and forbidden knowledge.
+4) At the outskirts of this orbit Machen and Blackwood have united again, as opposed to the other display, with Godwin's St. Leon and Carver's Horror of Oakendale connecting them with the circles of the third branch. Once again, Hoggs connects groups 2 and 3, but Beckford is absent and in his stead, Lytton and Polidori have shifted. This highlights the crystallization of a cluster of texts surrounding the intrusion of outsiders and forbidden knowledge.
 
 5) Hawthorne's works appear on the fringes of the network disconnected from most other pieces, mainly self-referential. Stoker and Byron are largely absent as well, influencing most of all each other.
 
-This grouping puts more emphasis on Mary Shelly and Willaim Godwin as a thematic bridge between differnt groupings of Gothic fiction authors highlighting their thematic sway over the genre formation as a whole.
+This grouping puts more emphasis on Mary Shelly and Willaim Godwin as a thematic bridge between different groupings of Gothic fiction authors, highlighting their thematic sway over the genre formation as a whole.
+
+
+
 
 # Network Graph on Textual Influence Through out time:
 
 
-This grouping, which takes chronology into consideration brings a few previously unheard of texts to the forefront, but the larger picture strengthens the impression informed by previous network analysis. The fact that the labeling has been done in order of degree centrality alows for a more precise ranking that any of the previous attempts and takes theh element of personal expectation, preferential invetigation and subjective gaze out of the picture.
+This grouping, which takes chronology into consideration, brings a few previously unheard of texts to the forefront, but the larger picture strengthens the impression informed by previous network analysis. The fact that the labeling has been done in order of degree centrality allows for a more precise ranking than any of the previous attempts and takes the element of personal expectation, preferential investigation and subjective gaze out of the picture.
 
-1) The shape of the network has drastically changed in comparison to the previous iterations prividing one larger, losely integrated cluster consisting of a number of sub groupings, asa well as a scant few highly influentail outliers whihc seemingly arrose without reference to prior works of the genre, which nevertheless provided a rich source of inspiration for subsequent texts.
+The shape of the network has drastically changed in comparison to the previous iterations providing one larger, loosely integrated cluster consisting of a number of sub groupings, as well as a scant few highly influential outliers which seemingly arose without reference to prior works of the genre, which nevertheless provided a rich source of inspiration for subsequent texts.
+Starting with some of the most prominent outliers:
 
-2) Starting with some of the most prominent outliers: 
 21: Percy Shelley's Zastrozzi (1810):  A piece lauded for its depiction of amoral self-indulgence and individualism within a backdrop of a gothic setting.
-23: Edward Bulwer-Lytton's Falkland (1827): An amoral piece of self-indulgence centered around the courting of young woman by a protagonist tormented by premonitions of her death - inspired by the Sturm and Drang Goethe piece Sorrows of young Werther.
-19 + 53: Wilkie Collin's The Womand in White (1860) and Marcus Clark's For the Term of his Natural Life (1874): The former is Collins most highly esteemed piece of Sensationalist mystery fiction about the dispossesion of a disenfranchised noble woman accused of lunacy. The latter deals with the cruelty and systematic violence inflicted on a wrongfully convicted.
-40 + 58 + 46: Edgar Allen Poe's The Fall of the House of Usher (1839), Mary Shelly's The Furtunes Of Perkin Warbeck, Walter Scott's The Black Dwarf: The Fall of the House of Usher details the story of an isolated aristocratic family, madness, as well as feelings of fear, doom and guilt. The Fortunes of Perkin Warbeck is a piece of political intrigue set in the War of the Roses. The Black Dwarf details the story of a misantropic hermit dwarf in league with the devil in the midst of a political intrigue.
+
+23: Edward Bulwer-Lytton's Falkland (1827): An amoral piece of self-indulgence centered around the courting of a young woman by a protagonist tormented by premonitions of her death - inspired by the Sturm and Drang Goethe piece Sorrows of young Werther.
+
+19 + 53: Wilkie Collin's The Woman in White (1860) and Marcus Clark's For the Term of his Natural Life (1874): The former is Collin's most highly esteemed piece of Sensationalist mystery fiction about the dispossession of a disenfranchised noble woman accused of lunacy. The latter deals with the cruelty and systematic violence inflicted on a wrongfully convicted.
+
+40 + 58 + 46: Edgar Allan Poe's The Fall of the House of Usher (1839), Mary Shelly's The Fortunes Of Perkin Warbeck, Walter Scott's The Black Dwarf: The Fall of the House of Usher details the story of an isolated aristocratic family, madness, as well as feelings of fear, doom and guilt. The Fortunes of Perkin Warbeck is a piece of political intrigue set in the War of the Roses. The Black Dwarf details the story of a misanthropic hermit dwarf in league with the devil in the midst of a political intrigue.
+
 41 + 42 + 43: Charles Dickens' The Haunted Man and the Ghost's Bargain and Elizabeth Gaskell's The Doom of the Griffiths: The former deals with a professor haunted by past mistakes and sorrows plagued by apparitions, while the latter deals with family curses, myth, revenge, murder and the role of women in society.
-17 + 25: Reeve Sophia's The Mysterious Wanderer and Jane Austin's Northanger Abbey: The former is a gothic romance in the style of Radcliffe rich with deceit, moder and family tragedy. The latter is a famous piece of satire on Gothioc Romance with a too-romantic girl and a frightening backdrop.
-14 + 26: James Hogg's The Private Memoirs And Confessions Of A Justified Sinner and Mathew Lewis' The Castle Spectre: The former deals in religious fanatism and psychologicla mystery, while the former deals with a caste haunted by a young woman wrongfully accused of murder.
-13 + 31: William Godwin's St. Leon and Ann Radcliffe's A Sicilian Romance: The former deals with fallen nobility, madness, faustian bargains and a retreat from society in despair. The latter deals with fallen nobility, shamefull secrets and psychological terror in a fallen castle.
-27 + 33 + 47 + 48: Arthur Machen's The great God Pan, AM Bernard's The Abbots Ghost, Mary Shelley's Lodore and William Beckford's Caliph Vathek: The Great God Pan deals with a metaphysical and moral transgression meddling with higher forces that create a corrupted, daemonic femme fatale. The Abbots Ghost is a tale of intrigue, ghost, forbidden love and miracles. Lodore covers power, responsibilty and the role of women within a family structure. Caliph Vathek is an orientalist tale dealing in ambition, greed, pacts with the devil and the consequences of unbridled desire.
+
+17 + 25: Reeve Sophia's The Mysterious Wanderer and Jane Austin's Northanger Abbey: The former is a gothic romance in the style of Radcliffe, rich with deceit, murder and family tragedy. The latter is a famous piece of satire on Gothic Romance, with a too-romantic girl and a frightening backdrop.
+
+14 + 26: James Hogg's The Private Memoirs And Confessions Of A Justified Sinner and Mathew Lewis' The Castle Spectre: The former deals in religious fanaticism and psychological mystery, while the former deals with a caste haunted by a young woman wrongfully accused of murder.
+
+13 + 31: William Godwin's St. Leon and Ann Radcliffe's A Sicilian Romance: The former deals with fallen nobility, madness, Faustian bargains and a retreat from society in despair. The latter deals with fallen nobility, shameful secrets and psychological terror in a fallen castle.
+
+27 + 33 + 47 + 48: Arthur Machen's The great God Pan, AM Bernard's The Abbot's Ghost, Mary Shelley's Lodore and William Beckford's Caliph Vathek: The Great God Pan deals with a metaphysical and moral transgression meddling with higher forces that create a corrupted, daemonic femme fatale. The Abbots Ghost is a tale of intrigue, ghost, forbidden love and miracles. Lodore covers power, responsibility and the role of women within a family structure. Caliph Vathek is an orientalist tale dealing in ambition, greed, pacts with the devil and the consequences of unbridled desire.
 
 More central pieces:
 
 I - IV quadrant:
-34: Eaton Barrett's The Heroine: A popular bestseller that combined the style of Radcliffes gothic romances with an over the top comedic and quixotic adventure and exploration ark of a female protagonist, with a paternal call or domestic submissivness at the end. This text had already  appeared as highly influental in the visualizations above and there are numerous quotes on its reach and influence.
-61 + 12: William Ainsworth's Rookwood and Tobias Smollet's The Adventures Of Ferdinand Count Fathom: The former is a gothic romance detailing royal inheritence disputes after an ill-fated death, while the latter chronicles the travels of a villanous, deceitful dandy with a supernatural undercurrent.
-9 + 29: Charlotte Smith's Emmeline, Or The Orphan Of The Castle and Montague James' Ghost Stories of an Antiquary: The former a cinderella story of female emancipation, gaining property and standing, where ownership over masonry and bodily authonomy blend. gothic in style. The latter deals with the veiled invasion of outside forces in the rural retreal of a scholar. (reminiscent of Sheridia or Machen)
-78 + 24 + 6: Charlotte Smith's The Emmigrants, Eliza Parsons' The Castle Of Wolfenbach and Charles Brockden Browns Wieland: Emmigrants deals with the trauma and alienation French emmigrants fter the revolution carry with them. The castle of Wolfenbach is an important early piece predating many Radcliff texts, lauded by Jane Austin as essential. (early outlier) A gothic royal romance with abundant frenzied expressions of emotion, fainting, weeping and struggles of identity formation. Wieland deals with madness, religious fanatism, psychologicla turmoil and supernatural gruesom violence (early american transposition of the genre after Godwin).
 
+34: Eaton Barrett's The Heroine: A popular bestseller that combined the style of Radcliffe's gothic romances with an over the top comedic and quixotic adventure and exploration arc of a female protagonist, with a paternal call or domestic submissiveness at the end. This text had already appeared as highly influential in the visualizations above, and there are numerous quotes on its reach and influence.
+
+61 + 12: William Ainsworth's Rookwood and Tobias Smollett's The Adventures Of Ferdinand Count Fathom: The former is a gothic romance detailing royal inheritance disputes after an ill-fated death, while the latter chronicles the travels of a villainous, deceitful dandy with a supernatural undercurrent.
+
+9 + 29: Charlotte Smith's Emmeline, Or The Orphan Of The Castle and Montague James' Ghost Stories of an Antiquary: The former a Cinderella story of female emancipation, gaining property and standing, where ownership over masonry and bodily autonomy blend. Gothic in style. The latter deals with the veiled invasion of outside forces in the rural retreat of a scholar. (reminiscent of Sheridan or Machen)
+
+78 + 24 + 6: Charlotte Smith's The Emigrants, Eliza Parsons' The Castle Of Wolfenbach and Charles Brockden Brown's Wieland: Emigrants deals with the trauma and alienation French emigrants after the revolution carry with them. The castle of Wolfenbach is an important early piece predating many Radcliff texts, lauded by Jane Austin as essential. (early outlier) A gothic royal romance with abundant frenzied expressions of emotion, fainting, weeping and struggles of identity formation. Wieland deals with madness, religious fanaticism, psychological turmoil and supernatural gruesome violence (early American transposition of the genre after Godwin).
 II quadrant:
 10 + 8 :
 32 + 76 :
@@ -618,4 +634,15 @@ dead center:
 
 ## Contextual Comparison:
 
-While the comparisons on the level of influential topics and authorial contribution to a given topic put more emphasis on the uniqueness of certain voices towards a specific theme and association put a lot of focus on authors with a succinctly unique voice that carried a wide reach, such as Poe, Le Fanu, Stoker and Hawthorne, The network analysis showed that while their contributions were influential and formative for a certain aestetic, they did not invite the same kind of imitation and formation of a movement as such as the likes of Walpole, Leiland, Brown, Sleathe. The voice of Walpole fell unheard in the topical part of the analysis, while his influence carried exceedingly far on the level of textual similarity at the start of a movement. Influencial and formative, yet not distinct in the same manner. The influencial, exceptional voices which combined both analysis are Godwin, Mary Shelly and to a lesser degree Ann Radcliffe.
+While the comparisons on the level of influential topics and authorial contribution to a given topic put more emphasis on the uniqueness of certain voices towards a specific theme and association put a lot of focus on authors with a succinctly unique voice that carried a wide reach, such as Poe, Le Fanu, Stoker and Hawthorne, The network analysis showed that while their contributions were influential and formative for a certain aesthetic, they did not invite the same kind of imitation and formation of a movement as such as the likes of Walpole, Leiland, Brown, Sleathe. In the topical part of the analysis, Walpole voice was not represented in the topical part of the analysis, while his influence carried exceedingly far on the level of textual similarity at the start of a movement. Influential and formative, yet not distinct in the same manner. The influential, exceptional voices which combined both analyses are Godwin, Mary Shelly and to a lesser degree Ann Radcliffe.
+
+
+
+
+## Evaluation of the alternative model's suitability for these purposes, as well as the plausibility of the LDA distribution: 
+
+The Contextual Topic Model (CTM) seems to be unsuitable to the Shannon divergence based multidimensional scaling employed by pyLDAvis, the topics seem coherent and the overall distribution throughout time roughly analogous to that of the LDA used in the analysis, strengthening the impression that the topic patterns and their distribution is static and driven both by the distribution of publications throughout the decades, and shifts in relevant themes.
+
+The principal component analysis based on its topic distribution shows a more evenly spread out shape, but a roughly analogous amount of spread, strengthening the overall picture that both of them present in their plausibility.
+
+The results of the topic modeling in embedding space (ETM) on the other hand seem uninterpretable and fundamental, at odds with those of the other two. While both CTM and ETM are not interpretable with the same multidimensional scaling techniques and both provide meaningful topics, the features of the ETM do not provide any meaningful spread throughout time or across texts, leading to both an uninterpretable historical distribution, and principal component analysis.
