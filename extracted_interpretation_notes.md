@@ -619,15 +619,17 @@ I - IV quadrant:
 9 + 29: Charlotte Smith's Emmeline, Or The Orphan Of The Castle and Montague James' Ghost Stories of an Antiquary: The former a Cinderella story of female emancipation, gaining property and standing, where ownership over masonry and bodily autonomy blend. Gothic in style. The latter deals with the veiled invasion of outside forces in the rural retreat of a scholar. (reminiscent of Sheridan or Machen)
 
 78 + 24 + 6: Charlotte Smith's The Emigrants, Eliza Parsons' The Castle Of Wolfenbach and Charles Brockden Brown's Wieland: Emigrants deals with the trauma and alienation French emigrants after the revolution carry with them. The castle of Wolfenbach is an important early piece predating many Radcliff texts, lauded by Jane Austin as essential. (early outlier) A gothic royal romance with abundant frenzied expressions of emotion, fainting, weeping and struggles of identity formation. Wieland deals with madness, religious fanaticism, psychological turmoil and supernatural gruesome violence (early American transposition of the genre after Godwin).
+
+
 II quadrant:
-10 + 8 :
-32 + 76 :
-22 :
-39 + 44 + 65 + 38 + 54 :
+10 + 8: Charles Brockden Brown's Arthur Mervyn and Edgar Huntly by the same author: Arthur Mervin details yellow fever plagues, crime, theft, plantation work, prostitution and a morally gray protagonist. Edgar Huntly deals with wilderness anxiety, supernatural, darkness and fear, sleepwalking and veiled truths. Both are considered influential early American gothic texts.
+32 + 76: Mary Shelley's The Last Man and Mathew Lewis' The Monk:
+22: Ann Radcliffe's The Mysteries Of Udolpho:
+39 + 44 + 38 + 54: Ann Radcliffe's The Castles Of Athlin And Dunbayne and Nathaniel Hawthorne's The Lily's Quest and The White Old Maid and Little Annies Ramble:
 
 dead center:
-30 + 1 + 3 :
-2 + 28 + 59 + 20
+30 + 1 + 3: John Palner's The Haunted Cavern. A Caledonian Tale and Regina Maria Roche's The Children Of The Abbey and Frances Burney's Camilla:
+2 + 28 + 59: William Godwin's Caleb Williams; Or, Things as They Are, the anonymous Count Roderic's Castle and Charlotte Smith's The Banished Man:
 
 
 
