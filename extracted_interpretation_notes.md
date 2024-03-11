@@ -623,8 +623,8 @@ I - IV quadrant:
 
 II quadrant:
 10 + 8: Charles Brockden Brown's Arthur Mervyn and Edgar Huntly by the same author: Arthur Mervin details yellow fever plagues, crime, theft, plantation work, prostitution and a morally gray protagonist. Edgar Huntly deals with wilderness anxiety, supernatural, darkness and fear, sleepwalking and veiled truths. Both are considered influential early American gothic texts.
-32 + 76: Mary Shelley's The Last Man and Mathew Lewis' The Monk:
-22: Ann Radcliffe's The Mysteries Of Udolpho:
+32 + 76: Mary Shelley's The Last Man and Mathew Lewis' The Monk: The Last Man deals with isolation, global plague, disaster, medicine, science and the loss of political ideas. The monk details the corruption of a monk by a demon in female disguise as well as romance, temptation, innocence, sexuality and strong horror elements.
+22: Ann Radcliffe's The Mysteries Of Udolpho: Forced marriage, forboding castles, fear and scheming relatives.
 39 + 44 + 38 + 54: Ann Radcliffe's The Castles Of Athlin And Dunbayne and Nathaniel Hawthorne's The Lily's Quest and The White Old Maid and Little Annies Ramble:
 
 dead center:
