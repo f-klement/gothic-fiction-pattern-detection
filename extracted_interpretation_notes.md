@@ -587,50 +587,136 @@ This grouping puts more emphasis on Mary Shelly and Willaim Godwin as a thematic
 
 This grouping, which takes chronology into consideration, brings a few previously unheard of texts to the forefront, but the larger picture strengthens the impression informed by previous network analysis. The fact that the labeling has been done in order of degree centrality allows for a more precise ranking than any of the previous attempts and takes the element of personal expectation, preferential investigation and subjective gaze out of the picture.
 
-The shape of the network has drastically changed in comparison to the previous iterations providing one larger, loosely integrated cluster consisting of a number of sub groupings, as well as a scant few highly influential outliers which seemingly arose without reference to prior works of the genre, which nevertheless provided a rich source of inspiration for subsequent texts.
-Starting with some of the most prominent outliers:
+The shape of the network has drastically changed in comparison to the previous iterations providing one larger, loosely integrated cluster consisting of a number of sub groupings, as well as a scant few highly influential outliers which seemingly arose without reference to prior works of the genre, which nevertheless provided a rich source of inspiration for subsequent texts.Upper outliers:
 
-21: Percy Shelley's Zastrozzi (1810):  A piece lauded for its depiction of amoral self-indulgence and individualism within a backdrop of a gothic setting.
+22: Edward Bulwer-Lytton's Falkland: An amoral piece of self-indulgence centered around the courting of a young woman by a protagonist tormented by premonitions of her death — inspired by the Sturm and Drang Goethe piece Sorrows of Young Werther.
 
-23: Edward Bulwer-Lytton's Falkland (1827): An amoral piece of self-indulgence centered around the courting of a young woman by a protagonist tormented by premonitions of her death - inspired by the Sturm and Drang Goethe piece Sorrows of young Werther.
+69: Mary Shelly's The Fortunes Of Perkin Warbeck: The Fortunes of Perkin Warbeck is a piece of political intrigue set in the War of the Roses.
 
-19 + 53: Wilkie Collin's The Woman in White (1860) and Marcus Clark's For the Term of his Natural Life (1874): The former is Collin's most highly esteemed piece of Sensationalist mystery fiction about the dispossession of a disenfranchised noble woman accused of lunacy. The latter deals with the cruelty and systematic violence inflicted on a wrongfully convicted.
+24: Mathew Lewis' The Castle Spectre: The text covers religious fanaticism and psychological mystery.
 
-40 + 58 + 46: Edgar Allan Poe's The Fall of the House of Usher (1839), Mary Shelly's The Fortunes Of Perkin Warbeck, Walter Scott's The Black Dwarf: The Fall of the House of Usher details the story of an isolated aristocratic family, madness, as well as feelings of fear, doom and guilt. The Fortunes of Perkin Warbeck is a piece of political intrigue set in the War of the Roses. The Black Dwarf details the story of a misanthropic hermit dwarf in league with the devil in the midst of a political intrigue.
+44: Walter Scott's The Black Dwarf: The Black Dwarf details the story of a misanthropic hermit dwarf in league with the devil amid political intrigue.
 
-41 + 42 + 43: Charles Dickens' The Haunted Man and the Ghost's Bargain and Elizabeth Gaskell's The Doom of the Griffiths: The former deals with a professor haunted by past mistakes and sorrows plagued by apparitions, while the latter deals with family curses, myth, revenge, murder and the role of women in society.
+39: Edgar Allan Poe's The Fall of the House of Usher: The Fall of the House of Usher details the story of an isolated aristocratic family, madness, as well as feelings of fear, doom, and guilt.
 
-17 + 25: Reeve Sophia's The Mysterious Wanderer and Jane Austin's Northanger Abbey: The former is a gothic romance in the style of Radcliffe, rich with deceit, murder and family tragedy. The latter is a famous piece of satire on Gothic Romance, with a too-romantic girl and a frightening backdrop.
+40: Charles Dickens' The Haunted Man and the Ghost's Bargain: The text deals with a professor haunted by past mistakes and sorrows plagued by apparitions.
 
-14 + 26: James Hogg's The Private Memoirs And Confessions Of A Justified Sinner and Mathew Lewis' The Castle Spectre: The former deals in religious fanaticism and psychological mystery, while the former deals with a caste haunted by a young woman wrongfully accused of murder.
-
-13 + 31: William Godwin's St. Leon and Ann Radcliffe's A Sicilian Romance: The former deals with fallen nobility, madness, Faustian bargains and a retreat from society in despair. The latter deals with fallen nobility, shameful secrets and psychological terror in a fallen castle.
-
-27 + 33 + 47 + 48: Arthur Machen's The great God Pan, AM Bernard's The Abbot's Ghost, Mary Shelley's Lodore and William Beckford's Caliph Vathek: The Great God Pan deals with a metaphysical and moral transgression meddling with higher forces that create a corrupted, daemonic femme fatale. The Abbots Ghost is a tale of intrigue, ghost, forbidden love and miracles. Lodore covers power, responsibility and the role of women within a family structure. Caliph Vathek is an orientalist tale dealing in ambition, greed, pacts with the devil and the consequences of unbridled desire.
-
-More central pieces:
-
-I - IV quadrant:
-
-34: Eaton Barrett's The Heroine: A popular bestseller that combined the style of Radcliffe's gothic romances with an over the top comedic and quixotic adventure and exploration arc of a female protagonist, with a paternal call or domestic submissiveness at the end. This text had already appeared as highly influential in the visualizations above, and there are numerous quotes on its reach and influence.
-
-61 + 12: William Ainsworth's Rookwood and Tobias Smollett's The Adventures Of Ferdinand Count Fathom: The former is a gothic romance detailing royal inheritance disputes after an ill-fated death, while the latter chronicles the travels of a villainous, deceitful dandy with a supernatural undercurrent.
-
-9 + 29: Charlotte Smith's Emmeline, Or The Orphan Of The Castle and Montague James' Ghost Stories of an Antiquary: The former a Cinderella story of female emancipation, gaining property and standing, where ownership over masonry and bodily autonomy blend. Gothic in style. The latter deals with the veiled invasion of outside forces in the rural retreat of a scholar. (reminiscent of Sheridan or Machen)
-
-78 + 24 + 6: Charlotte Smith's The Emigrants, Eliza Parsons' The Castle Of Wolfenbach and Charles Brockden Brown's Wieland: Emigrants deals with the trauma and alienation French emigrants after the revolution carry with them. The castle of Wolfenbach is an important early piece predating many Radcliff texts, lauded by Jane Austin as essential. (early outlier) A gothic royal romance with abundant frenzied expressions of emotion, fainting, weeping and struggles of identity formation. Wieland deals with madness, religious fanaticism, psychological turmoil and supernatural gruesome violence (early American transposition of the genre after Godwin).
+41: Elizabeth Gaskell's The Doom of the Griffiths: It covers family curses, myth, revenge, murder, and the role of women in society.
 
 
-II quadrant:
-10 + 8: Charles Brockden Brown's Arthur Mervyn and Edgar Huntly by the same author: Arthur Mervin details yellow fever plagues, crime, theft, plantation work, prostitution and a morally gray protagonist. Edgar Huntly deals with wilderness anxiety, supernatural, darkness and fear, sleepwalking and veiled truths. Both are considered influential early American gothic texts.
-32 + 76: Mary Shelley's The Last Man and Mathew Lewis' The Monk: The Last Man deals with isolation, global plague, disaster, medicine, science and the loss of political ideas. The monk details the corruption of a monk by a demon in female disguise as well as romance, temptation, innocence, sexuality and strong horror elements.
-22: Ann Radcliffe's The Mysteries Of Udolpho: Forced marriage, forboding castles, fear and scheming relatives.
-39 + 44 + 38 + 54: Ann Radcliffe's The Castles Of Athlin And Dunbayne and Nathaniel Hawthorne's The Lily's Quest and The White Old Maid and Little Annies Ramble:
+Upper Half:
 
-dead center:
-30 + 1 + 3: John Palner's The Haunted Cavern. A Caledonian Tale and Regina Maria Roche's The Children Of The Abbey and Frances Burney's Camilla:
-2 + 28 + 59: William Godwin's Caleb Williams; Or, Things as They Are, the anonymous Count Roderic's Castle and Charlotte Smith's The Banished Man:
+38: Mary Shelley's The Last Man: It deals with isolation, global plague, disaster, medicine, science, and the loss of political ideas. 
 
+29: John Palmer's The Haunted Cavern. A Caledonian Tale: The Haunted Cavern covers specters, murder, gloomy caverns and a betrothal to a villain. 
+
+32: Eaton Barrett's The Heroine: A popular bestseller that combined the style of Radcliffe's gothic romances with an over the top comedic and quixotic adventure and exploration arc of a female protagonist, with a paternal call or domestic submissiveness at the end. This text had already appeared highly influential in the visualizations above, and numerous quotes on its reach and influence exist.
+
+77: Charlotte Smith's The Emigrants: Emigrants deals with the trauma and alienation French emigrants after the revolution carry with them. 
+
+
+
+
+42 + 36 + 53: Nathaniel Hawthorne's The Lily's Quest and The White Old Maid and Little Annie's Ramble: All three Hawthorne texts stem from the same collection of short stories. The Lily's Quest, deals with the cycle of life and death, the futility of the pursuit of happiness and the necessity of hardship. The White Old Maid deals with ominous ritual surrounding death, a love triangle and reunification. Little Annie's Ramble covers childhood innocence, curiosity, and the longing of an adult for simple joys past, benevolent unconsenting child abduction.
+
+58: William Ainsworth's Rookwood: A gothic romance detailing royal inheritance disputes after an ill-fated death.
+
+
+
+
+Lower outliers:
+
+19: Wilkie Collin's The Woman in White: Collin's most highly esteemed piece of Sensationalist mystery fiction about the dispossession of a disenfranchised noblewoman accused of lunacy. 
+
+28: Montague James' Ghost Stories of an Antiquary: Deals with the veiled invasion of outside forces in the rural retreat of a scholar. (reminiscent of Sheridan or Machen)
+
+52: Marcus Clark's For the Term of his Natural Life: It deals with the cruelty and systematic violence inflicted on a wrongfully convicted.
+
+33: Algernon Blackwood's The Willows: Supernatural, threatening surroundings, intense dread and anxiety. (Strong influence on 20th-century weird fiction)
+
+34: Richard Francis Burton's Vikram: An Indian tale of the hunt for a necromantic vampire.
+
+
+
+Bottom Half up:
+
+13: William Godwin's St. Leon: Godwin grapples with fallen nobility, madness, Faustian bargains, and a retreat from society in despair.
+
+45: Mary Shelley's Lodore: Lodore covers power, responsibility, and the role of women within a family structure. 
+
+31: AM Bernard's The Abbot's Ghost: The Abbots Ghost is a tale of intrigue, ghost, forbidden love, and miracles.
+
+23: Jane Austin's Northanger Abbey: A famous satire on Gothic Romance, with a too-romantic girl and a frightening backdrop.
+
+30: Ann Radcliffe's A Sicilian Romance: Its themes are fallen nobility, shameful secrets, and psychological terror in a fallen castle.
+
+
+
+20: Percy Shelley's Zastrozzi:  A piece lauded for its depiction of amoral self-indulgence and individualism within a backdrop of a gothic setting.
+
+17: Reeve Sophia's The Mysterious Wanderer: A gothic romance in the style of Radcliffe, rich with deceit, murder, and family tragedy.
+
+47: William Beckford's Caliph Vathek: Caliph Vathek is an orientalist tale dealing with ambition, greed, pacts with the devil, and the consequences of unbridled desire.
+
+
+
+Center Bottom Right:
+
+35: Eliza Fenwick' Secrecy: Female Friendship, hidden pregnancies and betrayal, societal constraints, and punishments.
+
+2: Frances Burney's Camilla: Camilla is a generational tale of coming to age, romance, comedy, and morals with comedic and gothic episodes - immensely popular in its time, endorsed by Jane Austin. 
+
+25: Arthur Machen's The Great God Pan: The Great God Pan deals with a metaphysical and moral transgression meddling with higher forces that create a corrupted, daemonic femme fatale.
+
+6: Charles Brockden Brown's Wieland: Wieland deals with madness, religious fanaticism, psychological turmoil, and supernatural gruesome violence (early American transposition of the genre after Godwin).
+
+74: Mathew Lewis' The Monk: The Monk details the corruption of a monk by a demon in female disguise as well as romance, temptation, innocence, sexuality, and strong horror elements.
+
+
+
+
+18: Mrs. Carver The Horrors Of Oakendale Abbey: haunted abbey, sensationalist, necromancy, body snatchers, death and decay, grotesque — very popular in its day.
+
+9: Sophia Lee's The Recess, Or A Tale Of Other Times: political intrigue, heroic female lead, sefaring, warfare, gothic castles, marriage — very popular.
+
+10: Charlotte Smith's Emmeline, Or The Orphan Of The Castle: A Cinderella story of female emancipation, gaining property and standing, where ownership over masonry and bodily autonomy blend. Gothic in style.
+
+27: the anonymous Count Roderic's Castle: Love, birthrights, barbarous, violent rulers, and ominous castles with vengeful specters and dungeons.
+
+37: Ann Radcliffe's The Castles Of Athlin And Dunbayne: The Castles of Athlin and Dunbayne deals with murder, revenge, royalty, sublime nature, excited feelings, gloomy castles, romance, and heroic women.
+
+
+
+
+Center Left:
+
+12 + 8: Charles Brockden Brown's Arthur Mervyn and Edgar Huntly by the same author: Arthur Mervin details yellow fever plagues, crime, theft, plantation work, prostitution, and a morally gray protagonist. Edgar Huntly deals with wilderness anxiety, supernatural, darkness, and fear, sleepwalking, and veiled truths. Both are considered influential early American gothic texts.
+
+4: Ann Radcliffe's The Romance Of The Forest: Adding a discussion or moral values to a tale of horror and suspense, natural sublime and beauty, sexuality. (By contemporaries regarded it as her best)
+
+5: Horace Walpole's The Castle of Otranto: Medieval haunted Castle, supernatural horrific happenings, violence, surprising humor, sexual and grappling with questions of identity (retrospectively one of the earliest and most formative exemplary of the genre)
+
+15: Thomas Leland's Longsword, Earl Of Salisbury: Gloomy settings, evil clergymen, historical basis, abductions, royalty, shipwrecks. (an early cornerstone of the genre)
+
+7: Eleanor Sleath's The Orphan Of The Rhine: picturesque, strongly radcliffeque, scoundrels and half ruined castles, strong emotions, romance, terror (praised by Jane Austen in Northanger Abbey)
+
+21: Ann Radcliffe's The Mysteries Of Udolpho: Forced marriage, foreboding castles, fear, and scheming relatives, heroic idealistic women.
+
+
+
+Center Top Right:
+
+1: Regina Maria Roche's The Children Of The Abbey: The Children Of The Abbey was one of the best-selling novels of the 19th century and deals with wicked relatives, a quest for inheritance, love, royalty, castles, and heightened emotions, full of languishing. 
+
+3 William Godwin's Caleb Williams; Or, Things as They Are: A tale of treachery, persecution, political oppression, corrupt hierarchies, psychological obsession, and a big influence on Frankenstein. Individualism and the constraints of institutions.
+
+11: Tobias Smollett's The Adventures Of Ferdinand Count Fathom: Chronicles the travels of a villainous, deceitful dandy with a supernatural undercurrent.
+
+26: Eliza Parsons' The Castle Of Wolfenbach: The castle of Wolfenbach is an important early piece predating many Radcliff texts, lauded by Jane Austin as essential. (early outlier) A gothic royal romance with abundant frenzied expressions of emotion, fainting, weeping, and struggles of identity formation.
+
+14: James Hogg's The Private Memoirs And Confessions Of A Justified Sinner: It deals with a caste haunted by a young woman wrongfully accused of murder.
+
+16: Clara Reeve's The Old English Baron: An homage to Walpoles Castle of Otranto, but intended as a more realistic and streamlined Gothic template — widely adopted. Horror, mystery, ghost stories on castles.
 
 
 
