@@ -587,7 +587,9 @@ This grouping puts more emphasis on Mary Shelly and Willaim Godwin as a thematic
 
 This grouping, which takes chronology into consideration, brings a few previously unheard of texts to the forefront, but the larger picture strengthens the impression informed by previous network analysis. The fact that the labeling has been done in order of degree centrality allows for a more precise ranking than any of the previous attempts and takes the element of personal expectation, preferential investigation and subjective gaze out of the picture.
 
-The shape of the network has drastically changed in comparison to the previous iterations providing one larger, loosely integrated cluster consisting of a number of sub groupings, as well as a scant few highly influential outliers which seemingly arose without reference to prior works of the genre, which nevertheless provided a rich source of inspiration for subsequent texts.Upper outliers:
+The shape of the network has drastically changed in comparison to the previous iterations providing one larger, loosely integrated cluster consisting of a number of sub groupings, as well as a scant few highly influential outliers which seemingly arose without reference to prior works of the genre, which nevertheless provided a rich source of inspiration for subsequent texts.
+
+Upper outliers:
 
 22: Edward Bulwer-Lytton's Falkland: An amoral piece of self-indulgence centered around the courting of a young woman by a protagonist tormented by premonitions of her death — inspired by the Sturm and Drang Goethe piece Sorrows of Young Werther.
 
@@ -616,7 +618,7 @@ Upper Half:
 
 
 
-
+Upper Half-Lower:
 42 + 36 + 53: Nathaniel Hawthorne's The Lily's Quest and The White Old Maid and Little Annie's Ramble: All three Hawthorne texts stem from the same collection of short stories. The Lily's Quest, deals with the cycle of life and death, the futility of the pursuit of happiness and the necessity of hardship. The White Old Maid deals with ominous ritual surrounding death, a love triangle and reunification. Little Annie's Ramble covers childhood innocence, curiosity, and the longing of an adult for simple joys past, benevolent unconsenting child abduction.
 
 58: William Ainsworth's Rookwood: A gothic romance detailing royal inheritance disputes after an ill-fated death.
@@ -651,13 +653,12 @@ Bottom Half up:
 30: Ann Radcliffe's A Sicilian Romance: Its themes are fallen nobility, shameful secrets, and psychological terror in a fallen castle.
 
 
-
+Bottom Half Upper:
 20: Percy Shelley's Zastrozzi:  A piece lauded for its depiction of amoral self-indulgence and individualism within a backdrop of a gothic setting.
 
 17: Reeve Sophia's The Mysterious Wanderer: A gothic romance in the style of Radcliffe, rich with deceit, murder, and family tragedy.
 
 47: William Beckford's Caliph Vathek: Caliph Vathek is an orientalist tale dealing with ambition, greed, pacts with the devil, and the consequences of unbridled desire.
-
 
 
 Center Bottom Right:
@@ -688,6 +689,35 @@ Center Bottom Right:
 
 
 
+Center Bottom Right:
+
+25: Arthur Machen's The Great God Pan: The Great God Pan deals with a metaphysical and moral transgression meddling with higher forces that create a corrupted, daemonic femme fatale.
+
+6: Charles Brockden Brown's Wieland: Wieland deals with madness, religious fanaticism, psychological turmoil, and supernatural gruesome violence (early American transposition of the genre after Godwin).
+
+74: Mathew Lewis' The Monk: The Monk details the corruption of a monk by a demon in female disguise as well as romance, temptation, innocence, sexuality, and strong horror elements.
+
+18: Mrs. Carver The Horrors Of Oakendale Abbey: haunted abbey, sensationalist, necromancy, body snatchers, death and decay, grotesque — very popular in its day.
+
+
+
+Dead Center:
+
+35: Eliza Fenwick' Secrecy: Female Friendship, hidden pregnancies and betrayal, societal constraints, and punishments.
+
+2: Frances Burney's Camilla: Camilla is a generational tale of coming to age, romance, comedy, and morals with comedic and gothic episodes - immensely popular in its time, endorsed by Jane Austin. 
+
+9: Sophia Lee's The Recess, Or A Tale Of Other Times: political intrigue, heroic female lead, sefaring, warfare, gothic castles, marriage — very popular.
+
+10: Charlotte Smith's Emmeline, Or The Orphan Of The Castle: A Cinderella story of female emancipation, gaining property and standing, where ownership over masonry and bodily autonomy blend. Gothic in style.
+
+27: the anonymous Count Roderic's Castle: Love, birthrights, barbarous, violent rulers, and ominous castles with vengeful specters and dungeons.
+
+37: Ann Radcliffe's The Castles Of Athlin And Dunbayne: The Castles of Athlin and Dunbayne deals with murder, revenge, royalty, sublime nature, excited feelings, gloomy castles, romance, and heroic women.
+
+
+
+
 Center Left:
 
 12 + 8: Charles Brockden Brown's Arthur Mervyn and Edgar Huntly by the same author: Arthur Mervin details yellow fever plagues, crime, theft, plantation work, prostitution, and a morally gray protagonist. Edgar Huntly deals with wilderness anxiety, supernatural, darkness, and fear, sleepwalking, and veiled truths. Both are considered influential early American gothic texts.
@@ -701,6 +731,7 @@ Center Left:
 7: Eleanor Sleath's The Orphan Of The Rhine: picturesque, strongly radcliffeque, scoundrels and half ruined castles, strong emotions, romance, terror (praised by Jane Austen in Northanger Abbey)
 
 21: Ann Radcliffe's The Mysteries Of Udolpho: Forced marriage, foreboding castles, fear, and scheming relatives, heroic idealistic women.
+
 
 
 
