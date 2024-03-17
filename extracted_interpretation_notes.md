@@ -589,7 +589,7 @@ This grouping, which takes chronology into consideration, brings a few previousl
 
 The shape of the network has drastically changed in comparison to the previous iterations providing one larger, loosely integrated cluster consisting of a number of sub groupings, as well as a scant few highly influential outliers which seemingly arose without reference to prior works of the genre, which nevertheless provided a rich source of inspiration for subsequent texts.
 
-Upper outliers:
+Upper Outliers:
 
 22: Edward Bulwer-Lytton's Falkland: An amoral piece of self-indulgence centered around the courting of a young woman by a protagonist tormented by premonitions of her death — inspired by the Sturm and Drang Goethe piece Sorrows of Young Werther.
 
@@ -618,7 +618,7 @@ Upper Half:
 
 
 
-Upper Half-Lower:
+Upper Half Lower:
 42 + 36 + 53: Nathaniel Hawthorne's The Lily's Quest and The White Old Maid and Little Annie's Ramble: All three Hawthorne texts stem from the same collection of short stories. The Lily's Quest, deals with the cycle of life and death, the futility of the pursuit of happiness and the necessity of hardship. The White Old Maid deals with ominous ritual surrounding death, a love triangle and reunification. Little Annie's Ramble covers childhood innocence, curiosity, and the longing of an adult for simple joys past, benevolent unconsenting child abduction.
 
 58: William Ainsworth's Rookwood: A gothic romance detailing royal inheritance disputes after an ill-fated death.
@@ -626,7 +626,7 @@ Upper Half-Lower:
 
 
 
-Lower outliers:
+Lower Outliers:
 
 19: Wilkie Collin's The Woman in White: Collin's most highly esteemed piece of Sensationalist mystery fiction about the dispossession of a disenfranchised noblewoman accused of lunacy. 
 
@@ -640,7 +640,7 @@ Lower outliers:
 
 
 
-Bottom Half up:
+Bottom Half Up:
 
 13: William Godwin's St. Leon: Godwin grapples with fallen nobility, madness, Faustian bargains, and a retreat from society in despair.
 
@@ -663,34 +663,6 @@ Bottom Half Upper:
 
 Center Bottom Right:
 
-35: Eliza Fenwick' Secrecy: Female Friendship, hidden pregnancies and betrayal, societal constraints, and punishments.
-
-2: Frances Burney's Camilla: Camilla is a generational tale of coming to age, romance, comedy, and morals with comedic and gothic episodes - immensely popular in its time, endorsed by Jane Austin. 
-
-25: Arthur Machen's The Great God Pan: The Great God Pan deals with a metaphysical and moral transgression meddling with higher forces that create a corrupted, daemonic femme fatale.
-
-6: Charles Brockden Brown's Wieland: Wieland deals with madness, religious fanaticism, psychological turmoil, and supernatural gruesome violence (early American transposition of the genre after Godwin).
-
-74: Mathew Lewis' The Monk: The Monk details the corruption of a monk by a demon in female disguise as well as romance, temptation, innocence, sexuality, and strong horror elements.
-
-
-
-
-18: Mrs. Carver The Horrors Of Oakendale Abbey: haunted abbey, sensationalist, necromancy, body snatchers, death and decay, grotesque — very popular in its day.
-
-9: Sophia Lee's The Recess, Or A Tale Of Other Times: political intrigue, heroic female lead, sefaring, warfare, gothic castles, marriage — very popular.
-
-10: Charlotte Smith's Emmeline, Or The Orphan Of The Castle: A Cinderella story of female emancipation, gaining property and standing, where ownership over masonry and bodily autonomy blend. Gothic in style.
-
-27: the anonymous Count Roderic's Castle: Love, birthrights, barbarous, violent rulers, and ominous castles with vengeful specters and dungeons.
-
-37: Ann Radcliffe's The Castles Of Athlin And Dunbayne: The Castles of Athlin and Dunbayne deals with murder, revenge, royalty, sublime nature, excited feelings, gloomy castles, romance, and heroic women.
-
-
-
-
-Center Bottom Right:
-
 25: Arthur Machen's The Great God Pan: The Great God Pan deals with a metaphysical and moral transgression meddling with higher forces that create a corrupted, daemonic femme fatale.
 
 6: Charles Brockden Brown's Wieland: Wieland deals with madness, religious fanaticism, psychological turmoil, and supernatural gruesome violence (early American transposition of the genre after Godwin).
@@ -707,7 +679,7 @@ Dead Center:
 
 2: Frances Burney's Camilla: Camilla is a generational tale of coming to age, romance, comedy, and morals with comedic and gothic episodes - immensely popular in its time, endorsed by Jane Austin. 
 
-9: Sophia Lee's The Recess, Or A Tale Of Other Times: political intrigue, heroic female lead, sefaring, warfare, gothic castles, marriage — very popular.
+9: Sophia Lee's The Recess, Or A Tale Of Other Times: political intrigue, heroic female lead, seafaring, warfare, gothic castles, marriage — very popular.
 
 10: Charlotte Smith's Emmeline, Or The Orphan Of The Castle: A Cinderella story of female emancipation, gaining property and standing, where ownership over masonry and bodily autonomy blend. Gothic in style.
 
@@ -748,6 +720,139 @@ Center Top Right:
 14: James Hogg's The Private Memoirs And Confessions Of A Justified Sinner: It deals with a caste haunted by a young woman wrongfully accused of murder.
 
 16: Clara Reeve's The Old English Baron: An homage to Walpoles Castle of Otranto, but intended as a more realistic and streamlined Gothic template — widely adopted. Horror, mystery, ghost stories on castles.
+
+
+
+
+## Feature Evaluation Grouping:
+
+Upper Outliers:
+
+These texts stand out for their unique focus. They might explore themes like psychological horror (Fall of the House of Usher), political intrigue (The Fortunes of Perkin Warbeck), or the supernatural with a dark twist (The Black Dwarf).
+---------------------------
+The upper outliers consist of works that uniquely combine Gothic elements with other themes such as political intrigue, personal torment, and moral ambiguity. These texts stand apart due to their distinct narrative focuses or thematic explorations that diverge from more central Gothic conventions.
+
+Themes of Amorality and Self-Indulgence: Edward Bulwer-Lytton's Falkland and Charles Dickens' The Haunted Man and the Ghost's Bargain highlight personal struggles with morality and the past, emphasizing the psychological over the supernatural.
+Political Intrigue and Historical Settings: The Fortunes Of Perkin Warbeck by Mary Shelley and The Black Dwarf by Walter Scott integrate Gothic elements into historical and political narratives, showcasing the genre's versatility.
+Religious Fanaticism and Psychological Mystery: The Castle Spectre and The Fall of the House of Usher delve into the darker aspects of human psychology against a backdrop of religious extremism or decaying aristocracy.
+-------------------------------
+-> Psychological Terror, Politics, Fanatism, Transgressive Indulgence and Moral Debasement
+
+Upper Half:
+
+These stories deal with isolation, societal issues, and supernatural elements. We see themes of plague and disaster (The Last Man), female experience and societal expectations (The Heroine, The Emigrants), and classic gothic tropes like haunted caverns and gloomy settings (The Haunted Cavern).
+-----------------------------------
+This cluster embodies texts that, while still retaining core Gothic elements, begin to incorporate broader themes such as global catastrophes, scientific exploration, and societal alienation.
+
+Global Plague and Isolation: Mary Shelley's The Last Man is a prescient narrative of global disaster, emphasizing isolation and the loss of societal structures, a theme resonant with contemporary concerns about pandemics and societal collapse.
+Comedic Overtones and Domestic Submissiveness: Eaton Barrett's The Heroine challenges Gothic conventions with humor and satire, reflecting on the genre's tropes with a comedic twist.
+Trauma and Alienation: The Emigrants by Charlotte Smith explores the emotional and societal impacts of displacement, offering a nuanced examination of trauma and alienation in the post-revolutionary context.
+----------------------------------
+-> Societal Dissarray and Alienation, Humorous Subversion of Expectations 
+
+
+Upper Half Lower:
+
+These are all by Nathaniel Hawthorne and explore interconnected themes. They might delve into the cycle of life and death (The Lily's Quest), dark rituals and family secrets (The White Old Maid), or childhood innocence and loss (Little Annie's Ramble).
+-------------------------------------
+This subset features texts that start blending traditional Gothic themes with explorations of life cycles, the pursuit of happiness, and the innocence of childhood, suggesting a transition towards more introspective and philosophical themes.
+
+Life, Death, and Pursuit of Happiness: Nathaniel Hawthorne's stories from the same collection explore existential themes through the lens of Gothic fiction, juxtaposing life's transience against the backdrop of 
+traditional Gothic settings.
+------------------------------------
+-> Life, Death, Pursuit of Happiness
+
+
+Lower Outliers (Similar to Upper Outliers):
+
+These stand out for their specific themes. The Woman in White explores social injustice, Ghost Stories of an Antiquary deals with unsettling encounters in rural settings, For the Term of his Natural Life focuses on institutional cruelty, and Vikram dives into the world of the supernatural with a vampire tale.
+--------------------------------------
+The lower outliers are distinguished by their exploration of sensationalism, mystery, and the supernatural, with a strong focus on systemic violence, supernatural dread, and psychological horror.
+
+Sensationalist Mystery and Supernatural Dread: Texts like The Woman in White and The Willows focus on disenfranchisement, systemic cruelty, and the overwhelming power of nature, offering a stark portrayal of human and supernatural antagonism.
+---------------------------------------
+-> Systemic violence, Supernatural Othering Encounters
+
+
+Bottom Half Up and Bottom Half Upper:
+
+These clusters focus on themes of nobility, madness, Faustian bargains, and the satire of Gothic conventions, illustrating the genre's ability to critique social norms and explore the complexities of human desire and fear.
+Fallen Nobility and Satire: Works like William Godwin's St. Leon and Jane Austin's Northanger Abbey engage with the disillusionment with nobility and the parody of Gothic tropes, respectively, showcasing the genre's adaptability and critical edge.
+-------------------------------------------
+Bottom Half Up:
+These texts explore classic gothic themes like fallen nobility, psychological terror, and forbidden love. We see stories of characters grappling with despair (St. Leon), strong female leads in family dramas (Lodore), and intrigue set in gothic settings (The Abbot's Ghost, Northanger Abbey, A Sicilian Romance).
+
+Bottom Half Upper:
+Here, the focus might be on dark desires and consequences. We see exploration of amorality and individualism (Zastrozzi), gothic romances with family tragedies (The Mysterious Wanderer), and cautionary tales of ambition and demonic pacts (Caliph Vathek).
+--------------------------------------------
+Bottom Half Up:
+-> Fallen Nobility, Emotional Distress and Struggles of Love, Satire
+
+Bottom Half Upper:
+-> Dark Desires and Dire Consequences, Pacts
+
+
+
+
+Center Bottom Right, Dead Center, and Center Left:
+Central clusters highlight the genre's core themes, such as the struggle with identity, morality, and the supernatural. These texts, including The Great God Pan, Camilla, and Arthur Mervyn, embody the Gothic tradition's exploration of moral ambiguity, societal constraints, and the supernatural.
+----------------------------------------------------
+Center Bottom Right:
+
+
+Dead Center:
+These all share elements of gothic settings and themes, with a focus on female characters. We see stories of hidden pregnancies and betrayals (Secrecy), gothic romance with a focus on inheritance (The Recess), female empowerment through property ownership (Emmeline), and classic gothic tropes of castles, vengeful spirits, and royalty (Count Roderic's Castle, The Castles of Athlin and Dunbayne).
+
+Center Left:
+These are American gothic tales with distinct themes. Arthur Mervyn tackles social issues like yellow fever and moral ambiguity, while Edgar Huntly explores wilderness anxieties and the supernatural. We also see foundational gothic texts with themes of terror, suspense, and the sublime (The Romance of the Forest, The Castle of Otranto, Longsword, Earl of Salisbury, The Orphan of the Rhine, The Mysteries of Udolpho).
+-----------------------------------------------------
+Center Bottom Right:
+-> Very grotesque, physical depictions in religously coded settings, preceded by moral transgressions (Body Horror)
+
+Dead Center:
+-> Female Protagonists, struggling for control, their place in a changing environment or love (Gothic Romance)
+
+
+Center Left:
+-> Core foundational early British texts and their first adaptations over sea. The latter grapple with disease and the wilderness, while the former establish core themes of hightened emotions, insanity, the sublime, ghosts and castles
+
+
+Center Top Right:
+
+Here, the focus might be on family secrets, gothic settings, and societal power structures. We see stories of wicked relatives and inheritance quests (The Children of the Abbey), political intrigue and social commentary (Caleb Williams), chronicles of a villain (The Adventures of Ferdinand Count Fathom), early gothic romance (The Castle of Wolfenbach), and a haunted family saga (The Private Memoirs and Confessions of a Justified Sinner).
+------------------------------------------------
+This area of the graph highlights the intersection of Gothic fiction with themes of inheritance, identity, and the quest for understanding, represented by texts like The Children Of The Abbey and Caleb Williams. These works explore the individual's place within societal and familial structures, often against a backdrop of mystery and intrigue.
+-----------------------------------------------
+-> These texts deal with unrest within power structures, weather through family intrigue, religous power struggles or a quest of individuals against corrupt institutions
+
+
+
+
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+
+
+# Central topics reoccuring in the core nodes:
+
+1. Haunted Castles and Supernatural Horror: This cluster includes novels with a focus on haunted castles, supernatural events, spectral apparitions, and unexplained phenomena. Examples are "The Castle of Otranto," "The Mysteries of 
+Udolpho," and "The Orphan of the Rhine."
+2. Gothic Romance: This cluster features novels that revolve around romantic relationships set against a gothic backdrop. Castles, intrigue, scheming relatives, and heroic women are prominent features. Examples include "The Children 
+of the Abbey," "The Mysteries of Udolpho," and "The Castle of Wolfenbach."
+3. Quest for Identity and Inheritance: These novels involve protagonists who embark on a journey to discover their true identity or inheritance. Supernatural elements, mystery, and psychological obsession are common. Examples are 
+"Arthur Mervyn" and "Edgar Huntly," both by Charles Brockden Brown.
+4. Historical Gothic: This cluster includes novels that are rooted in historical events and feature a gothic atmosphere. Abductions, royalty, shipwrecks, and gloomy settings are typical elements. Examples include "Longsword, Earl of 
+Salisbury," by Thomas Leland, and "The Romance of the Forest" by Ann Radcliffe.
+5. Morality Tales: These novels blend horror, suspense, and a discussion or moral values. Natural sublime and beauty, sexuality, and questions of identity are addressed in these stories. Examples include "The Castle of Otranto," by 
+Horace Walpole, and "The Romance of the Forest," both by Ann Radcliffe.
+6. Early American Gothic: This group includes influential early American gothic texts that deal with themes like yellow fever plagues, crime, theft, plantation work, prostitution, and a morally gray protagonist. Examples are "Arthur 
+Mervyn" and "Edgar Huntly," both by Charles Brockden Brown.
+7. Darkness, Fear, and Veiled Truths: These novels explore themes of wilderness anxiety, supernatural, darkness, and fear, with veiled truths and surprising discoveries. Examples include "The Adventures of Ferdinand Count Fathom" by 
+Tobias Smollett and "The Castle of Wolfenbach" by Eliza Parsons.
+8. Morally Gray Protagonists: These novels feature morally gray protagonists dealing with a variety of issues, including plagues, crime, theft, plantation work, and prostitution. Examples include "Arthur Mervyn" and "Edgar Huntly," 
+both by Charles Brockden Brown.
+
+----------------------------------------------------------------------------------------------------------
 
 
 
