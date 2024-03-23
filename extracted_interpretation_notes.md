@@ -1,6 +1,6 @@
 # Collected Notes on the Interpretation of the Analysis on the gothic fiction corpus:
 
-ome of the elements are in order of their occurrence within the notebook, others are rearranged contextually,
+Some of the elements are in order of their occurrence within the notebook, others are rearranged contextually,
 but generally speaking are not provided with a full description of the setting they were taken out of there.
 This is still to come, but in terms of content the observations and groupings should be a to stand on their own
 and speak for themselves on what aspect of the corpus, the topic model, or the relationship between the authors
@@ -10,6 +10,7 @@ is life.
 
 ## Topics:
 
+ ```
 topic_labels = {
    "Topic 1": "Ominous Atmosphere - \n Spatial and Auditory Imagery: \n vastness, archaic, Refinement, Gloom, demons.",
    "Topic 2": "Emotional Dialogue -  \n Fear, Secrecy, Flattery, Arousal and Strife \n - Religion and Devils.",
@@ -85,7 +86,7 @@ topic_labels = {
    "Topic 72": "Festivities, Noise, Crowds.",
    "Topic 73": "Camps, Trenches and Weather."
 }
-
+```
 
 ## Broad Categorization:
 
@@ -826,6 +827,61 @@ This area of the graph highlights the intersection of Gothic fiction with themes
 -> These texts deal with unrest within power structures, weather through family intrigue, religous power struggles or a quest of individuals against corrupt institutions
 
 
+-----------------Core Graph Information before Evaluation--------------------
+
+
+Upper Outliers:
+-> Psychological Terror, Politics, Fanaticism, Transgressive Indulgence and Moral Debasement
+(Topic focus: Emotional Turmoil, Invasion of the sacred, societal discontent)
+
+
+Upper Half:
+-> Societal Disarray and Alienation, Humorous Subversion of Expectations
+(Topic focus: Clamor, Grief, social and emotional upheaval, Identity)
+
+
+Upper Half Lower:
+-> Life, Death, Pursuit of Happiness
+(Topic focus: Entirely different make-up, human desires, yearning and health, atmospheric settings, fantastical elements)
+
+
+Lower Outliers (similar to Upper Outliers):
+-> Systemic violence, Supernatural Othering Encounters
+(Topic focus: Very high Societal Disenfranchisement, Punishment)
+
+
+Bottom Half Up:
+-> Fallen Nobility, Emotional Distress and Struggles of Love, Satire
+(Topic focus: Domestic and Social Conflicts, Nobility, Conflict, Intimacy)
+
+
+Bottom Half Upper:
+-> Dark Desires and Dire Consequences, Pacts
+(Topic focus: Battle, Death, Aggression, Conflict, Resistance against demands and Mystery)
+
+
+Center Bottom Right:
+-> Very grotesque, physical depictions in religiously coded settings, preceded by moral transgressions (Body Horror) (less female representation)
+(Topic focus: Invasion of the sacred, Religion, Death and Ferocity)
+
+
+Dead Center:
+-> Female Protagonists, struggling for control, their place in a changing environment or love (Gothic Romance) (strongest female representation)
+(Topic focus: Very High Occurrence of Emotional and Interpersonal Conflicts, Gothic Settings, Quests for identity)
+
+
+Center Left:
+-> Core foundational early British texts and their first adaptations over sea. The latter grapple with disease and the wilderness, while the former establish core themes of heightened emotions, insanity, the sublime, ghosts and castles
+(Topic focus: Social and Emotional Distress, more interpersonal intimacy and interactions, Gothic settings, supernatural impressions and violence)
+
+
+Center Top Right:
+-> These texts deal with unrest within power structures, whether through family intrigue, religious power struggles or a quest of individuals against corrupt institutions
+(Topic focus: Royalty, Institutions, Tragedy, Obsessions, Individualism and Revolt)
+
+The core topics have a share of more than 50% female authors
+
+------------------Addition Through Evaluation---------------------------
 
 
 -----------------------------------------------
