@@ -847,12 +847,13 @@ textual_grouping = {'Upper Outliers': [22, 69, 24, 44, 39, 40, 41],
 Upper Outliers:
 -> Psychological Terror, Politics, Fanaticism, Transgressive Indulgence and Moral Debasement
 (Topic focus: Emotional Turmoil, Invasion of the sacred, societal discontent)
-
+Eval: 39, 69, 24 (Poe, M. Shelly, Lewis - High Impact Texts, stemming from the center points either the first or second wave of high Gothic productivity.
 
 Upper Half:
 -> Societal Disarray and Alienation, Humorous Subversion of Expectations
 (Topic focus: Clamor, Grief, social and emotional upheaval, Identity)
-
+Eval: Three quite early Romantic texts, one of which is a popular favorite of its time plus one early one by M. Shelly. All of them either regarded as influential or important to the genre. 
+Of particular interest is the nigh on central Eaton Barrett's The Heroine, a text praised for picking up and popularizing the style and content of Radcliff'ian gothic fiction, but in a satirical and quixotically metareferential and critical fashion. Highly praised by other authors of the genre and wildly publically successful for a wider audience. 
 
 Upper Half Lower:
 -> Life, Death, Pursuit of Happiness
