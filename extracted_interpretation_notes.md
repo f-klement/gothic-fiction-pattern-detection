@@ -826,8 +826,22 @@ This area of the graph highlights the intersection of Gothic fiction with themes
 -----------------------------------------------
 -> These texts deal with unrest within power structures, weather through family intrigue, religous power struggles or a quest of individuals against corrupt institutions
 
+----------------------------------------------------------------------
+------------------- Graph Cluster Information ------------------------
+----------------------------------------------------------------------
 
------------------Core Graph Information before Evaluation--------------------
+```
+textual_grouping = {'Upper Outliers': [22, 69, 24, 44, 39, 40, 41],
+ 'Upper Half': [38, 29, 32, 77],
+ 'Upper Half Lower': [42, 36, 53, 58],
+ 'Lower Outliers': [19, 28, 52, 33, 34],
+ 'Bottom Half Up': [13, 45, 31, 23, 30],
+ 'Bottom Half Upper': [20, 17, 47],
+ 'Center Bottom Right': [35, 2, 25, 6, 74, 18],
+ 'Dead Center': [35, 2, 9, 10, 27, 37],
+ 'Center Left': [12, 8, 4, 5, 15, 7, 21],
+ 'Center Top Right': [1, 3, 11, 26, 14, 16]}
+ ```
 
 
 Upper Outliers:
@@ -881,12 +895,8 @@ Center Top Right:
 
 The core topics have a share of more than 50% female authors
 
-------------------Addition Through Evaluation---------------------------
 
 
------------------------------------------------
------------------------------------------------
------------------------------------------------
 
 
 # Central topics reoccuring in the core nodes:
