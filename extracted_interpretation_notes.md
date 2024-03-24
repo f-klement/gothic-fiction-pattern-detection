@@ -718,7 +718,7 @@ Center Top Right:
 
 26: Eliza Parsons' The Castle Of Wolfenbach: The castle of Wolfenbach is an important early piece predating many Radcliff texts, lauded by Jane Austin as essential. (early outlier) A gothic royal romance with abundant frenzied expressions of emotion, fainting, weeping, and struggles of identity formation.
 
-14: James Hogg's The Private Memoirs And Confessions Of A Justified Sinner: It deals with a caste haunted by a young woman wrongfully accused of murder.
+14: James Hogg's The Private Memoirs And Confessions Of A Justified Sinner: Almost unnoticed until the 20th centuary, carrying deep religious criticism in its anti-hero.
 
 16: Clara Reeve's The Old English Baron: An homage to Walpoles Castle of Otranto, but intended as a more realistic and streamlined Gothic template — widely adopted. Horror, mystery, ghost stories on castles.
 
@@ -843,59 +843,91 @@ textual_grouping = {'Upper Outliers': [22, 69, 24, 44, 39, 40, 41],
  'Center Top Right': [1, 3, 11, 26, 14, 16]}
  ```
 
-
 Upper Outliers:
 -> Psychological Terror, Politics, Fanaticism, Transgressive Indulgence and Moral Debasement
 (Topic focus: Emotional Turmoil, Invasion of the sacred, societal discontent)
+
 Eval: 39, 69, 24 (Poe, M. Shelly, Lewis - High Impact Texts, stemming from the center points either the first or second wave of high Gothic productivity.
 
 Upper Half:
 -> Societal Disarray and Alienation, Humorous Subversion of Expectations
 (Topic focus: Clamor, Grief, social and emotional upheaval, Identity)
-Eval: Three quite early Romantic texts, one of which is a popular favorite of its time plus one early one by M. Shelly. All of them either regarded as influential or important to the genre. 
-Of particular interest is the nigh on central Eaton Barrett's The Heroine, a text praised for picking up and popularizing the style and content of Radcliff'ian gothic fiction, but in a satirical and quixotically metareferential and critical fashion. Highly praised by other authors of the genre and wildly publically successful for a wider audience. 
+
+Eval: Three quite early Romantic texts, one of which is a popular favorite of its time, plus one early one by M. Shelly. All of them either regarded as influential or important to the genre. 
+Of particular interest is the nigh on central Eaton Barrett's The Heroine, a text praised for picking up and popularizing the style and content of Radcliff'ian gothic fiction, but in a satirical and quixotically meta referential and critical fashion. Highly praised by other authors of the genre and wildly successful for a wider audience. 
 
 Upper Half Lower:
 -> Life, Death, Pursuit of Happiness
 (Topic focus: Entirely different make-up, human desires, yearning and health, atmospheric settings, fantastical elements)
 
+Eval: All of them are by Hawthorne whose role within the genre was seemingly not recognized as such by the creators of either of the corpora made use of here, Given that none of the other graphs allotted him any space, this can be seconded here, even if his texts fall quite squarely within the second wave of increased production within the corpus.
 
 Lower Outliers (similar to Upper Outliers):
 -> Systemic violence, Supernatural Othering Encounters
 (Topic focus: Very high Societal Disenfranchisement, Punishment)
+
+Eval: Of these texts, only Blackwood's The Willows (33) and Clark's For the term of his natural life (52) are recognized for their influence on the genre. Especially the former is often regarded as one of the finest pieces of supernatural fiction and an important predecessor of the Weird Fiction surge within the 20th century. The text seems well-connected with the lower sections of the center, in particular Arthur Machen and Godwin's St. Leon. Both of which share an ominous, foreboding and anxious attitude.
 
 
 Bottom Half Up:
 -> Fallen Nobility, Emotional Distress and Struggles of Love, Satire
 (Topic focus: Domestic and Social Conflicts, Nobility, Conflict, Intimacy)
 
+Eval: 13 - Godwin (St Leon - central, Faustian bargains, fallen nobility, madness), 45 - M. Shelley (Lodore - Peripheral - feminist, egalitarian novel), 23 - Jane Austin's Northanger Abbey is famed for its delicate parody of the genre, while remaining a prime example itself, in between first and second. 30 - Radcliffe (Sicilian Romance, Central Romantic, first spike), very classic in its themes.
+
 
 Bottom Half Upper:
 -> Dark Desires and Dire Consequences, Pacts
 (Topic focus: Battle, Death, Aggression, Conflict, Resistance against demands and Mystery)
+
+Eval: All three Romantic and very early texts. Shelley and Beckford are regarded as central, Reeve as Peripheral (Percey Shelley's Zastrozzi, a a piece of cruel self-indulgence, revenge and amorality, influential for its iconic villain.) Beckford's Caliph Vathek, early Orientalist adaptation of Walpole's seminal text, highly successful and esteemed for  amorality, devil's pacts and powerful use of architecture. It managed to combine the elements of earlier Gothic texts with influences from the Arabian Nights, which had a strong influence on the English Romantic movement. The mysterious Wanderer was a popular book at its time, reaching a large audience, which has ceded in recognition since then, having gotten largely forgotten.
 
 
 Center Bottom Right:
 -> Very grotesque, physical depictions in religiously coded settings, preceded by moral transgressions (Body Horror) (less female representation)
 (Topic focus: Invasion of the sacred, Religion, Death and Ferocity)
 
+Eval: 25 The Great God Pan - Central, Romantic, first peak, early, hyping pageant rites, Christian Symbolism, scientific amoral crossing of boundaries. Influential for Charles Brockden, H P Lovecraft, Oscar Wilde and Bram Stoker, drawing heavily from Poe, Le Fanu and Stevenson. Heavy influence on 20th century weird fiction. Brown's Wieland (central) is a gruesome early American piece, the first of its kind, also heavy on Christian symbolism, madness and supernaturla elements.
+74 - Lewis' The Monk is surprisingly unconnected and peripheral for its (central) position. (Because of its unique topical composition: 70, 63, 51 (highest), 38, 34, 30, 9, 4, 5) It still shares 70, 5, 38, making it highly in line with the essential texts, but its other make-up falls out of line - heavily emphasizing persecution, treacherous company, murder and temptation by devils - very fitting and to the point but potentially out there due to the corrupting happening to the protagonists and some mixture of transgression and clerical elements.)
+18 - The Horrors Of Oakendale Abbey Romantic, Only Peripheral, very gruesome and grotesque, early, highly popular and influential, but not regarded as highly in itself because of its lowly themes.
+
 
 Dead Center:
 -> Female Protagonists, struggling for control, their place in a changing environment or love (Gothic Romance) (strongest female representation)
 (Topic focus: Very High Occurrence of Emotional and Interpersonal Conflicts, Gothic Settings, Quests for identity)
 
+Eval: 35 Fenwick's Secrecy (Peripheral, Romantic) Early Influence on Radcliffe' The Italian. Morbid, feminist, transgression, female independence. 2. Burney's Camilla, Immensely popular, generational coming of age of several women, comedic with gothic episodes, praised by Jane Austin. 9: Sophia Lee's The Recess, Or A Tale Of Other Times: political intrigue, heroic female lead, seafaring, warfare, gothic castles, marriage — very popular. Very early, romantic and central. A 10: Charlotte Smith's Emmeline , Or The Orphan Of The Castle: (romantic, central, early) A Cinderella story of female emancipation, gaining property and standing, where ownership over masonry and bodily autonomy blend. Gothic in style - highly popular and finacially successful. (37) As well as a Radcliffe text in between. A number of very popular texts, featuring heroic women, romance and terror, some of which are today largely overlooked, hold sway here.
+
+
 
 Center Left:
 -> Core foundational early British texts and their first adaptations over sea. The latter grapple with disease and the wilderness, while the former establish core themes of heightened emotions, insanity, the sublime, ghosts and castles
-(Topic focus: Social and Emotional Distress, more interpersonal intimacy and interactions, Gothic settings, supernatural impressions and violence)
+(Topic focus: Social and Emotional Distress, more interpersonal intimacy and interactions, Gothic settings, supernatural impressions and violence).
+
+Eval: All regarded as central early texts of the genre, from two sides of the continent. Brown draws more heavily from Godwin than the others, creating a distinctive voice of wilderness, social disarray and abandonment. His texts Arthur Mervyn and Edgar Huntly defined the American branch of the genre as early adaptations, highly influential. With Wieland (Center Bottom Right, more carnal) and Edgar Huntly as more philosophical more closely tied to the tradition, Arthur Mervyn is further out, sprawling, less successful, less popular at its time, and darker (yellow fever).
+The British texts carry two by Radcliffe, as well as Eleanor Sleath's The Orphan Of The Rhine: picturesque, strongly radcliffeque, scoundrels and half ruined castles, strong emotions, romance, terror (praised by Jane Austen in Northanger Abbey), praised as very similar in style. Hugely successful. As well as Horace Walpole's The Castle of Otranto: Medieval haunted Castle, supernatural horrific happenings, violence, surprising humor, sexual and grappling with questions of identity (retrospectively one of the earliest and most formative exemplary of the genre)
+
+The American branch has a distinctly more individualist, more Godwin'ian and less medieval branch. While many of the British ones deal with love, sexuality, royalty and a lot of historical fiction.
+All of them are very early, almost all of them Romantic and all Central.
 
 
 Center Top Right:
 -> These texts deal with unrest within power structures, whether through family intrigue, religious power struggles or a quest of individuals against corrupt institutions
 (Topic focus: Royalty, Institutions, Tragedy, Obsessions, Individualism and Revolt)
 
-The core topics have a share of more than 50% female authors
+Eval: 
+Tobias Smollett's The Adventures Of Ferdinand Count Fathom the only Pre-Romantic and non-central, but only Influential. Resembling Zastrozzi in many ways. 26: Eliza Parsons' The Castle Of Wolfenbach: The castle of Wolfenbach is an important early piece predating many Radcliff texts, lauded by Jane Austin as essential. (early outlier) A gothic royal romance with abundant frenzied expressions of emotion, fainting, weeping, and struggles of identity formation. 
+16: Clara Reeve's The Old English Baron: An homage to Walpoles Castle of Otranto, but intended as a more realistic and streamlined Gothic template — widely adopted. Horror, mystery, ghost stories on castles. 1: Regina Maria Roche's The Children Of The Abbey: The Children Of The Abbey was one of the best-selling novels of the 19th century and deals with wicked relatives, a quest for inheritance, love, royalty, castles, and heightened emotions, full of languishing. Three very popular texts, continuing the trend from the Center Left and Dead Center - highly popular, either Gothic Romances in the style of Radcliffe or preceding it, or sharing in Walpole's gruesome, sexual and supernatural style. With the Nr. The Children Of The Abbey presenting a best seller of its time further embracing these Radcliffesque motifs.
+Outliers from this picture, but underlying the more philosophical side of the genre are 3: William Godwin's Caleb Williams; Or, Things as They Are: A tale of treachery, persecution, political oppression, corrupt hierarchies, psychological obsession, and a big influence on Frankenstein. Individualism and the constraints of institutions  and 14: James Hogg's The Private Memoirs And Confessions Of A Justified Sinner: It deals with a caste haunted by a young woman wrongfully accused of murder, which deal with the corruption and moral degradation of institutions, both within gruesome settings, while the former attempts to actively rally for a cause from the perspective of the downtrodden, the latter was almost unnoticed until the 20th century, carrying deep religious criticism in its anti-hero.
 
+Assessment:
+Generally, the relevance within the network is very strongly connected to Romantic authors, almost all the texts central here are regarded as central, with some peripheral ones included.) A strong female presence, intermixing of popular and traditional gothic authors, with some texts of more philosophical inquiry mixed in. Many popular female ones that expanded the genre and were created to live of off, added and expanded the genre creatively, shaping the picture for future texts to come. (Research the financial success of the main contributors.) The trajectory still warrants further analysis. Inter-cluster evaluation of statio
+n and positioning of authors still needs to be investigated. 30 and 35, 15, 11 need to be added to the graph (color green an issue?).
+The core topics have a share of more than 50% female authors. 
+(Within the female gothic and the gruesome pulp variant, more space for popular fiction to hold sway and influence the style more strongly)
+
+
+While these texts are regarded as inciting and influential for the genre. Those most distinct for the topics at hand are sometimes others. See analysis above.
 
 
 
